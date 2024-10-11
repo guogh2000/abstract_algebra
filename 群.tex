@@ -1,0 +1,778 @@
+\chapter{群}
+\section{群的同态定理}
+\begin{theorem}[群的第一同构定理]\label{qddytgdl}
+    设$G$是群,$H<G,N\lhd G$,则\begin{align*}
+        &(1)HN<G\\
+        &(2)H\cap N\lhd H\text{且}H/H\cap N\cong HN/N.
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    (1)的证明
+
+    $HN<G\iff$\begin{align*}
+        (\mr{i})&HN\text{非空}\\
+        (\mr{ii})&\forall a,b\in HN\Lra ab^{-1}\in HN.
+    \end{align*}$HN$显然非空.对任意$h_1n_1,h_2n_2\in HN$注意到\begin{align*}
+        &h_1n_1(h_2n_2)^{-1}\\
+        =&h_1n_1n_2^{-1}h_2^{-1}\\
+        =&h_1h_2^{-1}(h_2n_1n_2^{-1}h_2^{-1}).
+    \end{align*}由于$N\lhd G$,所以$\forall g\in G,gNg^{-1}\in N$,又$h_2\in H\subset G$,所以\begin{align*}
+        h_1h_2^{-1}(h_2n_1n_2^{-1}h_2^{-1})\in N,
+    \end{align*}从而\begin{align*}
+        h_1n_1(h_2n_2)^{-1}\in N,
+    \end{align*}于是$HN<G$.
+
+    (2)的证明
+
+    定义映射\begin{align*}
+        \varphi:H&\to HN/N\\
+        h&\mapsto hN,
+    \end{align*}显然这是良定义的.对$\forall h_1,h_2\in H$\begin{align*}
+        \varphi(h_1h_2)&=h_1h_2N\\
+        &=h_1Nh_2N\\
+        &=\varphi(h_1)\varphi(h_2),
+    \end{align*}可见$\varphi$是同态映射,所以由群同态基本定理(定理\ref{qttjbdy})\begin{align*}
+        H/\ker\varphi\cong\im\varphi.
+    \end{align*}
+    
+    注意到\begin{align*}
+        &h\in\ker\varphi\\
+        \iff&hN=N\\
+        \iff&h\in N\\
+        \overset{h\in H}{\iff}&h\in H\cap N,
+    \end{align*}所以$\ker\varphi=H\cap N$,从而\begin{align*}
+        &H\cap N\lhd H\\
+        &H/H\cap N\cong\im\varphi.
+    \end{align*}
+
+    对$\forall hnN\in HN/N$,有\begin{align*}
+        hnN=hN,
+    \end{align*}所以$\exists h\in H\st$\begin{align*}
+        \varphi(h)=hN,
+    \end{align*}所以$\varphi$是满同态,从而\begin{align*}
+        \im\varphi=HN/N,
+    \end{align*}所以\begin{align*}
+        H/H\cap N\cong HN/N.
+    \end{align*}
+\end{proof}
+\begin{remark}
+    类似可以证明:若$H<G,N\lhd G$,有\begin{align*}
+        (1)&NH<G\\
+        (2)&H\cap N\lhd H\text{且}H/H\cap N\cong NH/N.
+    \end{align*}
+\end{remark}
+\begin{theorem}[群的第二同构定理]\label{qddetgdl}
+    设$G$是群.若$N\lhd G,H\lhd G$并且$N\subset H$,则\begin{align*}
+        (1)&H/N\lhd G/N\\
+        (2)&(G/N)/(H/N)\cong G/H.
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    (1)的证明
+
+    定义映射\begin{align*}
+        \varphi:G/N&\to G/H\\
+        gN&\mapsto gH,
+    \end{align*}显然$\varphi$是良定义的.对$\forall g_1,g_2\in G$\begin{align*}
+        &\varphi(g_1Ng_2N)\\
+        \xlongequal[]{N\lhd G}&\varphi(g_1g_2N)\\
+        =&g_1g_2H\\
+        \xlongequal[]{H\lhd G}&g_1Hg_2H\\
+        =&\varphi(g_1N)\varphi(g_2N),
+    \end{align*}可见$\varphi$是同态映射,所以由群同态基本定理(定理\ref{qttjbdy})\begin{align*}
+        (G/N)/\ker\varphi\cong\im\varphi.
+    \end{align*}注意到\begin{align*}
+        &gN\in\ker\varphi\\
+        \iff&gH=H\\
+        \iff&g\in H\\
+        \iff&gN\in H/N,
+    \end{align*}可见$\ker\varphi=H/N$,所以\begin{align*}
+        &H/N\lhd G/N\\
+        &(G/N)/(H/N)\cong\im\varphi.
+    \end{align*}
+
+    (2)的证明
+    
+    对$\forall gH\in G/H,\exists g\in G\st$\begin{align*}
+        \varphi(gN)=gH,
+    \end{align*}可见$\varphi$是满同态,进而\begin{align*}
+        \im\varphi=G/H,
+    \end{align*}所以\begin{align*}
+        (G/N)/(H/N)\cong G/H.
+    \end{align*}
+\end{proof}
+\begin{remark}
+    习惯上将群同态基本定理(定理\ref{qttjbdy}),群的第一同构定理(定理\ref{qddytgdl}),群的第二同构定理(定理\ref{qddetgdl})统称为群的同态定理.
+\end{remark}
+\begin{theorem}
+    若$G$是群,$N\lhd G$,则$G$的所有包含$N$的子群与$G/N$的所有子群之间存在一一对应.
+\end{theorem}
+\begin{proof}
+    取自然同态\begin{align*}
+    \pi:G\to&G/N\\
+        g\mapsto&gN,
+    \end{align*}则问题转化为证明在集合$A$与$B$之间存在一一对应,其中\begin{align*}
+        A&=\l\{H:H<G,H\supset\ker\pi\r\}\\
+        B&=\l\{H':H'<\im\pi\r\}.
+    \end{align*}
+
+    设$H\in A,\pi_H$为映射$\pi$在子群$H$上的限制,容易验证$\im\pi_H\in B$.定义映射\begin{align*}
+        \varphi:A&\to B\\
+        H&\mapsto\im\pi_H,
+    \end{align*}容易验证$\varphi$是良定义的同态映射,若能证明$\varphi$是一一对应,则问题证毕.
+
+    (1)$\varphi$是满同态
+
+    $\forall H'<\im\pi$即\begin{align*}
+    H'=\l\{\pi(k):k\in K\subset G\r\}.
+    \end{align*}注意到\begin{align*}
+        &H'\text{成群}\\
+        \iff&\forall\pi(k_1),\pi(k_2)\in H'\Lra\pi(k_1)[\pi(k_2)]^{-1}\in H'\\
+        \iff&\forall\pi(k_1),\pi(k_2)\in H'\Lra\pi(k_1k_2^{-1})\in H'\\
+        \iff&\forall k_1,k_2\in K\Lra k_1k_2^{-1}\in K\\
+        \iff&K<G,
+    \end{align*}所以\begin{align}\label{asijdufgn}
+        H'=
+        \l\{\pi(k):k\in K<G\r\}.
+    \end{align}注意到\begin{align*}
+        &\forall t\in\ker\pi\Lra\pi(t)=e\in H',
+    \end{align*}因此不妨让式\eqref{asijdufgn}中的$K$包含$\ker\pi$,即\begin{align*}
+        H'=&\l\{\pi(k):k\in K<G,K\supset\ker\pi\r\}\\
+        =&\im\pi_K(K<G,K\supset\ker\pi),
+    \end{align*}所以\begin{align*}
+        B=&\l\{\im\pi_K:K<G,K\supset\ker\pi\r\}\\
+        =&\l\{\im\pi_H:H<G,H\supset\ker\pi\r\}\\
+        =&\l\{\im\pi_H:H\in A\r\},
+    \end{align*}由此可见$\im\varphi=B$,即$\varphi$是满同态;
+
+    (2)$\varphi$是单同态
+
+    \stars
+
+    由(1),(2)便知\begin{align*}
+        \varphi:A&\to B\\
+        H&\mapsto\im\pi_H
+    \end{align*}为一一对应,问题得证.
+\end{proof}
+\begin{definition}[由$S$生成的群]
+    设$G$是群,$S$是$G$的非空子集合.$G$的包含$S$的最小的子群,称为由$S$生成的群,记作$<S>$,即\begin{align*}
+        <S>=\bigcap_{S\subset H<G}H.
+    \end{align*}
+\end{definition}
+\begin{proposition}
+    设$(G,\cdot)$是群.若$S$是$G$的非空子集合,则\begin{align*}
+        <S>=\l(\l\{\prod_{k=1}^{m}x_k:x_1,\cdots,x_m\in S\cup S^{-1},m\in\N_+\r\},\cdot\r),
+    \end{align*}即集合$S\cup S^{-1}$中任意多个元素的乘积组成的集合关于$\cdot$构成$<S>$.
+\end{proposition}
+\begin{proof}
+    容易验证群$G$的子集合$\l\{\prod_{k=1}^{m}x_k:x_1,\cdots,x_m\in S\cup S^{-1},m\in\N_+\r\}$关于群$G$的乘法成群,记此群为$A$.注意到$A$包含$S$,所以$A$包含:包含$S$的最小的子群,即$A\supset<S>$.
+
+    反之,对$\forall a\in A$有\begin{align*}
+        a=\l(\prod_{\alpha\in\Lambda_1}s_\alpha\r)\cdot\l(\prod_{\beta\in\Lambda_2}s_\beta\r),
+    \end{align*}其中\begin{align*}
+        &s_\alpha\in S\subset<S>,\alpha\in\Lambda_1\\
+        &s_\beta\in S^{-1},\beta\in\Lambda_2,
+    \end{align*}注意到$s_\beta^{-1}\in S\subset<S>,\beta\in\Lambda_2$,而$<S>$成群,从而\begin{align*}
+        &s_\beta=\l(s_\beta^{-1}\r)^{-1}\in<S>,\beta\in\Lambda_2\\
+        \Lra&a=\l(\prod_{\alpha\in\Lambda_1}s_\alpha\r)\cdot\l(\prod_{\beta\in\Lambda_2}s_\beta\r),
+    \end{align*}可见$A\subset<S>$.
+
+    综上,$A=<S>$,即\begin{align*}
+        <S>=\l(\l\{\prod_{k=1}^{m}x_k:x_1,\cdots,x_m\in S\cup S^{-1},m\in\N_+\r\},\cdot\r).
+    \end{align*}
+\end{proof}
+\begin{definition}[有限生成的,循环群]\label{huasdjnkv}
+    设$G$是群.若$<S>=G$,则称$S$为$G$的一组生成元.若$G$中存在一有限集合$S$使得$<S>=G,$则称$G$为有限生成的.由一个元素生成的群称为循环群.
+\end{definition}
+\begin{proposition}
+    有限群(定义\ref{yxqywxq})一定是有限生成的,反之未必成立.
+\end{proposition}
+\begin{proof}
+    设$G$是有限群,$m=|G|\in\N_+$,则$G$所含元素的个数为$m$.取\begin{align*}
+    S=\l\{g_1,g_2,\cdots,g_m:\text{$g_k$是$G$中两两不同的元素,$k=1,2,\cdots,m$}\r\},
+    \end{align*}则\begin{align*}
+        G=<S>,
+    \end{align*}第一个论断证毕;
+
+    注意到\begin{align*}
+        &|(\Z,+)|=\infty\\
+        &(\Z,+)=<\{1\}>,
+    \end{align*}所以第二个论断证必.
+\end{proof}
+\begin{definition}[换位子,换位子群]
+    对$\forall a,b\in G$,元素$a^{-1}b^{-1}ab$称为群$G$中元素$a,b$的换位子,简记为$[a,b]$.由所有换位子生成的群称为$G$的换位子群,记作$G^{(1)}$.
+\end{definition}
+\begin{proposition}
+    已知$\varphi:G\to G'$是同态映射,有以下结论成立
+
+    (1)若$G$是Abel群,则$\varphi G$是Abel群;
+
+    (2)若$\varphi G$是Abel群,则$G$未必是Abel群;
+
+    (3)$\varphi G$是Abel群$\iff G^{(1)}\subset\ker\varphi$.
+\end{proposition}
+\begin{proof}
+    (1)
+
+    对$\forall g_1,g_2\in G$\begin{align*}
+    &\varphi(g_1)\varphi(g_2)\\
+    \xlongequal[]{\varphi\text{是同态映射}}&\varphi(g_1g_2)\\
+    \xlongequal[]{G\text{是Abel群}}&\varphi(g_2g_1)\\
+    =&\varphi(g_2)\varphi(g_1),
+    \end{align*}可见$\varphi G$是Abel群.
+
+    (2)
+
+    令\begin{align*}
+        &G=\l(\l\{\l(\begin{matrix}
+        a&b\\
+        c&d
+        \end{matrix}\r):a,b,c,d\in\R\text{且}\l|\begin{matrix}
+        a&b\\
+        c&d
+        \end{matrix}\r|\neq0\r\},\cdot\r)
+    \end{align*}\begin{align*}
+        \varphi:G\to&G'\\
+        \l(\begin{matrix}
+            a&b\\
+            c&d
+            \end{matrix}\r)\mapsto&\l(\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\r),
+    \end{align*}不难得到上述定义的$G$与$\varphi$证明了(2).
+
+    (3)\begin{align*}
+        &\varphi G\text{是Abel群}\\
+        \iff&\forall g_1,g_2\in G,\varphi(g_1)\varphi(g_2)=\varphi(g_2)\varphi(g_1)\\
+        \iff&\forall g_1,g_2\in G,\l[\varphi(g_2)\varphi(g_1)\r]^{-1}\varphi(g_1)\varphi(g_2)=e\\
+        \iff&\forall g_1,g_2\in G,\varphi(g_1^{-1}g_2^{-1}g_1g_2)=e\\
+        \iff&\forall g_1,g_2\in G,g_1^{-1}g_2^{-1}g_1g_2\in\ker\varphi\\
+        \iff&G^{(1)}\subset\ker\varphi,
+    \end{align*}问题得证.
+\end{proof}
+\section{循环群}
+循环群的定义见定义\ref{huasdjnkv}.
+\begin{theorem}\label{adsjfnklm}
+    整数加群$\Z$的子群都是由某一非负整数$m$生成的循环群.且$\forall m,n\in\N_+$\begin{align*}
+        n\Z\supset m\Z\iff n|m.
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    设$H$是$\l(\Z,+\r)$的一个子群.
+
+    (1)(i)若$H=\l(\l\{0\r\},+\r)$,取$m=0$即可.
+
+    (ii)若$H\neq\l(\l\{0\r\},+\r)$,则$H$中含有非零数,因而含有正整数.设$m$是$H$中最小的正整数,我们来证明$H=m\Z$.任取$x\in H$,由整数的除法算式有\begin{align*}
+        x=qm+r,\text{其中$q,r\in\Z,0\leq r<m$},
+    \end{align*}从而\begin{align*}
+        r=x-qm\in H.
+    \end{align*}若$r\neq0$,则$r$是$H$中小于$m$的正整数,矛盾,所以$r=0$,即\begin{align*}
+        x=qm,
+    \end{align*}这说明$H$中的任意元素都是$m$的倍数.反之,由群对运算的封闭性不难得到$m$的倍数也在$H$中.综上可得\begin{align*}
+        H=m\Z,
+    \end{align*}第一个论断证毕.
+
+    (2)由$n\Z\supset m\Z$可知$m\in n\Z$,所以$n|m$;
+
+    由$n|m$可知,$m$的倍数都是$n$的倍数,所以$n\Z\supset m\Z$.
+    
+    综上可得\begin{align*}
+        n\Z\supset m\Z\iff n|m,
+    \end{align*}第二个论断证毕.
+\end{proof}
+\begin{definition}[无限循环群]
+    设群$G=<g>$,若$G$是无限群,则称$G$为无限循环群,此时记$|G|=\infty$.
+\end{definition}
+\begin{theorem}
+    已知群$G=<g>,|G|=m$,则有以下结论成立:
+
+    (1)若$m=\infty,$则$G\cong\Z$,它的子群与非负整数成一一对应(见定理\ref{adsjfnklm});
+    
+    (2)若$m\in\N_+$,则$G\cong\Z/m\Z$,它的子群与$m$的因子一一对应.
+\end{theorem}
+\begin{proof}
+    定义映射\begin{align*}
+        \varphi:\Z&\to G\\
+        n&\mapsto g^n,
+    \end{align*}显然$\varphi$是良定义的满同态.
+    
+    (1)若$m=\infty$,则\begin{align*}
+        &\forall n, m\in \N_+,n\neq m,\Lra g^n\neq g^m\\
+        \iff&\varphi\text{是单射}\\
+        \iff&\varphi\text{是同构映射}\\
+        \iff&G\cong\Z.
+    \end{align*}
+
+    \stars
+    
+    (2)若$m\in\N_+$,不难得到\begin{align*}
+        \ker\varphi=m\Z,
+    \end{align*}于是根据群同态基本定理(定理\ref{qttjbdy})有\begin{align*}
+        G=\im\varphi\cong\Z/k\Z.
+    \end{align*}
+
+    \stars
+\end{proof}
+\section{单群与\os{$A_n$}的单性}
+\begin{definition}[单群]
+    若群$G$没有非平凡的子群,则称群$G$为单群.
+\end{definition}
+\begin{theorem}
+    设$G$为交换群,$G\neq\l\{e\r\}$,则$G$为单群的充分必要条件是$G$为素数阶的循环群.
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{definition}[置换]
+    设$\varOmega$为有限集合,由$\varOmega$到自身的一个双射叫作$\varOmega$的一个置换.
+\end{definition}
+\begin{definition}[轮换]
+    若一个$n$元置换$\sigma$把$i_1$映成$i_2$,把$i_2$映成$i_3$,$\cdots$,把$i_{r-1}$映成$i_r$,把$i_r$映成$i_1$,其余的元素保持不变,则称$\sigma$为一个$r$-轮换,简称轮换.$2$-轮换也称为对换.
+\end{definition}
+\begin{lemma}
+    每个置换都可以表示成一些对换的乘积;每个偶置换(置换$\sigma$为偶置换当且仅当$\sigma$的对换分解式中对换的个数为偶数)都可以表示成一些长度为$3$的轮换(简称$3$-轮换)的乘积.
+\end{lemma}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{definition}[全变换群]
+    非空集合$\varOmega$到自身的所有双射组成的集合,对于映射的乘法成群,称它为集合$\varOmega$的全变换群,记作$S_n$.
+\end{definition}
+\begin{definition}[$n$元交错群]
+    $S_n$中所有偶置换组成的集合,对于映射的乘法成群,称它为$n$元交错群,记作$A_n$.
+\end{definition}
+\begin{theorem}
+    交错群$A_n,n\geq5$是单群.
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\section{可解群}
+对任意群$G$而言,它的换位子群$G^{(1)}$是$G$的正规子群,即\begin{align*}
+    G^{(1)}\lhd G,
+\end{align*}再做$G^{(1)}$的换位子群$\l(G^{(1)}\r)^{(1)}$,记作$G^{(2)}$,就有\begin{align*}
+    G^{(2)}\lhd G^{(1)}\lhd G,
+\end{align*}以此类推可得\begin{align*}
+    \cdots\lhd G^{(k)}\lhd G^{(k-1)}\lhd\cdots\lhd G^{(2)}\lhd G^{(1)}\lhd G.
+\end{align*}
+
+若$G$是有限群,这样的群列只有以下两种可能\begin{align*}
+    (1)&\exists k\in\N_+\st G^{(k)}=G^{(k+1)}=\cdots\neq\l\{e\r\}\\
+    (2)&\exists k\in\N_+\st G^{(k)}=\l\{e\r\}.
+\end{align*}
+\begin{definition}[可解群]
+    设$G$是群.若\begin{align*}
+        \exists k\in\N_+\st G^{(k)}=\l\{e\r\},
+    \end{align*}则称$G$为可解群.
+\end{definition}
+\begin{theorem}
+    群$G$是可解的当且仅当存在一递降的子群列\begin{align*}
+        G=G_0>G_1>\cdots>G_s=\l\{e\r\},
+    \end{align*}其中每个$G_i$是前一个$G_{i-1}$的正规子群,且商群$G_{i-1}/G_i$交换($i=1,\cdots,s$).
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+由群的第二同构定理(定理\ref{qddetgdl})可知,当群$N$是群$G$的正规子群时,商群$G/N$的正规子群与$G$中包含$N$的正规子群是一一对应的.因此,商群$G/N$是单群的充要条件为正规子群$N$不包含在另一个非平凡的正规子群中,即不存在$G$的正规子群$N_1,N_1\neq G,N_1\neq N$,且\begin{align*}
+    N<N_1\lhd G,
+\end{align*}具有此性质的正规子群$N$称为极大的.
+\begin{theorem}
+    有限群$G$是可解的的充分必要条件为存在递降的子群列\begin{align*}
+        G=H_0\rhd H_1\rhd\cdots\rhd H_t=\l\{e\r\},
+    \end{align*}其中商群$H_{i-1}/H_i(i=1,\cdots,t)$都是素数阶的循环群.
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\section{群的自同构群}
+\begin{definition}[自同构与自同构群]
+    一个群到它自身的同构映射称为自同构映射,简称为自同构.群的全部自同构在变换下的乘法下成群,称为自同构群.群$G$的自同构群记作$\Aut(G)$.
+\end{definition}
+设$G$为群,$a\in G$为固定元素.定义\begin{align}
+    \sigma_a:&G\to G\nonumber\\
+    &g\mapsto aga^{-1}\nonumber,
+\end{align}不难验证$\sigma_a\in\Aut(G)$.
+\begin{definition}[内自同构与内自同构群]
+    称$\sigma_a$这种由$G$中元素引起的自同构为内自同构.$a\mapsto\sigma_a$给出了群$G$到$\Aut(G)$的同态,$G$的同态像就是$G$的全体内自同构,它们组成$\Aut(G)$的子群,记作$\In(G)$,称为$G$的内自同构群.
+\end{definition}
+\begin{definition}[中心]
+    对任意群$G$,与$G$的全体元素可交换的元素组成的集合称为$G$的中心,记作$Z(G)$.
+\end{definition}
+\begin{theorem}
+    定义映射\begin{align*}
+        f:&G\to\In(G)\\
+        &a\mapsto\sigma_a,
+    \end{align*}则\begin{align*}
+        &\ker f=Z(G)\\
+        &G/Z(G)\cong\In(G).
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{theorem}
+    对任意群$G$,有\begin{align*}
+        \In(G)\lhd\Aut(G).
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{definition}[外自同构群]
+    对任意群$G$,称自同构群对于内自同构群的商群\begin{align*}
+        \Aut(G)/\In(G)
+    \end{align*}为$G$的外自同构群.
+\end{definition}
+\begin{theorem}
+    对任意群$G$,若$Z(G)=\l\{e\r\}$,则\begin{align*}
+        G\cong\In(G).
+    \end{align*}此时我们可以认为$G<\In(G)$.
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{definition}[完全群]
+    一个中心为单位且自同构全是内自同构的群称为完全群.
+\end{definition}
+\section{群作用}
+\begin{definition}[群$G$在集合$X$上的作用]\label{qgzjhxudzy}
+    设$G$是群,$X$是非空集合.若映射$f:G\times X\to X$适合以下条件\begin{align*}
+        \forall g_1,g_2\in G,&x\in X:\\
+        &(1)f(e,x)=x\\
+        &(2)f(g_1g_2,x)=f(g_1,f(g_2,x)),
+    \end{align*}就称$f$决定了群$G$在集合$X$上的作用.
+\end{definition}
+\begin{remark}
+    在不需要明确指出映射$f$情况下,通常把$f(g,x)$简写成$g(x)$.按此写法,定义\ref{qgzjhxudzy}中的条件就可以写成\begin{align*}
+        (1)&e(x)=x\\
+        (2)&g_1(g_2(x))=g_1g_2(x).
+    \end{align*}
+\end{remark}
+\begin{example}\label{sahuidfj}
+    设$G$是群,取$X=G$.定义\begin{align*}
+        g(x)=gx,\ \ \text{对}g,x\in G.
+    \end{align*}这就给出了一个群在集合$G$上的作用.此即以前所谓的左平移.
+\end{example}
+\begin{example}[共轭变换]\label{gebh}
+    设$G$是群,取$X=G$.定义\begin{align*}
+        g(x)=gxg^{-1},\ \ \text{对}g,x\in G.
+    \end{align*}此即群$G$上的共轭变换.称元素$x$与元素$gxg^{-1}$共轭;称子群$H$与子群$gHg^{-1}$共轭,它们都是等价关系;称群$G$共轭作用在集合$G$上.
+\end{example}
+\begin{example}\label{sdghbj}
+    设$G$是群,$H<G$,令$X=\l\{xH:x\in G\r\}$,定义\begin{align*}
+        g(xH)=gxH,\ \ g,x\in G.
+    \end{align*}这就决定了群$G$在集合$X$上的左右.
+\end{example}
+\begin{definition}[齐性空间]
+    设$G$是群,$H<G$,称\begin{align*}
+        X=\l\{xH:x\in G\r\}
+    \end{align*}是群$G$的一个齐性空间.
+\end{definition}
+当群$G$作用在集合$X$上时,有可能$G$中的不同的元素在$X$上引起相同的映射,亦即$g\mapsto\sigma_g$不一定是单射.比如在例\ref{gebh}中,$Z(G)$中的元素都对应$G$上的恒同映射.
+\begin{definition}[如实的]
+    若映射\begin{align*}
+        f:&G\to\In(G)\\
+        &a\mapsto\sigma_a
+    \end{align*}是单射,就称群$G$在集合$X$上的作用是如实的,或称群$G$如实地作用在集合$X$上.其中\begin{align}
+        \sigma_a:&G\to G\nonumber\\
+        &g\mapsto aga^{-1}\nonumber.
+    \end{align}
+\end{definition}
+\begin{remark}
+    例\ref{sahuidfj}中的作用是如实的;例\ref{gebh},例\ref{sdghbj}不一定是如实的.
+\end{remark}
+\begin{definition}[等价的]
+    设$G$是群,$X$与$X'$是非空集合,$G$作用在$X$与$X'$上.若有一个一一对应$\varphi:X\to X'$使得\begin{align*}
+        \varphi\l(g(x)\r)=g\l(\varphi(x)\r),
+    \end{align*}则称$G$在集合$X$与$X'$上的作用是等价的.
+\end{definition}
+从抽象的观点来看,两个等价的作用可以不加区别.
+\begin{definition}[集合$X$上的等价关系]\label{jhxuddjgx}
+    对$\forall x,y\in X$,若\begin{align*}
+        \exists g\in G\st y=g(x),
+    \end{align*}则称$x$等价于$y$,记作$x\sim y$.
+\end{definition}
+\begin{remark}
+    定义\ref{jhxuddjgx}中的关系$\sim$是等价关系的证明如下.
+    \begin{proof}
+        \stars
+    \end{proof}
+\end{remark}
+\begin{definition}[$G$-轨道]
+    在定义\ref{jhxuddjgx}中的等价关系下,集合$X$中的元素被分成等价类,称这样分成的等价类为$x$的$G$-轨道,简称轨道,记作$O_x$.称$x$为该轨道的代表.
+\end{definition}
+\begin{remark}\label{sdaujnf}
+    由于轨道就是等价类,所以任意两条轨道要么相等,要么无交,即\begin{align*}
+        X=\bigcup_{i\in I}O_{x_i},
+    \end{align*}其中当$x_i\neq x_j$时$O_{x_i}\cap O_{x_j}=\varnothing$.进而\begin{align*}
+        |X|=\sum_{i\in I}|O_{x_i}|.
+    \end{align*}
+\end{remark}
+\begin{definition}[完全代表系]
+    称集合\begin{align*}
+        \l\{x_i:i\in I\r\}
+    \end{align*}为$x$的$G$-轨道的完全代表系.
+\end{definition}
+\begin{definition}[不动元素]
+    当轨道$O_x$只含有一个元素$x$即\begin{align*}
+        \forall g\in G,g(x)=x
+    \end{align*}时,称$x$为$G$的不动元素.
+\end{definition}
+在例\ref{gebh}中,若$x\in Z(G)$,则显然$O_x=\l\{x\r\}$;反之,由$O_x=\l\{x\r\}$可知$x\in Z(G)$.
+\begin{definition}[传递的]
+    设群$G$作用在集合$X$上,当$X$是一个轨道即\begin{align*}
+        \forall x,y\in X,\exists g\in G\st g(x)=g(y)
+    \end{align*}时,称群$G$在集合$X$上的作用是传递的.
+\end{definition}
+不难发现,例\ref{sahuidfj}与例\ref{sdghbj}都是传递的的情形.
+\begin{definition}[稳定子与稳定子群]
+    设群$G$作用在集合$X$上,对$\forall x\in X$,称集合\begin{align*}
+        H_x=\l\{g\in G:g(x)=x\r\}
+    \end{align*}是$x$的稳定子.容易验证,$H_x$是$G$的子群,因此也称为元素$x$的稳定子群.
+\end{definition}
+当群$G$在集合$G$上的作用是共轭作用(参考例\ref{gebh})时\begin{align}
+    H_x=&\l\{g\in G:gxg^{-1}=x\r\}\nonumber\\
+    =&\l\{g\in G:gx=xg\r\}.\label{sdaubhf}
+\end{align}
+\begin{definition}[中心化子]
+    称等式\eqref{sdaubhf}右端的集合为$x$在$G$里的中心化子,记作$Z(x)$,它就是在群$G$的共轭作用下$x$的稳定子群$H_x$.
+\end{definition}
+\begin{theorem}[轨道-稳定子定理]\label{gdwdzdl}
+    设群$G$作用在集合$X$上,$x\in X,O_x$是包含$x$的轨道,$H_x$是$x$的稳定子群,则群$G$在集合$O_x$上的作用与群$G$在齐性空间$G/H_x$上的作用等价,也可写作\begin{align*}
+        |O_x|=|G/H_x|,
+    \end{align*}即$x$的轨道的长度($x$的轨道所含元素的个数)等于$x$的稳定子在$G$中的指数.
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{corollary}
+    设群$G$在集合$X$上的作用是传递的,$x\in X,H_x$是元素$x$的稳定子群.则$G$在$X$上的作用与$G$在齐性空间$G/H_x$上的作用等价.
+\end{corollary}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{corollary}
+    设有限群$G$作用在集合$X$上.则任意一个轨道$O_x$包含有限多个元素,并且包含的元素的个数是$|G|$的因子.
+\end{corollary}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{definition}[$p$-群]
+    设$G$是有限群,若$|G|$是素数$p$的方幂,即\begin{align*}
+        |G|=p^k,\ \ k\geq1,
+    \end{align*}则称$G$为$p$-群($p$是素数).
+\end{definition}
+\begin{corollary}\label{sdjhansjoia}
+    设有限群$G$作用在有限集合$X$上.若$G$是$p$-群,$|X|=n,(n,p)=1$,则$X$中一定有不动元素.
+\end{corollary}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{corollary}\label{sadyhbfjk}
+    设$p$-群作用在有限集合$X$上,$|X|=n$.若$t$为$X$中不动元素的个数,则\begin{align*}
+        t\equiv n\mod p.
+    \end{align*}
+\end{corollary}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{corollary}
+    $p$-群有非平凡的中心.
+\end{corollary}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{definition}[共轭类]
+    当群$G$在集合$G$上的作用是共轭变换(见例\ref{gebh})时,称轨道$O_x$为$x$所在的共轭类,记作$C(x)$.
+\end{definition}
+\begin{theorem}
+    设群$G$作用在集合$X$上,$x,y\in X$.若存在$g_0\in G$使得$y=g_0x$,则$H_y=g_0H_xg_0^{-1}$.
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\section{Sylow定理}
+Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的阶是$|G|$的因子.反之,对于$|G|$的任意正因子$d$,是否存在一个$d$阶子群?本节介绍的Sylow定理将回答这一问题.
+
+在此之前我们需要以下引理.
+\begin{lemma}\label{aisuhdjnk}
+    若$n=p^lm,(p,m)=1,k\leq l,C_n^{p^k}$是组合数,则\begin{align*}
+        p^{l-k}|C_n^{p^k},p^{l-k+1}\nmid C_n^{p^k}.
+    \end{align*}
+\end{lemma}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{theorem}[Sylow第一定理]
+    若群$G$的阶为$n=p^lm$,其中$p$为素数,$(p,m)=1,l\geq1$,则对于$0\leq k\leq l$,$G$有$p^k$阶子群.特别地,称$p^l$阶子群为$G$的$\mr{Sylow}\ p$-子群.
+\end{theorem}
+\begin{proof}
+    令\begin{align*}
+        X=\l\{A:A\subset G,|A|=p^k\r\},
+    \end{align*}易见$|X|=C_{n}^{p^k}$.对$\forall A\in X$,对$\forall g\in G$定义映射\begin{align*}
+        g:&X\to X\\
+        &A\mapsto gA,
+    \end{align*}不难验证这是良定义的.该映射给出了群$G$在集合$X$上的作用.
+
+    由注\ref{sdaujnf}可知\begin{align*}
+        \l|X\r|=\sum_{i\in I}\l|O_{A_i}\r|.
+    \end{align*}由引理\ref{aisuhdjnk}可知\begin{align*}
+        p^{l-k+1}\nmid C_n^{p^k}=|X|,
+    \end{align*}所以至少有一个轨道,不妨设为$O_{A_j}$,满足\begin{align*}
+        p^{l-k+1}\nmid|O_{A_j}|,
+    \end{align*}此即$|O_{A_j}|$含有的$p$因子至多为$p^{l-k}$.
+    
+    对于$A_j$的稳定子群$H_{A_j}$,由轨道-稳定子定理(定理\ref{gdwdzdl})可知\begin{align*}
+        |O_{A_j}|=|G/H_{A_j}|=\frac{|G|}{|H_{A_j}|},
+    \end{align*}注意到\begin{align*}
+        &\text{$|G|$含有的$p$因子恰好为$p^l$}\\
+        &\text{$|O_{A_j}|$含有的$p$因子至多为$p^{l-k}$},
+    \end{align*}所以\begin{align*}
+        \text{$H_{A_j}$含有的$p$因子至少为$p^k$},
+    \end{align*}亦即\begin{align*}
+        \exists q\in\N_+\st|H_{A_j}|=p^kq,
+    \end{align*}可见\begin{align}\label{duhsbvj}
+        |H_{A_j}|\geq p^k.
+    \end{align}
+
+    反之,对$\forall g\in H_{A_j}$,有$g(A_j)=A_j$,所以对$\forall a\in A_j$,有$ga\in A_j$,从而\begin{align*}
+        H_{A_j}a=\l\{ga:g\in H_{A_j}\r\}\subset A_j,
+    \end{align*}于是\begin{align}\label{sduibfhbj}
+        |H_{A_j}|=\l|H_{A_j}a\r|\leq|A_j|=p^k.
+    \end{align}
+
+    由式\eqref{duhsbvj}与式\eqref{sduibfhbj}可知,$H_{A_j}$是$G$的$p^k$阶子群.定理得证.
+\end{proof}
+\begin{theorem}[Sylow第二定理]\label{xldedl}
+    若有限群$G$的阶为$p^lm$,其中$p$为素数且$(p,m)=1$,记$P$为$G$的$\mr{Sylow}\ p$-子群.则$G$的任意一个阶为$p^k(k\leq l)$的子群$H$包含在一个与$P$共轭的$\mr{Sylow}\ p$-子群中.
+\end{theorem}
+\begin{proof}
+    令\begin{align*}
+        X=\l\{gP:g\in G\r\},
+    \end{align*}对$\forall h\in H$,定义映射\begin{align*}
+        h:X\to&X\\
+        gP\mapsto&hgP,
+    \end{align*}容易验证该定义是良定义的,$h$确定了群$H$在集合$X$上的作用.由Lagrange定理(\ref{Lagrange定理})的证明过程可知\begin{align*}
+        |G|=|X|\cdot|P|,
+    \end{align*}所以$|X|=m$.注意到有限$p$-群$H$作用在集合$X$上,并且$(p,m)=1$,所以由推论\ref{sdjhansjoia}可知$X$有不动元素,不妨设其中的一个为$g_jP$,即\begin{align*}
+        &\forall h\in H,hg_jP=g_jP\\
+        \iff&\forall h\in H,g_j^{-1}hg_jP=P\\
+        \iff&\forall h\in H,g_j^{-1}hg_j\in P\\
+        \iff&\forall h\in H,h\in g_jPg_j^{-1}\\
+        \iff&H\subset g_jPg_j^{-1},
+    \end{align*}注意到$H,P$均成群,所以$H<g_jPg_j^{-1}$,即$H$包含在一个与$P$共轭的$\Sp$-子群中,定理得证.
+\end{proof}
+\begin{corollary}\label{sadjnasd}
+    对有限群而言,任意两个$\Sp$子群都互相共轭.
+\end{corollary}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{corollary}\label{asdinfjkasdfmk}
+    有限群$G$的$\Sp$子群是惟一的当且仅当$G$的$\Sp$子群是正规子群.
+\end{corollary}
+\begin{proof}
+    $G$的子群$P$是正规子群即$P$的所有共轭子群都等与$P$自身.
+
+    任取$G$的两个$\Sp$子群$P_0,P$,由推论\ref{sadjnasd}可知$P_0,P$互相共轭,又由于$P_0,P$互相共轭可知$P_0=P$,推论得证.
+\end{proof}
+\begin{definition}[正规化子]\label{zghz}
+    对群$G$的任意子群$H$,定义\begin{align*}
+        N(H)=\l\{g\in G:gHg^{-1}=H\r\},
+    \end{align*}则$N(H)<G$且$H\subset N(H)$.称$N(H)$为子群$H$的正规化子.
+\end{definition}
+由定义\ref{zghz}可立即推出$H\lhd N(H)$.
+\begin{corollary}\label{asdihufjankdsf}
+    若$G$是有限群,$P$是$G$的$\Sp$子群,则\begin{align*}
+        (1)&N(N(P))=N(P)\\
+        (2)&\text{$N(P)$不包含$G$的另一个$\Sp$子群.}
+    \end{align*}
+\end{corollary}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{corollary}\label{asdbhjvfn}
+    若$G$是有限群,$p$是素数且$p\Big||G|$,则$G$的$\Sp$子群的个数是$|G|$的因子.
+\end{corollary}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{theorem}[Sylow第三定理]\label{xldsdl}
+    若$|G|=p^lm,p$是素数且$(p,m)=1,l\geq1$,记$G$的$\Sp$子群的个数为$k$,则$k\equiv1\mod p$.
+\end{theorem}
+\begin{analysis}
+    注意到该定理的结论与推论\ref{sadyhbfjk}十分相似,这引诱我们构造某$p$-群$P$,使其作用在某$k$元集合$X$后所得不动元素的个数为$1$.
+\end{analysis}
+\begin{proof}
+    令\begin{align*}
+        X=\l\{P:P<G,|P|=p^l\r\},
+    \end{align*}于是$|X|=k$.
+
+    任取$P\in X$,考虑$P$在$X$上的共轭作用.对$\forall a\in P$,定义映射\begin{align*}
+        a:X\to&X\\
+        Q\mapsto&aQa^{-1},
+    \end{align*}容易验证这是良定义的,$a$给出了群$P$在集合$X$上的作用.设$X_0$为$P$作用在$X$上的不动点集,即\begin{align*}
+        X_0=\l\{Q\in X:a(Q)=Q\r\},
+    \end{align*}则\begin{align*}
+        Q\in X_0\iff&\forall a\in P,a(Q)=Q\\
+        \iff&\forall a\in P,aQa^{-1}=Q\\
+        \iff&\forall a\in P,a\in N(Q)\\
+        \iff&P\subset N(Q),
+    \end{align*}又$Q\subset N(Q)$且$P,Q$都是$G$的$\Sp$子群,所以由推论\ref{asdihufjankdsf}可知$P=Q$,进而$|X_0|=1$.由推论\ref{sadyhbfjk}可知\begin{align*}
+        |X_0|\equiv|X|\mod p,
+    \end{align*}即\begin{align*}
+        &1\equiv k\mod p\\
+        \iff&k\equiv1\mod p,
+    \end{align*}定理得证.
+\end{proof}
+\begin{corollary}\label{asuidgbuj}
+    若群$G$的阶为$p^lm$,其中$p$是素数且$(p,m)=1$,则$G$的$\Sp$子群的个数是$m$的因子.
+\end{corollary}
+\begin{proof}
+    设$G$的$\Sp$子群的个数为$k$.
+
+    由推论\ref{asdbhjvfn}可知$k\Big||G|$,由$|G|=p^lm$,$p$是素数且$(p,m)=1$\begin{align}\label{asdkmfjn}
+        k|p\text{或}k|m.
+    \end{align}
+
+    由定理\ref{xldsdl}可知\begin{align}\label{sadijf}
+        k\nmid p.
+    \end{align}
+
+    由式\eqref{asdkmfjn}与\eqref{sadijf}可知$k|m$,推论得证.
+\end{proof}
+作为本节的结束,我们来看一个例子来说明如何利用上面的结果来解决群论的问题.
+\begin{example}
+    已知有限群$G$的阶为$72$,证明$G$不是单群.
+\end{example}
+\begin{proof}
+    注意到\begin{align*}
+        72=2^3\cdot3^2,
+    \end{align*}所以利用Sylow第三定理(定理\ref{xldsdl}),可设$G$的Sylow\ $3$-子群的个数为\begin{align*}
+        1+3t,t\in\N,
+    \end{align*}再利用推论\ref{asuidgbuj}可知\begin{align*}
+        (1+3t)|2^3,
+    \end{align*}所以$t=0$或$t=1$.
+
+    (1)若$t=0$,即$G$有惟一的Sylow\ $3$-子群,设为$P$,由推论\ref{asdinfjkasdfmk}可知\begin{align*}
+        P\lhd G,
+    \end{align*}所以此时$G$有非平凡的正规子群$P$,从而不是单群.
+
+    (2)若$t=1$,即$G$有$4$个Sylow\ $3$-子群,设为$P_1,P_2,P_3,P_4$.考虑$G$在集合\begin{align*}
+        X=\l\{P_1,P_2,P_3,P_4\r\}
+    \end{align*}上的共轭变换(参考例\ref{gebh}).由推论\ref{sadjnasd}可知$G$任意两个Sylow\ $3$-子群都互相共轭,所以$G$的每个元素都在$X$上诱导出一个$4$次置换,从而诱导出同态\begin{align*}
+        \phi:G\to S_4,
+    \end{align*}由群同态基本定理可知\begin{align*}
+        G/\ker\phi\cong\phi(G),
+    \end{align*}所以\begin{align}
+        &|\ker\phi|=\frac{|G|}{|\phi(G)|}\geq\frac{|G|}{|S_4|}=3\nonumber\\
+        \Lra&\ker\phi\neq\l\{e\r\}.\label{sadfnj}
+    \end{align}由$G$的Sylow\ $3$-子群不惟一可知\begin{align}
+        &\phi(G)>1\nonumber\\
+        \Lra&\ker\phi\neq\l\{e\r\}\nonumber\\
+        \Lra&\ker\phi\neq G.\label{sdjfnkajs}
+    \end{align}由式\eqref{sadfnj}与\eqref{sdjfnkajs}可知,此时$\ker\phi$是$G$的非平凡的正规子群.
+
+    综上,$G$不是单群.
+\end{proof}

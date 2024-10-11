@@ -1,0 +1,88 @@
+\section{CHAPTER2习题}
+\begin{problem}[P97T1]
+    已知$G$是有限群,$N\lhd G$,$\l(|N|,|G/N|\r)=1$.证明:若元素$a$的阶整除$|N|$,则$a\in N$.
+\end{problem}
+\begin{proof}
+    考虑自然同态\begin{align*}
+        \pi:G\to&G/N\\
+        g\mapsto&gN,
+    \end{align*}于是\begin{align*}
+        \l[\pi(a)\r]^{o(a)}=&(aN)^{o(a)}\\
+        \xlongequal[]{N\lhd G}&a^{o(a)}N^{o(a)}\\
+        =&N,
+    \end{align*}又$N$是$G/N$的单位元素,所以\begin{align}\label{snjdkk}
+        \l|\pi(a)\r|\Big|\l|o(a)\r|\Big|\l|N\r|.
+    \end{align}
+
+    注意到\begin{align*}
+        aN\in G/N,
+    \end{align*}所以\begin{align*}
+        \l|aN\r|\Big|\l|G/N\r|,
+    \end{align*}即\begin{align}\label{asjgndk}
+        \l|\pi(a)\r|\Big|\l|G/N\r|.
+    \end{align}
+
+    由式\eqref{snjdkk}与\eqref{asjgndk}结合$\l(|N|,|G/N|\r)=1$可知\begin{align*}
+        &|\pi(a)|=1\\
+        \Lra&\pi(a)=N\\
+        \Lra&aN=N\\
+        \Lra&a\in N,
+    \end{align*}问题得证.
+\end{proof}
+\begin{problem}[P97T2]
+    设$c$是群$G$中阶为$rs$的元素,其中$(r,s)=1$.证明$c$可以表示成$c=ab$,其中$a$的阶为$r,b$的阶为$s$,且$a,b$都是$c$的方幂.
+\end{problem}
+\begin{proof}
+    由$(r,s)=1$可知\begin{align*}
+        \exists u,v\in\Z\st ur+vs=1,
+    \end{align*}不难验证\begin{align*}
+        &a=c^{vs}\\
+        &b=c^{ur}
+    \end{align*}满足题设要求.
+\end{proof}
+\begin{problem}[P97T3]
+    已知群$G$中元素$a$的阶与正整数$k$互素,证明方程$x^k=a$在$<a>$内恰有一解.
+\end{problem}
+\begin{proof}
+    由$\l(o(a),k\r)=1$可知\begin{align*}
+        \exists u,v\in \Z\st uo(a)+vk=1,
+    \end{align*}所以\begin{align*}
+        a^{uo(a)+vk}=a,
+    \end{align*}即\begin{align*}
+        a^{vk}=a,
+    \end{align*}由此可见$x=a^v$是$x^k=a$在$<a>$内的解.
+
+    现设$x=a^v_0$也是$x^k=a$在$<a>$内的解,其中$0\leq v-v_0\leq o(a)-1$,于是\begin{align*}
+        &a^{vk}=a\\
+        &a^{v_0k}=a,
+    \end{align*}即\begin{align*}
+        vk\equiv1&\mod o(a)\\
+        v_0k\equiv1&\mod o(a),
+    \end{align*}所以\begin{align*}
+    o(a)|(v-v_0)k,
+    \end{align*}由此可见$v-v_0=0$即$v=v_0$.
+
+    综上,问题证毕.
+\end{proof}
+\begin{problem}[P97T4]
+    证明在群中,$ab$与$ba$有相同的阶.
+\end{problem}
+\begin{proof}
+    注意到$ab=b^{-1}\cdot ba\cdot b$,所以\begin{align*}
+        &ab=e\\
+        \iff&b^{-1}\cdot ba\cdot b=e\\
+        \iff&ba=e,
+    \end{align*}可见问题得证.
+\end{proof}
+\begin{problem}[P97T10]
+    证明$S_n$由$n-1$个对换$(12),(13),\cdots,(1n)$生成,$S_n$也可由$n-1$个对换$(12),(23),\cdots,(n-1\ n)$生成.
+\end{problem}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{problem}[P97T16]
+    设$H_1,H_2$是群$G$的两个子群,证明$H_1\cap H_2$的任一左陪集是$H_1$的一个左陪集与$H_2$的一个左陪集的交.
+\end{problem}
+\begin{proof}
+    \stars
+\end{proof}

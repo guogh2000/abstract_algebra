@@ -1,0 +1,106 @@
+\documentclass[b5paper]{book}
+
+
+
+
+
+
+
+
+
+\usepackage{ctex}
+\usepackage{amsmath}
+\usepackage{extarrows}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tikz-cd}
+\usepackage{hyperref}
+% \usepackage[hidelinks]{hyperref}
+% \usepackage[notref,notcite]{showkeys}
+\newcommand{\xl}{\overrightarrow}
+\newcommand{\ys}{\mathcal}
+\newcommand{\gs}{\texorpdfstring}
+\newcommand{\arccot}{\mathrm{arccot}\,}
+\newcommand{\sech}{\mathrm{sech}\,}
+\newcommand{\p}{\partial}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Lla}{\Longleftarrow}
+\newcommand{\Lra}{\Longrightarrow}
+\newcommand{\lla}{\longleftarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\llas}{\leftleftarrows}
+\newcommand{\rras}{\rightrightarrows}
+\newcommand{\mr}{\mathrm}
+\newcommand*{\im}{\mathrm{im}\,}
+\newcommand{\st}{\ \ \mathrm{s.t.}\ \ }
+\newcommand{\stars}{\text{*****************************************************}}
+\newcommand{\os}{\texorpdfstring}
+\newcommand{\Aut}{\mathrm{Aut}\,}
+\newcommand{\In}{\mathrm{In}\,}
+%右推出、左推不出
+\newcommand\rtc{\mathrel{\vcenter{\ialign{##\crcr$\Rightarrow$\crcr
+\noalign{\nointerlineskip\vskip2pt}$\nLeftarrow$\crcr}}}}
+%左推出、右推不出
+\newcommand\ltc{\mathrel{\vcenter{\ialign{##\crcr$\nRightarrow$\crcr\noalign{\nointerlineskip\vskip2pt}$\Leftarrow$\crcr}}}}
+\newcommand{\Sp}{\mr{Sylow}\ p\text{-}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\l}{\left}
+\renewcommand{\r}{\right}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\emptyset}{\varnothing}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+\let\mathbb\relax
+\DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
+\everymath{\displaystyle}
+
+
+
+
+
+
+
+
+
+
+\newtheorem{theorem}{\indent 定理}[section]
+\newtheorem{lemma}{\indent 引理}[section]
+\newtheorem{proposition}{\indent 命题}[section]
+\newtheorem{corollary}{\indent 推论}[section]
+\newtheorem{definition}{\indent 定义}[section]
+\newtheorem{example}{\indent 例}[section]
+% \newtheorem{example_addition}{\indent 补充题}
+\newtheorem{remark}{\indent 注}[section]
+\newtheorem{problem}{\indent 问题}[chapter]
+\newtheorem*{analysis}{\indent 分析}
+% \newtheorem{*problem}[problem]{\indent 问题*}
+% \newtheorem{exercise}{\indent 练习题}
+\newenvironment{solution}{\begin{proof}[\indent 解]}{\end{proof}}
+\renewcommand{\proofname}{\indent 证}
+
+
+% \title{抽象代数}
+% \author{郭冠华}
+% \date{\today}
+
+
+
+\begin{document}
+\allowdisplaybreaks
+\tableofcontents
+\raggedbottom
+    \input{代数基本概念.tex}
+    \input{第一章习题.tex}
+    \input{群.tex}
+    \input{第二章习题.tex}
+\end{document}

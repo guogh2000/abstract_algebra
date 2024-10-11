@@ -1,0 +1,475 @@
+\section{CHAPTER1习题}
+\begin{problem}[P54T7]
+    设$G$是群,$a,b\in G$.若$a^{-1}ba=b^r(r\in \N_+)$,证明$a^{-i}ba^i=b^{r^i}(1,2,\cdots)$.
+\end{problem}
+\begin{proof}
+    使用数学归纳法.
+
+    (1)题设条件已经说明,当$i=1$时结论成立;
+
+    (2)假设当$i=n$时结论成立即$a^{-n}ba^n=b^{r^n}$,于是\begin{align*}
+        a^{-(n+1)}ba^{n+1}=&a^{-1}(a^{-n}ba^n)a\\
+        =&a^{-1}b^{r^n}a\\
+        =&(a^{-1}ba)^{r^n}\\
+        =&(b^r)^{r^n}\\
+        =&b^{r^{n+1}},
+    \end{align*}可见当$i=n+1$时结论也成立.
+    
+    综上所述,问题得证.
+\end{proof}
+\begin{problem}[P54T8]
+    证明:群$G$为交换群$\iff$映射$x\mapsto x^{-1}$为同构映射.
+\end{problem}
+\begin{proof}
+    设$\varphi:G\to G',x\mapsto x^{-1}$,不难发现$G=G'$.
+
+    (1)必要性:
+
+    令$\varphi(x)=e$,有$x^{-1}=e\Lra x=e\Lra\ker\varphi=\l\{e\r\}$,可见$\varphi$是单射;
+
+    $\forall x\in G'=G$,$\exists x^{-1}\in G$满足$\varphi(x^{-1})=x$,可见$\varphi$是满射;
+
+    $\forall x,y\in G$,有\begin{align*}
+        \varphi(xy)=(xy)^{-1}=&y^{-1}x^{-1}\\
+        \xlongequal[]{G\text{是交换群}}&x^{-1}y^{-1}\\
+        =&\varphi(x)\varphi(y),
+    \end{align*}于是$\varphi$是同态.
+
+    必要性得证.
+
+    (2)充分性:
+
+    $\forall x,y\in G$,有$x^{-1},y^{-1}\in G$,并且\begin{align*}
+        &\varphi(x^{-1}y^{-1})\xlongequal[]{\varphi\text{是同态}}\varphi(x^{-1})\varphi(y^{-1})\\
+        \Lra&yx=xy\\
+        \Lra&G\text{是交换群}.
+    \end{align*}
+    
+    充分性得证.
+
+    综上所述,问题得证.
+\end{proof}
+\begin{problem}[P54T9]
+    设$S$为群$G$的非空子集合,在$G$中定义关系$a\sim b$当且仅当$ab^{-1}\in S$.证明这是等价关系的充要条件为$S$为$G$的子群.
+\end{problem}
+\begin{proof}
+    先给出等价关系的定义.
+    
+    称满足如下三条性质的关系$\sim$为等价关系\begin{align*}
+        \text{(i)}&\text{反身性:$a\sim a$;}\\
+        \text{(ii)}&\text{对称性:若$a\sim b$,则$b\sim a$;}\\
+        \text{(iii)}&\text{传递性:若$a\sim b,b\sim c$,则$a\sim c$.}
+    \end{align*}
+
+    (1)必要性:
+
+    对$\forall a,b\in S$亦即$ae^{-1},be^{-1}\in S$,有\begin{align*}
+        ae^{-1}(be^{-1})^{-1}\in S,
+    \end{align*}即$ab^{-1}\in S$,可见$S<G$.
+    
+    必要性得证.
+
+    (2)充分性:
+
+    由于$S$非空,所以$\forall s\in S$,有\begin{align*}
+        ss^{-1}\in S,
+    \end{align*}即$s\sim s$,反身性得证;
+
+    任取$a\in S$,由于$S$成群,所以$a^{-1}\in S$,进而若$a\sim b$即$ab^{-1}\in S$即$a\sim b$,有\begin{align*}
+    ba^{-1}=(ab^{-1})^{-1}\in S,
+    \end{align*}即$b\sim a$,对称性得证;
+
+    设$a\sim b,b\sim c$即$ab^{-1}\in S,bc^{-1}\in S$,由$S$成群可知\begin{align*}
+    (ab^{-1})(bc^{-1})\in S,
+    \end{align*}即$a\sim c$,传递性得证.
+
+    充分性得证.
+
+    综上所述,问题证毕.
+\end{proof}
+\begin{problem}[P55T20]
+    设群$H,K$为群$G$的子群,证明$HK$为$G$的子群当且仅当$HK=KH$.
+\end{problem}
+\begin{proof}
+    (1)必要性
+
+    按以下方式定义从$HK$到$HK$的一一对应$\varphi_1$\begin{align*}
+        \varphi_1(hk)=(hk)^{-1},\forall hk\in HK.
+    \end{align*}注意到$\im\varphi_1=HK$,并且\begin{align*}
+        (hk)^{-1}=k^{-1}h^{-1}\in KH,
+    \end{align*}即$HK=\im\varphi_1\subset KH$.同理,按以下方式定义$KH$到$KH$的一一对应$\varphi_2$可证$KH\subset HK$\begin{align*}
+        \varphi_2(kh)=k^{-1}h^{-1},\forall kh\in KH.
+    \end{align*}由$HK\subset KH$及$KH\subset HK$可得$HK=KH$,必要性得证.
+
+    (2)充分性
+
+    对任意$h_1k_1,h_2k_2\in HK$,有\begin{align*}
+        h_1k_1(h_2k_2)^{-1}=&h_1k_1k_2^{-1}h_2^{-1}\\
+        =&h_1(k_1k_2^{-1}h_2^{-1}),
+    \end{align*}而\begin{align*}
+        k_1k_2^{-1}h_2^{-1}\in KH=HK,
+    \end{align*}所以$h_1k_1(h_2k_2)^{-1}\in HK$,亦即\begin{align*}
+        \forall a,b\in HK\Lra ab^{-1}\in HK,
+    \end{align*}可见$HK<G$,充分性得证.
+
+    综上所述,问题证毕.
+\end{proof}
+\begin{problem}[P56T28]
+    在整数集$\Z$上重新定义加法与乘法为\begin{align*}
+        &a\oplus b=ab,&&a\odot b=a+b.
+    \end{align*}试问$\Z$在新定义的运算下是否成环.
+\end{problem}
+\begin{solution}
+    不能成环,理由如下.
+
+    假设$\Z$在新定义的运算下成环,则$\Z$关于加法成交换群.对$\forall n\in\Z$
+    \begin{align*}
+        1\oplus n=1\cdot n=n,
+    \end{align*}所以$\Z$在新定义的运算下,关于加法的所成的交换群中的单位元是$1$.注意到$\forall m\in\Z$\begin{align*}
+        0\oplus m=0\cdot m=0\neq1,
+    \end{align*}所以在此加法群中,$0$无逆元,这与$\Z$关于加法成交换群矛盾,所以$\Z$在新定义的运算下不成环.
+\end{solution}
+\begin{problem}[P56T29]
+    设$L$为有单位元素的交换环,在$L$中定义\begin{align*}
+        &a\oplus b=a+b-1,\\
+        &a\odot b=a+b-ab.
+    \end{align*}证明在新定义的运算下,$L$仍为有单位元素的交换环,并且与原来的环同构.
+\end{problem}
+\begin{proof}
+    (1)对任意$a,b,c\in L$\begin{align*}
+        &(a\oplus b)\oplus c\\
+        =&(a+b-1)\oplus c\\
+        =&(a+b-1)+c-1\\
+        =&a+b+c-2\\
+        =&a+(b+c-1)-1\\
+        =&a+(b\oplus c)-1\\
+        =&a\oplus(b\oplus c),
+    \end{align*}$L$关于$\oplus$满足结合律;
+
+    (2)对任意$a\in L$\begin{align*}
+        &1\oplus a\\
+        =&1+a-1\\
+        =&a,
+    \end{align*}$L$关于$\oplus$有单位元素;
+
+    (3)对任意$a\in L$\begin{align*}
+        &(-a)\oplus a\\
+        =&-a+a-1\\
+        =&1,
+    \end{align*}$L$中的元素关于$\oplus$有逆元;
+
+    (4)对任意$a,b\in L$\begin{align*}
+        &a\oplus b\\
+        =&a+b-1\\
+        =&b+a-1\\
+        =&b\oplus a,
+    \end{align*}$L$关于$\oplus$可交换;
+
+    (5)对任意$a,b,c\in L$\begin{align*}
+        &(a\oplus b)\odot c\\
+        =&(a+b-1)\odot c\\
+        =&(a+b-1)+c-(a+b-1)c\\
+        =&a+b+2c-ac-bc-1,
+    \end{align*}\begin{align*}
+        &(a\odot c)\oplus(b\odot c)\\
+        =&(a\odot c)+(b\odot c)-1\\
+        =&(a+c-ac)+(b+c-bc)-1\\
+        =&a+b+2c-ac-bc-1,
+    \end{align*}$L$满足$\odot$对于$\oplus$的分配律;
+
+    (6)对任意$a,b\in L$\begin{align*}
+        &a\odot b\\
+        =&a+b-ab\\
+        =&b+a-ba\\
+        =&b\odot a,
+    \end{align*}$L$关于$\odot$满足交换律;
+
+    (7)对任意$a\in L$,存在$0\in L$满足\begin{align*}
+        &0\odot a\\
+        =&0+a-0a\\
+        =&a,
+    \end{align*}$L$关于$\odot$有单位元素.
+
+    (1)$\sim$(7)说明$L$成有单位元素的交换环,其中零元为$1$,单位元为$0$.
+
+    定义$\varphi$为$(L;+,\cdot)\to(L;\oplus,\odot)$的映射\begin{align*}
+        \varphi(x)=1-x,
+    \end{align*}显然$\varphi$为双射.
+
+    注意到\begin{align*}
+        \varphi(x+y)=&1-x-y,\\
+        \varphi(x)\oplus\varphi(y)=&(1-x)\oplus(1-y)\\
+        =&(1-x)+(1-y)-1=1-x-y,
+    \end{align*}即$\varphi(x+y)=\varphi(x)\oplus\varphi(y)$;\begin{align*}
+        \varphi(xy)=&1-xy,\\
+        \varphi(x)\odot\varphi(y)=&(1-x)\odot(1-y)\\
+        =&(1-x)+(1-y)-(1-x)(1-y)\\
+        =&2-x-y-(1-y-x+xy)\\
+        =&1-xy,
+    \end{align*}即$\varphi(xy)=\varphi(x)\odot\varphi(y)$.可见$\varphi$是同态映射.
+
+    综上所述,$\varphi:(L;+,\cdot)\to(L;\oplus,\odot)$为同构映射,问题得证.
+\end{proof}
+\begin{problem}[P56T30]
+    给环出$L$与它的子环$S$的例子,它们分别具有下列性质
+
+    (1)$L$有单位元素,$S$无单位元素;
+
+    (2)$L$无单位元素,$S$有单位元素;
+
+    (3)$L,S$均有单位元素,但不相同;
+
+    (4)$L$不交换,$S$交换.
+\end{problem}
+\begin{solution}
+    (1)$L=(\Z;+,\cdot),S=(2\Z;+,\cdot)$.\\(1.1)对于$L$:
+
+    (1.1.1)$\forall a,b,c\in \Z$\begin{align*}
+        (a+b)+c=a+b+c=a+(b+c),
+    \end{align*}可见$(\Z;+)$满足结合律;
+
+    (1.1.2)$\forall a\in\Z,\exists 0\in\Z$满足\begin{align*}
+        0+a=a,
+    \end{align*}可见$(\Z;+)$存在左单位元;
+
+    (1.1.3)$\forall a\in\Z,\exists-a\in\Z$满足\begin{align*}
+        -a+a=0,
+    \end{align*}可见$(\Z;+)$中的任意元素都有左逆元;
+
+    (1.1.4)$\forall a,b\in\Z$,有\begin{align*}
+        a+b=b+a\in\Z,
+    \end{align*}可见$(\Z;+)$满足交换律;
+
+    (1.1.5)$\forall a,b,c\in\Z$,有\begin{align*}
+        a(b+c)=ab+ac,
+    \end{align*}可见$(\Z;+,\cdot)$满足乘法对于加法的分配律.\\(1.1.1)$\sim$(1.1.5)说明$(\Z;+,\cdot)$成环.注意到$\forall a\in\Z$,有$1\in \Z$满足\begin{align*}
+        1\cdot a=a,
+    \end{align*}所以$(\Z;+,\cdot)$有单位元素$1$.\\(1.2)对于$S$:
+
+    同理可证$S$成环.假设$S$有单位元素$e$,则$\forall s\in S$\begin{align*}
+        es=s,
+    \end{align*}现取$n\in\Z$且$m\neq0$,则$2n\in2\Z$且\begin{align*}
+        e(2n)=2n\overset{\text{等式两端同时除以$2n$}}{\Lra}e=1\notin2\Z,
+    \end{align*}这与$e\in S$矛盾,所以$S$没有单位元素.
+
+    (2)\begin{align*}
+        L=\l(\l\{\l(\begin{matrix}
+            a&b\\
+            0&0
+        \end{matrix}\r):a,b\in\R\r\};+,\cdot\r),S=\l(\l\{\l(\begin{matrix}
+            a&0\\
+            0&0
+        \end{matrix}\r):a\in\R\r\};+\cdot\r).
+    \end{align*}(2.1)对于$L$:
+
+    (2.1)容易验证$L$成环.令$e=\l(\begin{matrix}
+        x_1&x_2\\
+        x_3&x_4
+    \end{matrix}\r)$满足\begin{align*}
+        &\l\{\begin{matrix}
+            e\l(\begin{matrix}
+                a&b\\
+                0&0
+            \end{matrix}\r)=\l(\begin{matrix}
+                x_1&x_2\\
+                x_3&x_4
+            \end{matrix}\r)\l(\begin{matrix}
+                a&b\\
+                0&0
+            \end{matrix}\r)=\l(\begin{matrix}
+                a&b\\
+                0&0
+            \end{matrix}\r)\\
+            \l(\begin{matrix}
+                a&b\\
+                0&0
+            \end{matrix}\r)e=\l(\begin{matrix}
+                a&b\\
+                0&0
+            \end{matrix}\r)\l(\begin{matrix}
+                x_1&x_2\\
+                x_3&x_4
+            \end{matrix}\r)=\l(\begin{matrix}
+                a&b\\
+                0&0
+            \end{matrix}\r)
+        \end{matrix}\r.\text{对任意$a,b\in\R$均成立}\\
+        \iff&\begin{cases}
+            ax_1=a\\
+            bx_1=b\\
+            ax_3=0\\
+            bx_4=0\\
+            ax_1+bx_3=a\\
+            ax_2+bx_4=b\\
+            ax_3=0\\
+            bx_3=0
+        \end{cases}\text{对任意$a,b\in\R$均成立},
+    \end{align*}解之可得\begin{align*}
+        e=\l(\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\r)\notin L,
+    \end{align*}亦即$L$没有单位元素.
+
+    容易验证$S$成环.注意到$\forall s=\l(\begin{matrix}
+        a&0\\
+        0&0
+    \end{matrix}\r)\in S,\exists e=\l(\begin{matrix}
+        1&0\\
+        0&0
+    \end{matrix}\r)\in S$满足\begin{align*}
+        es=se=s,
+    \end{align*}所以$S$有单位元素$\l(\begin{matrix}
+        1&0\\
+        0&0
+    \end{matrix}\r)$.
+
+    (3)\begin{align*}
+        L=\l(\l\{\l(\begin{matrix}
+            a&0\\
+            0&b
+        \end{matrix}\r):a,b\in\R\r\};+,\cdot\r),S=\l(\l\{\l(\begin{matrix}
+            a&0\\
+            0&0
+        \end{matrix}\r):a\in\R\r\};+,\cdot\r).
+    \end{align*}取$e_1=\l(\begin{matrix}
+        1&0\\
+        0&1
+    \end{matrix}\r),e_2=\l(\begin{matrix}
+        1&0\\
+        0&0
+    \end{matrix}\r)$验证它们分别是$L$与$S$中的单位元素即可.
+
+    (4)\begin{align*}
+        L=\l(\l\{\l(\begin{matrix}
+            a&0\\
+            b&0
+        \end{matrix}\r):a,b\in\R\r\};+,\cdot\r),S=\l(\l\{\l(\begin{matrix}
+            a&0\\
+            0&0
+        \end{matrix}\r):a\in\R\r\};+,\cdot\r).
+    \end{align*}(4.1)对于$L$:
+    
+    令$l_1=\l(\begin{matrix}
+        1&0\\
+        2&0
+    \end{matrix}\r),l_2=\l(\begin{matrix}
+        3&0\\
+        4&0
+    \end{matrix}\r)\in L$,易见\begin{align*}
+        l_1l_2=\l(\begin{matrix}
+            3&0\\
+            6&0
+        \end{matrix}\r)\neq\l(\begin{matrix}
+            3&0\\
+            4&0
+        \end{matrix}\r)=l_2l_1,
+    \end{align*}于是$L$不交换.\\(4.2)对于$S$:
+
+    任取$\l(\begin{matrix}
+        a&0\\
+        0&0
+    \end{matrix}\r),\l(\begin{matrix}
+        b&0\\
+        0&0
+    \end{matrix}\r)\in S$,注意到\begin{align*}
+        &\l(\begin{matrix}
+            a&0\\
+            0&0
+        \end{matrix}\r)\l(\begin{matrix}
+            b&0\\
+            0&0
+        \end{matrix}\r)\\
+        =&\l(\begin{matrix}
+            ab&0\\
+            0&0
+        \end{matrix}\r)\\
+        =&\l(\begin{matrix}
+            ba&0\\
+            0&0
+        \end{matrix}\r)\\
+        =&\l(\begin{matrix}
+            b&0\\
+            0&0
+        \end{matrix}\r)\l(\begin{matrix}
+            a&0\\
+            0&0
+        \end{matrix}\r),
+    \end{align*}所以$S$交换.
+\end{solution}
+\begin{problem}[P56T31]
+    环$L$中元素$e_L$称为左单位元,若对$\forall a\in L$\begin{align*}
+        e_La=a;
+    \end{align*}元素$e_R$称为右单位元,若对$\forall a\in L$\begin{align*}
+        e_Ra=a;
+    \end{align*}证明
+
+    (1)若$L$既有左单位又有右单位,则$L$有单位元素;
+
+    (2)若$L$有左单位,无零因子,则$L$有单位元素;
+
+    (3)若$L$有左单位,无右单位,则$L$至少有两个左单位.
+\end{problem}
+\begin{proof}
+    (1)由\begin{align*}
+        e_Le_R=\l\{\begin{matrix}
+            e_R\text{($e_L$是左单位元)};\\
+            e_L\text{($e_R$是右单位元)}
+        \end{matrix}\r.
+    \end{align*}可知$e_L=e_R$,所以$L$有单位元素;
+
+    (2)在等式$e_La=a$两端同时左乘$a$可得\begin{align*}
+        &ae_La=a^2\\
+        \Lra&(ae_L-a)a=0\\
+        \Lra&ae_L-a=0\\
+        \Lra& ae_L=a,
+    \end{align*}可见$L$有单位元素;
+
+    (3)设$e_L$为$L$的一个左单位,由于$L$无右单位,所以$\exists x\in L$,满足\begin{align*}
+        &xe_L\neq x\\
+        \Lra&xe_L-x+e_L\neq e_L.
+    \end{align*}注意到$\forall a\in L$\begin{align*}
+        (xe_L-x+e_L)a=a,
+    \end{align*}所以$xe_L-x+e_L$是异于$e_L$的左单位,所以$L$至少有两个左单位.
+\end{proof}
+\begin{problem}[P56T32]
+    设$F$为域.证明$F$无非平凡的理想.
+\end{problem}
+\begin{proof}
+    设$I\neq\varnothing$是$F$的理想.首先证明$I$一定含有零元.
+
+    对$\forall a\in I$,若$a$是零元,则显然$I$含有零元;若$a$不是零元,由\begin{align*}
+        a\in I\subset F
+    \end{align*}可知$a$在$F$中存在逆元$-a$,于是由理想的定义可知\begin{align*}
+        0=a+(-a)\in I,
+    \end{align*}所以$I$有零元.
+
+    由理想的定义有$\forall f\in F$\begin{align*}
+        f=0+f\in I,
+    \end{align*}所以$F\subset I$,从而$F=I$.可见域$F$没有非平凡的理想.
+\end{proof}
+\begin{problem}[P57T35]
+    设$L$为有单位元素的交换环.若$L$无非平凡的理想,则$L$为域.
+\end{problem}
+\begin{proof}
+    由命题\ref{auhisgnjdvk}与引理\ref{zncxkjvna}可知,若能证明$L$的非零元可逆,便能推出$L$为域.
+
+    任取$0\neq a\in L$,令\begin{align*}
+        La=\l\{la:l\in L\r\},
+    \end{align*}首先证明$La$是$L$的加法子群.
+
+    对$\forall l_1a,l_2a\in La$,有\begin{align*}
+        l_1a-l_2a=(l_1-l_2)a,
+    \end{align*}注意到$l_1-l_2\in L$,于是\begin{align*}
+        (l_1-l_2)a\in La\Lra l_1a-l_2a\in La,
+    \end{align*}所以$La$是$L$的加法子群.
+
+    然后证明$La$是$L$的理想.对$\forall la\in La,b\in L$,注意到$bl,lb\in L,ab=ba$,所以\begin{align*}
+        &lab=l(ab)=l(ba)=lba\in La\\
+        &bla\in La,
+    \end{align*}所以$La$是$L$的理想.因为$La\neq\varnothing$且$L$没有非平凡的理想,所以$La=L$.
+
+    最后证明$L$即$La$是域.由于$1\in L=La$,所以\begin{align*}
+        \exists b\in L\st ba=1,
+    \end{align*}所以$a$有逆元$b$,亦即$L$的非零元均有逆元,从而$L$是域.问题证毕.
+\end{proof}

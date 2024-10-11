@@ -1,0 +1,607 @@
+\chapter{代数基本概念}
+\section{代数运算}
+\begin{definition}[代数运算]
+    设$A$是一个非空集合,任意一个由$A\times A\lra A$的映射就称为定义在$A$上的代数运算.
+\end{definition}
+\section{群的定义和简单性质}
+\begin{definition}[群]
+    设$G$是一个非空集合,在$G$上定义了一个称之为乘法的代数运算,记作$ab$,若该代数运算满足如下性质,就称$G$为一个群\begin{align*}
+        [\text{结合律}]&(1)(ab)c=a(bc);\\
+        [\text{左幺元}]&(2)\exists e\in G\ \ \mr{s.t.}\ \ \forall a\in G,\text{有}ea=a;\\
+        [\text{左逆元}]&(3)\forall a\in G,\exists b\in G\ \ \mr{s.t.}\ \ ba=e.
+    \end{align*}
+\end{definition}
+
+1.若$ba=e$,则$ab=e$.\begin{proof}
+    任取$b\in G$,存在$c\in G$,使得$cb=e$,于是\begin{align}
+        a=ea=(cb)a=c(ba)=ce,\label{1.1}
+    \end{align}在等式\eqref{1.1}两侧同时右乘$b$,就有\begin{align*}
+        ab=(ce)b=c(eb)=cb=e,
+    \end{align*}问题证毕.
+\end{proof}
+
+2.若对所有的$a\in G$,有$ea=a$,那么也有$ae=a$,对所有的$a\in G$.\begin{proof}
+    取$b\in G$,使得$ba=e$,同时$ab=e$,于是\begin{align*}
+        ae=a(ba)=(ab)a=ea=a,
+    \end{align*}问题证毕.
+\end{proof}
+
+3.群$G$中有惟一的元素$e$具有性质\begin{align*}
+    \forall a\in G,ea=ae=a.
+\end{align*}\begin{proof}
+    假设$G$中有元素$e_1,e_2$满足此性质,则\begin{align*}
+        e_1=e_1e_2=e_2,
+    \end{align*}可见惟一性得证.
+\end{proof}
+
+4.对群$G$中任意元素$a$,有惟一元素$b$,使$ab=ba=e$.\begin{proof}
+    假设在$G$中还有元素$c$满足$ac=ca=e$,则\begin{align*}
+        c=ec=ce=c(ab)=(ca)b=eb=b,
+    \end{align*}这就证明了惟一性.
+\end{proof}
+
+5.对于群$G$中任意元素$a,b$,方程\begin{align*}
+    ax=b
+\end{align*}在$G$中有惟一解.\begin{proof}
+    在题设方程两侧同时左乘$a^{-1}\in G$,有\begin{align*}
+        (a^{-1}a)x=a^{-1}b
+    \end{align*}亦即$x=a^{-1}b\in G$,解的存在性得证.
+
+    假设还有元素$c\in G$满足$ac=b$,则\begin{align}
+        ax=b=ac,\label{5}
+    \end{align}在等式\eqref{5}两侧同时左乘$a^{-1}$,就有\begin{align*}
+        (a^{-1}a)x=(a^{-1}a)c\iff x=c,
+    \end{align*}解的惟一性得证.
+
+    综上所述,问题得证.
+\end{proof}
+
+\begin{definition}[Abel群(或交换群)]
+    若群$G$的运算适合交换律,则称群$G$为Abel群(或交换群).
+\end{definition}
+
+\begin{definition}[阶]
+    群$G$中所含元素的个数称为群$G$的阶,记作$|G|$.
+\end{definition}
+
+\begin{definition}[有限群与无限群]\label{yxqywxq}
+    若$|G|$是一个有限数(无限数),则称群$G$为有限群(无限群).
+\end{definition}
+\section{群的例子}
+略.
+\section{子群,陪集}
+\begin{definition}[子群]
+    若群$G$的非空子集合$H$对$G$的运算也成群,则称群$H$是群$G$的子群,记作$H<G$.
+\end{definition}
+
+\begin{theorem}\label{1.4.1}
+    群$G$的非空子集合$H$是群$G$的子群的充分必要条件是\begin{align*}
+        \forall a,b\in H\Lra ab^{-1}\in H.
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    必要性显然,接下来证明充分性.
+
+    (1)结合律:显然满足;
+
+    (2)幺元的存在性:$\forall a\in H$,取$b=a$,则$e=aa^{-1}\in H$;
+
+    (3)逆元的存在性:$\forall b\in H$,取$a=e$,则$b^{-1}=eb^{-1}\in H$.
+
+    结合(1),(2),(3)可得$H$成为群,进而是群$G$的子群.
+\end{proof}
+\begin{definition}[左陪集,右陪集]
+    设群$H$是群$G$的一个子群,对$G$中的任意一个元素$a$,称$aH=\l\{ah:h\in H\r\}$是$H$的一个左陪集;称$Ha=\l\{ha:h\in H\r\}$是$H$的一个右陪集.
+\end{definition}
+\begin{theorem}\label{vu1}
+    设$G$是群,$H<G$,则$H$的任意一个左陪集$gH$与$H$含有同样多的元素.该定理对于右陪集同样成立.
+\end{theorem}
+\begin{proof}
+    易见$h\mapsto ah$是子群$H$到左陪集$aH$的一个一一对应,$h\mapsto ha$是子群$H$到右陪集$Ha$的一个一一对应,因此定理得证.
+\end{proof}
+\begin{theorem}\label{1.4.2}
+    设群$H$是群$G$的子群.$H$的任意两个左(右)陪集要么相等,要么无公共元素.群$G$可以表示为若干个不相交的左(右)陪集之并.
+\end{theorem}
+\begin{proof}
+    利用相互包含证明第一个论断:取$H$的两个左陪集$aH,bH$并假设它们有公共元素,即有$ah_1\in aH,bh_2\in bH$满足\begin{align}
+        ah_1=bh_2,\label{7}
+    \end{align}等式\eqref{7}两端同时右乘$h_1^{-1}$,有\begin{align*}
+        a=bh_2h_1^{-1}\in bH,
+    \end{align*}可见$aH\subset bH$.同理可证$aH\supset bH$,进而$aH=bH$.第一个论断证毕.
+
+    第二个论断的证明:由于$a\in aH$,所以\begin{align*}
+        G=\bigcup_{a\in G}aH,
+    \end{align*}去掉其中的重复项,就有\begin{align*}
+        G=\bigcup_{\alpha}a_{\alpha}H,
+    \end{align*}其中$a_{\alpha}H$两两无交.
+\end{proof}
+\begin{corollary}[Lagrange定理]\label{Lagrange定理}
+    设$G$是有限群,$H$是它的子群,则$|H|$是$|G|$的因子.
+\end{corollary}
+\begin{proof}
+    设$|G|=n,|H|=t$,由定理\ref{1.4.2}可得\begin{align}
+        G=a_1H\cup a_2H\cup\cdots\cup a_rh,\label{xx}
+    \end{align}其中$a_iH\cap a_jH=\varnothing(i,j=1,2,\cdots,r\text{且}i\neq j)$,在等式\eqref{xx}两侧同时取因子,并利用定理\ref{vu1}就有\begin{align*}
+        |G|=r|H|,
+    \end{align*}从而$|H|$是$|G|$的因子.
+\end{proof}
+\begin{definition}[由$a$生成的子群]
+    在群$G$中,任意一个元素$a$的全体方幂组成的集合$\l\{a^m:m\in\Z\r\}$显然成$G$的子群,称为由$a$生成的子群.
+\end{definition}
+\begin{remark}
+    (1)元素$a$的方幂要么两两不同要么存在$l\in\Z_+$使得$a^l=e$;
+
+    (2)在(1)的后一种情形中,一定有最小的正整数$d$满足$a^d=e$.此时将$d$称为元素$a$的阶.
+\end{remark}
+\begin{corollary}
+    设$G$为一有限群,则$G$中每一个元素的阶一定是$|G|$的因子.
+\end{corollary}
+\begin{proof}
+    设$H$是由$G$中的元素$a$生成的子群,则\begin{align*}
+        (\text{i})&|a|=|<a>|=|H|;\\
+        (\text{ii})&H\text{是}G\text{的子群}\Lra|H|\text{整除}|G|,
+    \end{align*}可见$G$中每一个元素的阶一定是$G$的因子.
+\end{proof}
+\section{群的同构}
+\begin{definition}[群的同构]
+    若$G,G'$是两个群,$\varphi:g\mapsto g',G\lra G'$是一一对应,并且满足$\forall g_1,g_2\in G$\begin{align}
+        \varphi(g_1g_2)=\varphi(g_1')\varphi(g_2'),\label{1.5.1}
+    \end{align}则称群$G$同构于群$G'$,记作$G\cong G'$.适合等式\eqref{1.5.1}的一一对应称为同构映射,简称同构.
+\end{definition}
+\begin{lemma}\label{yl1.5.1}
+    任意非空集合上的全体可逆变换构成的集合关于变换的乘法成群.
+\end{lemma}
+\begin{theorem}[Cayley定理]
+    任何一个群都同构于某一集合上的变换群.
+\end{theorem}
+\begin{proof}
+    设$G$是群.对每一个$a\in G$,定义$G$上的变换$\varphi_a$如下\begin{align*}
+        \varphi_a(x)=ax,x\in G,
+    \end{align*}可见$\forall x\in G$\begin{align*}
+        (\text{i})&\varphi_{a^{-1}}\varphi_a(x)=\varphi_{a^{-1}}(ax)=a^{-1}ax=x;\\
+        (\text{ii})&\varphi_a\varphi_{a^{-1}}(x)=\varphi_a(a^{-1}x)=aa^{-1}x=x,
+    \end{align*}可见$\forall a\in G,\varphi_a$均是可逆变换.记$G_l=\l\{\varphi_a:a\in G\r\}$,于是$\forall a,b\in G_l$\begin{align*}
+        \varphi_a\varphi_{b^{-1}}(x)=\varphi_a(b^{-1}x)=ab^{-1}x=\varphi_{ab^{-1}}(x),
+    \end{align*}即$\varphi_a\varphi_{b^{-1}}=\varphi_{ab^{-1}}\in G_l$,根据引理\ref{yl1.5.1}与定理\ref{1.4.1}可得$G_l$成群,亦即$G_l$是一变换群.
+
+    根据$G_l$定义易知映射$a\mapsto\varphi_a$为满映射.
+    
+    由于\begin{align*}
+        \varphi_a(e)=a,
+    \end{align*}所以当$a\neq b$时,$\varphi_a\neq\varphi_b$,亦即映射$a\mapsto\varphi_a$是单映射.进而映射$a\mapsto\varphi_a$是一一对应.再由$\varphi_a\varphi_b=\varphi_{ab}$可知所述映射为同构映射,从而$G\cong G_l$,定理得证.
+\end{proof}
+\section{同构,正规子群}
+\begin{definition}[同态映射]
+    若$\varphi$是群$G$到群$G'$的映射,满足$\forall g_1,g_2\in G$\begin{align*}
+        \varphi(g_1g_2)=\varphi(g_1)\varphi(g_2)
+    \end{align*}则称$\varphi$是群$G$到$G'$的同态映射,或同态.
+\end{definition}
+\begin{remark}
+    在同态映射的定义中,既不要求它是映上的,也不要求它是单射.
+\end{remark}
+
+当$\varphi$是$G$到$G'$的同态映射时,常常简记为\begin{align*}
+    \varphi:G\mapsto G'.
+\end{align*}
+
+\begin{definition}[象]
+    若$\varphi:G\mapsto G'$,定义\begin{align*}
+        \varphi G=\l\{\varphi(a):a\in G\r\}
+    \end{align*}为同态映射$\varphi$的象.
+\end{definition}
+\begin{remark}
+    (1)易见$\varphi G$是$G'$的子群;
+
+    (2)若$\varphi$是映上的,即$\varphi G=G'$,称$\varphi$为满同态;
+
+    (3)若$\varphi$是单射,即$G$与$\varphi G$同构,亦即$G$与$G'$的一个子群同构,则称$\varphi$为单一同态,或嵌入映射.
+\end{remark}
+\begin{definition}[完全反象,核]
+    对于同态映射$\varphi:G\mapsto G'$,定义\begin{align*}
+        \varphi^{-1}(a')=\l\{a:\varphi(a)=a'\r\}
+    \end{align*}为元素$a'$的完全反象.特别地,定义$\varphi^{-1}(e')$为同态映射$\varphi$的核,记作$\ker{\varphi}$.
+\end{definition}
+\begin{proposition}\label{xz1.6.1}
+    记$\varphi(a)=a'$,则$\varphi^{-1}(a')=\l\{\begin{matrix}
+        a\ker{(\varphi)};\\
+        \ker{(\varphi)}a.
+    \end{matrix}\r.$
+\end{proposition}
+\begin{proof}
+    (1)任取$h\in\ker\varphi$,有\begin{align*}
+        \varphi(ah)\xlongequal[]{\text{同态映射}}\varphi(a)\varphi(h)=a'e'=a',
+    \end{align*}这说明$a\ker\varphi$中的元素在映射$\varphi$下的象均为$a'$,亦即$a\ker\varphi\subset\varphi^{-1}(a')$;
+
+    (2)反之,任取$a\in\varphi^{-1}(a')$,即$\varphi(a)=a'$.又$e\in\ker\varphi$,从而\begin{align*}
+        a=ae\in a\ker\varphi,
+    \end{align*}这说明在映射$\varphi$下的象为$a'$的元素在$a\ker\varphi$中,亦即$a\ker\supset\varphi^{-1}(a')$.
+
+    由(1),(2)可知$\varphi^{-1}(a)=a\ker(\varphi)$.
+
+    同理可证$\varphi^{-1}(a')=\ker(\varphi)a$.
+\end{proof}
+\begin{definition}[正规子群]\label{sadjfgnka}
+    设群$H$是群$G$的子群,若对任意$g\in G$,都有$gH=Hg$,则称$H$是$G$的正规子群,记作$H\lhd G$.
+\end{definition}
+\begin{remark}
+    (1)由命题\ref{xz1.6.1}可知,同态的核都是正规子群;
+
+    (2)正规子群的定义可以改写为\begin{align*}
+        \forall g\in G,gHg^{-1}=H.
+    \end{align*}正规子群的定义换个说法就是子群$H$的左右陪集相等;
+
+    (3)在Abel群中,每个子群都正规.
+\end{remark}
+\section{商群}
+\begin{definition}[群的子集合的运算]
+    \ 
+
+    1.定义\begin{align*}
+        AB=\l\{ab|a\in A,b\in B\r\},
+    \end{align*}子集乘积满足结合律:$(AB)C=A(BC)$;
+
+    2.定义\begin{align*}
+        A^{-1}=\l\{a^{-1}|a\in A\r\}.
+    \end{align*}
+\end{definition}
+
+利用集合运算,定理\ref{1.4.1}可改写为\begin{align*}
+    \text{群$G$的非空子集合$H$是子群}\iff HH^{-1}\subset H.
+\end{align*}
+\begin{theorem}
+    设$H$是群$G$的一个子群.$H$是正规子群$\iff H$的任意两个左(右陪集)之积还是左(右陪集).
+\end{theorem}
+\begin{proof}
+    (1)必要性
+
+    任取正规子群$H$的两个左陪集$aH$与$bH$,有\begin{align*}
+        (aH)(bH)=a(Hb)H=a(bH)H=(ab)(HH)=abH,
+    \end{align*}必要性得证;
+
+    (2)充分性
+
+    任取$H$的两个左陪集$aH$与$bH$,根据已知条件可设$(aH)(bH)=cH$,由于$ab\in(aH)(bH)$,所以$ab\in cH$,再由$ab\in abH$与定理\ref{1.4.2}可得\begin{align}
+        abH=cH=(aH)(bH),
+    \end{align}等式两端同时左乘$a^{-1}$,有\begin{align*}
+        bH=HbH\supset Hbe=Hb,
+    \end{align*}由于$b$具有任意性,故可以将其改成$b^{-1}$,得到\begin{align*}
+        b^{-1}H\supset Hb^{-1},
+    \end{align*}等式两边同时左乘$b$,右乘$b$,得到\begin{align*}
+        Hb\supset bH,
+    \end{align*}亦即$bH=Hb$,可见$H$是正规子群.
+\end{proof}
+令$G/H$代表正规子群$H$的全部不同的右陪集组成的集合.
+\begin{proposition}
+    $G/H$在陪集的运算下成群.
+\end{proposition}
+\begin{proof}
+    (1)结合律
+
+    由$(Ha)(Hb)=Hab$可见,陪集之间的乘法可归结为陪集代表的乘法,故结合律显然成立;
+
+    (2)左幺元
+
+    $\forall Ha\in G/H,$有\begin{align*}
+        H\cdot Ha=Ha,
+    \end{align*}可见左幺元存在,为$H$;
+
+    (3)左逆元
+
+    $\forall Ha\in G/H$,有\begin{align*}
+    (Ha^{-1})(Ha)=H(a^{-1}H)a=H(Ha^{-1})a=(HH)(a^{-1}a)=H,
+    \end{align*}可见$G/H$中的任一元都有左逆元.
+
+    (1),(2),(3)说明$G/H$成群,问题得证.
+\end{proof}
+\begin{definition}[商群]
+    $G/H$在陪集的乘法下所成的群称为群$G$对正规子群$H$的商群,仍记作$G/H$.
+\end{definition}
+\begin{proposition}\label{asjdga}
+    设群$H$是群$G$的正规子群,定义映射\begin{align*}
+        \varphi:G\to&G/H\\
+        g\mapsto&Hg,
+    \end{align*}则$\varphi$是满同态且$\ker\varphi=H$.
+\end{proposition}
+\begin{proof}
+    (1)$\forall a,b\in G$,有\begin{align*}
+        &\varphi(ab)\\
+        =&Hab\\
+        =&HabH\\
+        =&Ha(bH)\\
+        =&Ha(Hb)\\
+        =&HaHb\\
+        =&\varphi(a)\varphi(b)\\
+        \Lra&\varphi\text{是同态映射};
+    \end{align*}
+
+    (2)根据商群的定义,$\varphi$显然是映上的;
+
+    (3)对$\forall h\in H$,注意到\begin{align*}
+        &\varphi(h)\\
+        =&hH\\
+        =&H\\
+        =&eH,
+    \end{align*}可见$h\in H$,于是$\ker\varphi\supset H$.同时对$\forall k\in\ker\varphi$,有\begin{align*}
+        \varphi(k)=&kH\\
+        =&H,
+    \end{align*}所以对任意$h\in H$,都有$kh\in H$,现取$h=e$,所以\begin{align*}
+        k=ke\in H,
+    \end{align*}即$k\in H$,所以$\ker\varphi\subset H$.
+
+    (1),(2)说明$\varphi:G\to G/H$为满同态;(3)说明$\ker\varphi=H$.
+\end{proof}
+\begin{remark}
+    由于$H\lhd  G$,所以若定义\begin{align*}
+        \varphi:G\to&G/H\\
+        g\mapsto&gH,
+    \end{align*}则命题\ref{asjdga}也成立.
+\end{remark}
+\begin{definition}[自然同态]
+    称命题\ref{asjdga}中的$\varphi$为$G\to G/H$的自然同态.
+\end{definition}
+\begin{remark}
+    由命题\ref{xz1.6.1}可知,同态的核都是正规子群;自然同态的构造说明每个正规子群也都是某一同态的核.
+\end{remark}
+\begin{lemma}\label{jskdf}
+    若$H$为群$G$的子群,$a,b\in G$,则\begin{align*}
+        b^{-1}a\in H\iff aH=bH;\\
+        ab^{-1}\in H\iff Ha=Hb.
+    \end{align*}
+\end{lemma}
+\begin{proof}
+    只要证明第一条即可,第二条同理可证.
+    
+    (1)必要性
+
+    可设$h\in H$满足$b^{-1}a=h$,从而$a=bh\in bH$,又$e\in H$且$a=ae$,故\begin{align*}
+        a=ae\in aH\\
+        a\in bH,
+    \end{align*}可见$aH\cap bH\neq\varnothing$,进而$aH=bH$,必要性得证;
+
+    (2)充分性
+
+    等式$aH=bH$两端同时左乘$b^{-1}$有\begin{align*}
+        b^{-1}aH=H\Lra b^{-1}a\cdot e\in H\iff b^{-1}a\in H,
+    \end{align*}充分性得证.
+\end{proof}
+% \begin{remark}
+%     *************************************************丘维声
+% \end{remark}
+\begin{theorem}[群同态基本定理]\label{qttjbdy}
+    若$\sigma:G\to G'$,则$G/\ker\sigma\cong\im{\sigma}$.进一步,若$\sigma$是满同态,则$G/\ker\sigma\cong G'$.
+\end{theorem}
+\begin{proof}
+设$\varphi:G\to G/\ker{\sigma}$是自然同态,则得到两个满同态$\sigma$和$\varphi$,交换图如下:\begin{center}
+        \begin{tikzcd}
+            G \arrow[rr, "\sigma"] \arrow[d, "\varphi"'] &  & \im{\sigma} \\
+            G/\ker{\sigma} \arrow[rru, "\psi"', dashed]             &  &   
+            \end{tikzcd}
+    \end{center}其中虚线部分的$\psi$表示我们要找的同构.定义映射\begin{align*}
+        \psi_0(\ker\sigma\cdot a)=\sigma(a),
+    \end{align*}显然$\psi_0$是良定义的.
+
+    由于\begin{align*}
+        \psi_0(\ker\sigma\cdot a\ker\sigma \cdot b)\xlongequal[]{\ker\sigma\text{是正规子群}}\psi_0(\ker\sigma\cdot ab)=\sigma(ab)=\sigma(a)\sigma(b),
+    \end{align*}所以$\psi_0$是同态映射.
+    
+    当$\sigma(a)=\sigma(b)$时,有\begin{align*}
+        \sigma(a)(\sigma(b))^{-1}=&e'\\
+        \sigma{(ab^{-1})}=&e',
+    \end{align*}根据引理\ref{jskdf},\begin{align*}
+        ab^{-1}\in\ker\sigma\iff b^{-1}\ker\sigma=a^{-1}\ker\sigma,
+    \end{align*}即$a\ker\sigma=b\ker\sigma$,亦即$\ker\sigma\cdot a=\ker\sigma\cdot b$.可见$\psi_0$为单射.
+
+    显然$\psi_0$是满射.
+
+    综上所述,$\psi_0$是同构映射.取$\psi=\psi_0$即证明了$G/\ker\sigma\cong\in\sigma$.
+
+    进一步,若$\sigma$是满同态,则$G'\cong\im\sigma$,从而$G/\ker\sigma\cong G'$.
+\end{proof}
+\section{环,子环}
+\begin{definition}[环]
+    设$L$是一个非空集合,在$L$上定义了两个代数运算,一个叫加法,记为$a+b$,一个叫乘法,记为$ab$.若这两种运算具有性质\begin{align*}
+        &(1)\text{$L$对于加法构成Abel群};\\
+        &(2)\text{$L$对于乘法满足结合律};\\
+        &(3)\text{$L$满足乘法对加法的分配律},
+    \end{align*}则称$L$为环.
+\end{definition}
+\begin{definition}[子环]
+    设$S$是环$L$的非空子集合,若$S$对于$L$的两种运算也成环,则称环$S$是环$L$的子环.
+\end{definition}
+\begin{proposition}
+    环$L$的非空子集合$S$成环的充分必要条件为$S$对于加法是子群且对于乘法封闭.
+\end{proposition}
+\begin{proof}
+    必要性是显然的,下面证明充分性.
+
+    (1)$S$对于加法构成Abel群:任取$a,b\in S$,于是$a,b\in L$,所以\begin{align*}
+        ab\xlongequal[]{L\text{对于乘法构成Abel群}}ba,
+    \end{align*}可见$S$关于加法构成的子群满足交换律,所以$S$为Abel群;
+
+    (2)$S$对于乘法满足结合律:任取$a,b,c\in S$,有$a,b,c\in L$,所以\begin{align*}
+        a(bc)=(ab)c=abc\in S,
+    \end{align*}可见$S$对于乘法满足结合律;
+
+    (3)$S$满足乘法对于加法的分配律:任取$a,b,c\in S$,有$a,b,c\in L$,所以\begin{align*}
+        a(b+c)\xlongequal[]{L\text{满足乘法对加法的分配律}}ab+ac\in S,
+    \end{align*}可见$S$满足乘法对于加法的分配律.
+\end{proof}
+\begin{definition}[同构映射]
+    设$L$与$L'$是两个环,若有$L$到$L'$的一一对应$\sigma$满足如下性质\begin{align*}
+        &(1)\sigma(a+b)=\sigma(a)+\sigma(b);\\
+        &(2)\sigma(ab)=\sigma(a)\sigma(b),
+    \end{align*}其中$a,b\in L$,则称$L$与$L'$同构,称具有以上性质的$\sigma$为一个同构映射(简称同构).
+\end{definition}
+\section{各种特殊类型的环}
+\begin{proposition}\label{auhisgnjdvk}\ 
+    \begin{center}
+        \begin{tikzcd}
+            &  & \text{环} \arrow[d, "\text{存在幺元}" description] \arrow[rrd, "\text{无零因子}" description] \arrow[lld, "\text{乘法可交换}" description] &                                             &                  \\
+            \text{交换环} \arrow[rrd] \arrow[rrrddd] &  & \text{幺环} \arrow[rd]                                                                                    &                                             & \text{无零因子环} \arrow[ld] \\
+            &  & \text{交换整环}                                                                                             & \text{整环} \arrow[d, "\text{非零元可逆}" description] \arrow[l] &                  \\
+            &  &                                                                                                  & \text{体} \arrow[d]                                 &                  \\
+            &  &                                                                                                  & \text{域}                                           &                 
+        \end{tikzcd}
+    \end{center}
+\end{proposition}
+\begin{remark}
+    幺元:设$L$是环.若$e\in L$满足\begin{align*}
+        \forall a\in L,ae=ea=a,
+    \end{align*}则称$e$为环$L$的单位元素(幺元),简记为$1$;
+
+    用$0$表示环中加法群的单位元(即零元素);
+
+    零因子:设$L$是环.若有$0\neq a\in L,0\neq b\in L$满足$ab=0$,则称$a$为一个左零因子,称$b$为一个右零因子.
+\end{remark}
+\begin{lemma}\label{zncxkjvna}
+    非零元可逆$\rtc$无零因子.
+\end{lemma}
+\begin{proof}
+    (1)非零元可逆$\Rightarrow$无零因子:
+
+    设$L$是环且非零元可逆.假设$a\in L$是$L$的左零因子(右零因子同理),则有\begin{align*}
+        ab=0\text{且}a\neq0,b\neq0.
+    \end{align*}设$c\in L$是$a$的逆元,即\begin{align*}
+        ac=ca=1,
+    \end{align*}于是\begin{align*}
+        &(ca)b=c(ab)\\
+        &(ca)b=1b=b\neq0\\
+        &c(ab)=c0=0,
+    \end{align*}得到矛盾,从而$L$无零因子,问题得证.
+
+    (2)无零因子$\nRightarrow$非零元可逆:
+
+    如整数环.
+\end{proof}
+\begin{definition}[子域]
+    若域$F$的子环$S$是域,则称$S$是域$F$的子域.
+\end{definition}
+\section{环的同态,理想}
+\begin{definition}[同态]
+    设$L,L'$是两个环,$\sigma$是$L$到$L'$的映射.若对$\forall a,b\in L,\sigma$具有性质\begin{align*}
+        &(1)\sigma(a+b)=\sigma(a)+\sigma(b);\\
+        &(2)\sigma(ab)=\sigma(a)\sigma(b),
+    \end{align*}就称$\sigma$为环$L$到环$L'$的一个同态映射(简称同态),简记为$\sigma:L\to L'$.
+\end{definition}
+\begin{remark}
+    (1)由同态的定义可以看出$\sigma(L)$是$L'$的子环;
+
+    (2)若$\sigma(L)=\{0\}$,称$\sigma$为零同态;
+
+    (3)若$\sigma(L)=L'$,称$\sigma$为满同态,称$L'$为$L$的同态象.
+\end{remark}
+\begin{definition}[理想]
+    设$L$成环,$I\subset L$为$L$的一个加法子群.若$\forall r\in L,\forall a\in L$,都有\begin{align*}
+        ra\in I,ar\in I,
+    \end{align*}就称$I$是$L$的理想(或双边理想).若只满足$ra\in I$(\text{或}$ar\in I$),则称$I$是$L$的右(或左)理想.
+\end{definition}
+\begin{remark}
+    显然$\{0\}$与$L$都是$L$的理想,称它们为平凡的理想.
+\end{remark}
+\section{商环}
+\begin{definition}[陪集]\label{sdkjfhb}
+    设环$I$是环$L$的理想,$I$作为$L$的加法群的子群,按如下方式定义陪集\begin{align*}
+        &r+I(\forall r\in L)\text{为左陪集};&&I+r(\forall r\in L)\text{为右陪集},
+    \end{align*}按如下方式定义陪集的加法与乘法\begin{align*}
+        &(r_1+I)+(r_2+I)=r_1+r_2+I&&(\forall r_1,r_2\in L);\\
+        &(r_1+I)(r_2+I)=r_1r_2+I&&(\forall r_1,r_2\in L),
+    \end{align*}全体陪集所成的集合在这样规定的运算下成环.
+\end{definition}
+\begin{definition}[商环]
+    设环$I$是环$L$的理想.$L$对于$I$的陪集在定义\ref{sdkjfhb}的运算下所成的环称为$L$对于$I$的商环,记作$L/I$.
+\end{definition}
+设环$I$是环$L$的理想.不难发现$\sigma(a)=a+I,a\in L$是环$L$到商环$L/I$的满同态,且该同态的核为理想$I$.可见每个理想都是某一同态的核.
+\begin{lemma}
+    设$\sigma:L\to L'$,则$\ker{\sigma}$是$L$的理想.
+\end{lemma}
+\begin{proof}
+    对$\forall a\in \ker\sigma,\forall b\in L$,有\begin{align*}
+        \sigma(ab)\xlongequal[]{\sigma\text{是同态}}\sigma(a)\sigma(b)=0\sigma(b)=0\Lra ab\in\ker\sigma;\\
+        \sigma(ba)\xlongequal[]{\sigma\text{是同态}}\sigma(b)\sigma(a)=\sigma(b)0=0\Lra ba\in\ker\sigma,
+    \end{align*}可见$\ker\sigma$是$L$的理想.
+\end{proof}
+\begin{theorem}[环同态基本定理]
+    若$\sigma:L\to L'$,则$L/\ker{\sigma}\cong\im\sigma$.进一步,若$\sigma$是满同态,则$L/\ker{\sigma}\cong L'$.
+\end{theorem}
+\begin{proof}
+    设$\varphi:L\to L/\ker{\sigma}$是自然同态,则得到两个满同态$\sigma$和$\varphi$,交换图如下:\begin{center}
+        \begin{tikzcd}
+            L \arrow[rr, "\sigma"] \arrow[d, "\varphi"'] &  & \im{\sigma} \\
+            L/\ker{\sigma} \arrow[rru, "\psi"', dashed]             &  &   
+            \end{tikzcd}
+    \end{center}其中虚线部分的$\psi$表示我们要找的同构.定义映射\begin{align*}
+        \psi_0(\ker\sigma+a)=\sigma(a),
+    \end{align*}显然$\psi_0$是良定义的.
+
+    对$\forall a,b\in L$,有\begin{align*}
+        \psi_0[(\ker\sigma+a)+(\ker\sigma+b)]\xlongequal[]{\ker\sigma\text{是理想}}&\psi_0(\ker\sigma+a+b)\\
+        =&\sigma(a+b)\\
+        \xlongequal[]{\sigma\text{是同态}}&\sigma(a)+\sigma(b)\\
+        =&\psi_0(\ker\sigma+a)+\psi_0(\ker\sigma+b),
+    \end{align*}由此可见$\psi_0$保持加法;\begin{align*}
+        \psi_0[(\ker\sigma+a)(\ker\sigma+b)]\xlongequal[]{\ker\sigma\text{是理想}}&\psi_0(\ker+ab)\\
+        =&\sigma(ab)\\
+        \xlongequal[]{\sigma\text{是同态}}&\sigma(a)\sigma(b)\\
+        =&\psi_0(\ker\sigma+a)\psi_0(\ker\sigma+b),
+    \end{align*}由此可见$\psi_0$保持乘法,于是$\psi_0:L/\ker\sigma\to\im\sigma$.
+
+    对$\forall\sigma(a)=\sigma(b)$,有\begin{align*}
+        &\sigma(a)-\sigma(b)=0\\
+        \overset{\sigma\text{是同态}}{\Lra}&\sigma(a-b)=0\\
+        \Lra&a-b\in\ker\sigma\\
+        \overset{\text{引理}\ref{jskdf}}{\Lra}&\ker\sigma+a=\ker\sigma+b\\
+        \Lra&\psi_0\text{是单射}.
+    \end{align*}
+
+    $\psi_0$显然是满射.
+
+    综上所述,$\psi_0$是同构映射.取$\psi=\psi_0$即证明了$L/\ker\sigma\cong\im\sigma$.
+
+    进一步,若$\sigma$是满同态,则$L'\cong\im\sigma$,从而$L/\ker I\cong L'$.
+\end{proof}
+\section{特征}
+设$F$是域,$e$是$F$中的单位元素.若$e$是有限阶元素,即存在正整数$m$使得$me=0$,则将$m$定义为$F$的单位元素在$F$的加法群中的阶.显然$m$一定是素数.
+
+\begin{definition}[特征]
+    设$F$是域.若$F$的单位元素$e$在$F$的加法群中是有限阶元素,阶为$p$,就称域$F$的特征为$p$l若单位元素是无限阶元素,就称域$F$的特征为$0$.域$F$的特征记为$\chi(F)$.
+\end{definition}
+\begin{proposition}
+    在域的加法群中,任一非零元素都与单位元素有相同的阶.
+\end{proposition}
+\begin{proof}
+    设$a$是域$F$的任一非零元,由\begin{align*}
+        ma=mae\xlongequal[]{ae\text{乘法可交换}}a(me)
+    \end{align*}可知,$ma=0$当且仅当$me=0$,问题得证.
+\end{proof}
+\begin{theorem}
+    设$F$为域.若$\chi(F)=p\neq0,$则$F$包含与$Z/pZ$同构的子域;若$\chi(F)=0,$则$F$包含与有理数域同构的子域.
+\end{theorem}
+\begin{proof}
+    首先按如下方式定义整数环到$F$的映射$\sigma$\begin{align*}
+        \sigma(n)=ne.
+    \end{align*}注意到$\forall n,m\in\Z$\begin{align*}
+        &\sigma(n+m)=(n+m)e=ne+me;\\
+        &\sigma(nm)=(nm)e=(ne)(me)=\sigma(n)\sigma(m),
+    \end{align*}于是$\sigma:\Z\to F$.
+
+    (1)若$\chi(F)=p\neq0$,令$\sigma(n)=0$,有\begin{align*}
+        0=\sigma(n)=ne\iff n\in p\Z,
+    \end{align*}可见$\ker{\sigma}=p\Z$.易见\begin{align*}
+        \im\sigma=\l\{e,2e,\cdots,(p-1)e,0\r\}\subset F,
+    \end{align*}不难验证$\im\sigma$构成域$F$的子域.根据环同态基本定理,有\begin{align*}
+        F/p\Z\cong\im\sigma.
+    \end{align*}
+
+    (2)若$\chi(F)=0$,令$\sigma(n)=e$可推出$n=0$,即$\ker\sigma=\l\{0\r\}$,所以$\sigma$是单射.易见\begin{align*}
+        \im\sigma=\l\{ne\r|n\in\Z\}
+    \end{align*}与整数环$\Z$同构.按如下方式扩充$\sigma$的定义\begin{align*}
+        \sigma\l(\frac{m}{n}\r)=(ne)^{-1}(me),
+    \end{align*}由于当$\frac{m}{n}=\frac{m'}{n'}$时\begin{align*}
+        (ne)^{-1}(me)^{-1}=(n'e)^{-1}(m'e)^{-1}\iff\sigma\l(\frac{m}{n}\r)=\sigma\l(\frac{m'}{n}\r),
+    \end{align*}所以这是良定义的.易见\begin{align*}
+        \im\sigma=\l\{(ne)^{-1}me:n\in\Z\text{且}n\neq0;m\in\Z\r\}\subset F
+    \end{align*}构成$F$的子域,而$\im\sigma\cong\Q$,亦即$F$有一个同构于有理数域$\Q$的子域.
+
+    综上所述,问题得证.
+\end{proof}
