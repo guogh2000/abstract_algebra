@@ -119,9 +119,9 @@
     设$H\in A,\pi_H$为映射$\pi$在子群$H$上的限制,容易验证$\im\pi_H\in B$.定义映射\begin{align*}
         \varphi:A&\to B\\
         H&\mapsto\im\pi_H,
-    \end{align*}容易验证$\varphi$是良定义的同态映射,若能证明$\varphi$是一一对应,则问题证毕.
+    \end{align*}容易验证$\varphi$是良定义.若能证明$\varphi$是一一对应,则问题证毕.
 
-    (1)$\varphi$是满同态
+    (1)$\varphi$是满射
 
     $\forall H'<\im\pi$即\begin{align*}
     H'=\l\{\pi(k):k\in K\subset G\r\}.
@@ -145,9 +145,20 @@
         =&\l\{\im\pi_H:H\in A\r\},
     \end{align*}由此可见$\im\varphi=B$,即$\varphi$是满同态;
 
-    (2)$\varphi$是单同态
+    (2)$\varphi$是单射\begin{align}
+        \iff&\forall x_1,x_2\in A,\text{若}x_1\neq x_2,\text{则}\phi(x_1)\neq\phi(x_2)\nonumber\\
+        \iff&\l|\l\{x\in A:\phi(x)=\phi(x_0),x_0\in A\r\}\r|=1\nonumber\\
+        \iff&\l|\l\{H\supset N:\im\pi|_H=\im\pi|_{H_0},H_0\supset A\r\}\r|=1\nonumber\\
+        \iff&\l\{H\supset N:\im\pi|_H=\im\pi|_{H_0},H_0\supset A\r\}=\l\{H_0\r\}\nonumber\\
+        \iff&\text{若$H_0\supset N$,$H\supset N$且$\im\pi|_H=\im\pi|_{H_0}$,则$H=H_0$,}\label{asjdnfkaf}
+    \end{align}注意到在\eqref{asjdnfkaf}的题设条件下,显然有$H\supset H_0$,故只需证明$H\subset H_0$便可得到$H=H_0$.
 
-    \stars
+    在\eqref{asjdnfkaf}的题设条件下\begin{align*}
+        &\forall h\in H,\exists h_0\in H_0\st\pi(h)=\pi(h_0)\\
+        \iff&\forall h\in H,\exists h_0\in H_0\st hN=h_0N\\
+        \iff&\forall h\in H,\exists h_0\in H_0\st h\in h_0N\subset H_0\\
+        \Lra\ &H\subset H_0.
+    \end{align*}所以$\phi$是单射.
 
     由(1),(2)便知\begin{align*}
         \varphi:A&\to B\\
