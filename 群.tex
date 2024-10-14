@@ -205,11 +205,11 @@
 \begin{proposition}
     已知$\varphi:G\to G'$是同态映射,有以下结论成立
 
-    (1)若$G$是Abel群,则$\varphi G$是Abel群;
+    (1)若$G$是Abel群,则$\im\varphi$是Abel群;
 
-    (2)若$\varphi G$是Abel群,则$G$未必是Abel群;
+    (2)虽$\im\varphi$是Abel群,但$G$未必是Abel群;
 
-    (3)$\varphi G$是Abel群$\iff G^{(1)}\subset\ker\varphi$.
+    (3)$\im\varphi$是Abel群$\iff G^{(1)}\subset\ker\varphi$.
 \end{proposition}
 \begin{proof}
     (1)
@@ -219,7 +219,7 @@
     \xlongequal[]{\varphi\text{是同态映射}}&\varphi(g_1g_2)\\
     \xlongequal[]{G\text{是Abel群}}&\varphi(g_2g_1)\\
     =&\varphi(g_2)\varphi(g_1),
-    \end{align*}可见$\varphi G$是Abel群.
+    \end{align*}可见$\im\varphi$是Abel群.
 
     (2)
 
@@ -243,7 +243,7 @@
     \end{align*}不难得到上述定义的$G$与$\varphi$证明了(2).
 
     (3)\begin{align*}
-        &\varphi G\text{是Abel群}\\
+        &\im\varphi\text{是Abel群}\\
         \iff&\forall g_1,g_2\in G,\varphi(g_1)\varphi(g_2)=\varphi(g_2)\varphi(g_1)\\
         \iff&\forall g_1,g_2\in G,\l[\varphi(g_2)\varphi(g_1)\r]^{-1}\varphi(g_1)\varphi(g_2)=e\\
         \iff&\forall g_1,g_2\in G,\varphi(g_1^{-1}g_2^{-1}g_1g_2)=e\\
