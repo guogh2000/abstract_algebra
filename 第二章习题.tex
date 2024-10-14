@@ -84,7 +84,24 @@
     设$H_1,H_2$是群$G$的两个子群,证明$H_1\cap H_2$的任一左陪集是$H_1$的一个左陪集与$H_2$的一个左陪集的交.
 \end{problem}
 \begin{proof}
-    \stars
+    若能证明对$\forall g\in G$都有$g(H_1\cap H_2)=gH_1\cap gH_2$,则问题得证.证明思路为两者互相包含.
+
+    (1)对$\forall$给定的$g\in G$,在$g(H_1\cap H_2)$中任取$gh_0$,有\begin{align*}
+        &h_0\in H_1\cap H_2\\
+        \Lra&gh_0\in gH_1,gh_0\in gH_2\\
+        \Lra&gh_0\in gH_1\cap gH_2\\
+        \Lra&g(H_1\cap H_2)\subset gH_1\cap gH_2.
+    \end{align*}
+
+    (2)反之,对任意给定的$g\in G$,在$gH_1\cap gH_2$中任取$gh_0$,有\begin{align*}
+        &gh_0\in gH_1,gh_0\in gH_2\\
+        \overset{g\text{的任意性}}{\Lra}&h_0\in H_1,h_0\in H_2\\
+        \Lra&h_0\in H_1\cap H_2\\
+        \Lra&gh_0\in g(H_1\cap H_2)\\
+        \Lra&gH_1\cap gH_2\subset g(H_1\cap H_2).
+    \end{align*}
+
+    由(1),(2)便知$g(H_1\cap H_2)=gH_1\cap gH_2$,综上,问题得证.
 \end{proof}
 \begin{problem}[P98T18]
     设$G$为有限群,$H<G$且$|G/H|=n>1$.证明$G$含有指数整除$n!$的非平凡正规子群或者$G$同构于$S_n$的一个子群.
