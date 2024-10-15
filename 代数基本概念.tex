@@ -64,7 +64,7 @@
     群$G$中所含元素的个数称为群$G$的阶,记作$|G|$.
 \end{definition}
 
-\begin{definition}[有限群与无限群]\label{yxqywxq}
+\begin{definition}[有限群与无限群]
     若$|G|$是一个有限数(无限数),则称群$G$为有限群(无限群).
 \end{definition}
 \section{群的例子}
@@ -73,7 +73,7 @@
 \begin{definition}[子群]
     若群$G$的非空子集合$H$对$G$的运算也成群,则称群$H$是群$G$的子群,记作$H<G$.
 \end{definition}
-\begin{theorem}\label{1.4.1}
+\begin{theorem}\label{p31dl1}
     群$G$的非空子集合$H$是群$G$的子群的充分必要条件是\begin{align*}
         \forall a,b\in H\Lra ab^{-1}\in H.
     \end{align*}
@@ -98,7 +98,7 @@
 \begin{proof}
     易见$h\mapsto ah$是子群$H$到左陪集$aH$的一个一一对应,$h\mapsto ha$是子群$H$到右陪集$Ha$的一个一一对应,因此定理得证.
 \end{proof}
-\begin{theorem}\label{1.4.2}
+\begin{theorem}\label{p31dy2}
     设群$H$是群$G$的子群.$H$的任意两个左(右)陪集要么相等,要么无公共元素.群$G$可以表示为若干个不相交的左(右)陪集之并.
 \end{theorem}
 \begin{proof}
@@ -114,11 +114,11 @@
         G=\bigcup_{\alpha}a_{\alpha}H,
     \end{align*}其中$a_{\alpha}H$两两无交.
 \end{proof}
-\begin{corollary}[Lagrange定理]\label{Lagrange定理}
+\begin{corollary}[Lagrange定理]\label{Lagrangedl}
     设$G$是有限群,$H$是它的子群,则$|H|$是$|G|$的因子.
 \end{corollary}
 \begin{proof}
-    设$|G|=n,|H|=t$,由定理\ref{1.4.2}可得\begin{align}
+    设$|G|=n,|H|=t$,由定理\ref{p31dy2}可得\begin{align}
         G=a_1H\cup a_2H\cup\cdots\cup a_rh,\label{xx}
     \end{align}其中$a_iH\cap a_jH=\varnothing(i,j=1,2,\cdots,r\text{且}i\neq j)$,在等式\eqref{xx}两侧同时取因子,并利用定理\ref{vu1}就有\begin{align*}
         |G|=r|H|,
@@ -148,7 +148,7 @@
     \end{align}则称群$G$同构于群$G'$,记作$G\cong G'$.适合等式\eqref{1.5.1}的一一对应称为同构映射,简称同构.
 \end{definition}
 \begin{lemma}\label{yl1.5.1}
-    任意非空集合上的全体可逆变换构成的集合关于变换的乘法成群.
+    任意非空集合上的全体可逆变换构成的集合关于变换的乘法成群.\qed
 \end{lemma}
 \begin{theorem}[Cayley定理]
     任何一个群都同构于某一集合上的变换群.
@@ -161,7 +161,7 @@
         (\text{ii})&\varphi_a\varphi_{a^{-1}}(x)=\varphi_a(a^{-1}x)=aa^{-1}x=x,
     \end{align*}可见$\forall a\in G,\varphi_a$均是可逆变换.记$G_l=\l\{\varphi_a:a\in G\r\}$,于是$\forall a,b\in G_l$\begin{align*}
         \varphi_a\varphi_{b^{-1}}(x)=\varphi_a(b^{-1}x)=ab^{-1}x=\varphi_{ab^{-1}}(x),
-    \end{align*}即$\varphi_a\varphi_{b^{-1}}=\varphi_{ab^{-1}}\in G_l$,根据引理\ref{yl1.5.1}与定理\ref{1.4.1}可得$G_l$成群,亦即$G_l$是一变换群.
+    \end{align*}即$\varphi_a\varphi_{b^{-1}}=\varphi_{ab^{-1}}\in G_l$,根据引理\ref{yl1.5.1}与定理\ref{p31dl1}可得$G_l$成群,亦即$G_l$是一变换群.
 
     根据$G_l$定义易知映射$a\mapsto\varphi_a$为满映射.
     
@@ -244,7 +244,7 @@
     \end{align*}
 \end{definition}
 
-利用集合运算,定理\ref{1.4.1}可改写为\begin{align*}
+利用集合运算,定理\ref{p31dl1}可改写为\begin{align*}
     \text{群$G$的非空子集合$H$是子群}\iff HH^{-1}\subset H.
 \end{align*}
 \begin{theorem}
@@ -259,7 +259,7 @@
 
     (2)充分性
 
-    任取$H$的两个左陪集$aH$与$bH$,根据已知条件可设$(aH)(bH)=cH$,由于$ab\in(aH)(bH)$,所以$ab\in cH$,再由$ab\in abH$与定理\ref{1.4.2}可得\begin{align}
+    任取$H$的两个左陪集$aH$与$bH$,根据已知条件可设$(aH)(bH)=cH$,由于$ab\in(aH)(bH)$,所以$ab\in cH$,再由$ab\in abH$与定理\ref{p31dy2}可得\begin{align}
         abH=cH=(aH)(bH),
     \end{align}等式两端同时左乘$a^{-1}$,有\begin{align*}
         bH=HbH\supset Hbe=Hb,
@@ -363,9 +363,6 @@
         b^{-1}aH=H\Lra b^{-1}a\cdot e\in H\iff b^{-1}a\in H,
     \end{align*}充分性得证.
 \end{proof}
-% \begin{remark}
-%     *************************************************丘维声
-% \end{remark}
 \begin{theorem}[群同态基本定理]\label{qttjbdy}
     若$\sigma:G\to G'$,则$G/\ker\sigma\cong\im{\sigma}$.进一步,若$\sigma$是满同态,则$G/\ker\sigma\cong G'$.
 \end{theorem}
@@ -498,7 +495,7 @@
     显然$\{0\}$与$L$都是$L$的理想,称它们为平凡的理想.
 \end{remark}
 \section{商环}
-\begin{definition}[陪集]\label{sdkjfhb}
+\begin{definition}[陪集]\label{pj}
     设环$I$是环$L$的理想,$I$作为$L$的加法群的子群,按如下方式定义陪集\begin{align*}
         &r+I(\forall r\in L)\text{为左陪集};&&I+r(\forall r\in L)\text{为右陪集},
     \end{align*}按如下方式定义陪集的加法与乘法\begin{align*}
@@ -507,7 +504,7 @@
     \end{align*}全体陪集所成的集合在这样规定的运算下成环.
 \end{definition}
 \begin{definition}[商环]
-    设环$I$是环$L$的理想.$L$对于$I$的陪集在定义\ref{sdkjfhb}的运算下所成的环称为$L$对于$I$的商环,记作$L/I$.
+    设环$I$是环$L$的理想.$L$对于$I$的陪集在定义\ref{pj}的运算下所成的环称为$L$对于$I$的商环,记作$L/I$.
 \end{definition}
 设环$I$是环$L$的理想.不难发现$\sigma(a)=a+I,a\in L$是环$L$到商环$L/I$的满同态,且该同态的核为理想$I$.可见每个理想都是某一同态的核.
 \begin{lemma}
@@ -519,7 +516,7 @@
         \sigma(ba)\xlongequal[]{\sigma\text{是同态}}\sigma(b)\sigma(a)=\sigma(b)0=0\Lra ba\in\ker\sigma,
     \end{align*}可见$\ker\sigma$是$L$的理想.
 \end{proof}
-\begin{theorem}[环同态基本定理]
+\begin{theorem}[环同态基本定理]\label{httjbdl}
     若$\sigma:L\to L'$,则$L/\ker{\sigma}\cong\im\sigma$.进一步,若$\sigma$是满同态,则$L/\ker{\sigma}\cong L'$.
 \end{theorem}
 \begin{proof}
@@ -587,7 +584,7 @@
         0=\sigma(n)=ne\iff n\in p\Z,
     \end{align*}可见$\ker{\sigma}=p\Z$.易见\begin{align*}
         \im\sigma=\l\{e,2e,\cdots,(p-1)e,0\r\}\subset F,
-    \end{align*}不难验证$\im\sigma$构成域$F$的子域.根据环同态基本定理,有\begin{align*}
+    \end{align*}不难验证$\im\sigma$构成域$F$的子域.根据环同态基本定理(定理\ref{httjbdl}),有\begin{align*}
         F/p\Z\cong\im\sigma.
     \end{align*}
 

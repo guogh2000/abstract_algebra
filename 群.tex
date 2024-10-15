@@ -192,11 +192,11 @@
         <S>=\l(\l\{\prod_{k=1}^{m}x_k:x_1,\cdots,x_m\in S\cup S^{-1},m\in\N_+\r\},\cdot\r).
     \end{align*}
 \end{proof}
-\begin{definition}[有限生成的,循环群]\label{huasdjnkv}
+\begin{definition}[有限生成的,循环群]\label{xhq}
     设$G$是群.若$<S>=G$,则称$S$为$G$的一组生成元.若$G$中存在一有限集合$S$使得$<S>=G,$则称$G$为有限生成的.由一个元素生成的群称为循环群.
 \end{definition}
 \begin{proposition}
-    有限群(定义\ref{yxqywxq})一定是有限生成的,反之未必成立.
+    有限群一定是有限生成的,反之未必成立.
 \end{proposition}
 \begin{proof}
     设$G$是有限群,$m=|G|\in\N_+$,则$G$所含元素的个数为$m$.取\begin{align*}
@@ -263,8 +263,8 @@
     \end{align*}问题得证.
 \end{proof}
 \section{循环群}
-循环群的定义见定义\ref{huasdjnkv}.
-\begin{theorem}\label{adsjfnklm}
+循环群的定义见定义\ref{xhq}.
+\begin{theorem}\label{p62dl4}
     整数加群$\Z$的子群都是由某一非负整数$m$生成的循环群.且$\forall m,n\in\N_+$\begin{align*}
         n\Z\supset m\Z\iff n|m.
     \end{align*}
@@ -298,7 +298,7 @@
 \begin{theorem}
     已知群$G=<g>,|G|=m$,则有以下结论成立:
 
-    (1)若$m=\infty,$则$G\cong\Z$,它的子群与非负整数成一一对应(见定理\ref{adsjfnklm});
+    (1)若$m=\infty,$则$G\cong\Z$,它的子群与非负整数成一一对应(见定理\ref{p62dl4});
     
     (2)若$m\in\N_+$,则$G\cong\Z/m\Z$,它的子群与$m$的因子一一对应.
 \end{theorem}
@@ -574,13 +574,13 @@
         |G|=p^k,\ \ k\geq1,
     \end{align*}则称$G$为$p$-群($p$是素数).
 \end{definition}
-\begin{corollary}\label{sdjhansjoia}
+\begin{corollary}\label{p77tl3}
     设有限群$G$作用在有限集合$X$上.若$G$是$p$-群,$|X|=n,(n,p)=1$,则$X$中一定有不动元素.
 \end{corollary}
 \begin{proof}
     \stars
 \end{proof}
-\begin{corollary}\label{sadyhbfjk}
+\begin{corollary}\label{p77tl4}
     设$p$-群作用在有限集合$X$上,$|X|=n$.若$t$为$X$中不动元素的个数,则\begin{align*}
         t\equiv n\mod p.
     \end{align*}
@@ -595,7 +595,7 @@
     \stars
 \end{proof}
 \begin{definition}[共轭类]
-    当群$G$在集合$G$上的作用是共轭变换(见例\ref{gebh})时,称轨道$O_x$为$x$所在的共轭类,记作$C(x)$.
+    当群$G$在集合$G$上的作用是共轭变换(例\ref{gebh})时,称轨道$O_x$为$x$所在的共轭类,记作$C(x)$.
 \end{definition}
 \begin{theorem}
     设群$G$作用在集合$X$上,$x,y\in X$.若存在$g_0\in G$使得$y=g_0x$,则$H_y=g_0H_xg_0^{-1}$.
@@ -604,10 +604,10 @@
     \stars
 \end{proof}
 \section{Sylow定理}
-Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的阶是$|G|$的因子.反之,对于$|G|$的任意正因子$d$,是否存在一个$d$阶子群?本节介绍的Sylow定理将回答这一问题.
+Lagrange定理(推论\ref{Lagrangedl})指出,有限群$G$的任意子群的阶是$|G|$的因子.反之,对于$|G|$的任意正因子$d$,是否存在一个$d$阶子群?本节介绍的Sylow定理将回答这一问题.
 
 在此之前我们需要以下引理.
-\begin{lemma}\label{aisuhdjnk}
+\begin{lemma}\label{p79yl}
     若$n=p^lm,(p,m)=1,k\leq l,C_n^{p^k}$是组合数,则\begin{align*}
         p^{l-k}|C_n^{p^k},p^{l-k+1}\nmid C_n^{p^k}.
     \end{align*}
@@ -628,7 +628,7 @@ Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的�
 
     由注\ref{sdaujnf}可知\begin{align*}
         \l|X\r|=\sum_{i\in I}\l|O_{A_i}\r|.
-    \end{align*}由引理\ref{aisuhdjnk}可知\begin{align*}
+    \end{align*}由引理\ref{p79yl}可知\begin{align*}
         p^{l-k+1}\nmid C_n^{p^k}=|X|,
     \end{align*}所以至少有一个轨道,不妨设为$O_{A_j}$,满足\begin{align*}
         p^{l-k+1}\nmid|O_{A_j}|,
@@ -664,17 +664,17 @@ Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的�
     \end{align*}对$\forall h\in H$,定义映射\begin{align*}
         h:X\to&X\\
         gP\mapsto&hgP,
-    \end{align*}容易验证该定义是良定义的,$h$确定了群$H$在集合$X$上的作用.由Lagrange定理(\ref{Lagrange定理})的证明过程可知\begin{align*}
+    \end{align*}容易验证该定义是良定义的,$h$确定了群$H$在集合$X$上的作用.由Lagrange定理(推论\ref{Lagrangedl})的证明过程可知\begin{align*}
         |G|=|X|\cdot|P|,
-    \end{align*}所以$|X|=m$.注意到有限$p$-群$H$作用在集合$X$上,并且$(p,m)=1$,所以由推论\ref{sdjhansjoia}可知$X$有不动元素,不妨设其中的一个为$g_jP$,即\begin{align*}
+    \end{align*}所以$|X|=m$.注意到有限$p$-群$H$作用在集合$X$上,并且$(p,m)=1$,所以由推论\ref{p77tl3}可知$X$有不动元素,不妨设其中的一个为$g_jP$,即\begin{align*}
         &\forall h\in H,hg_jP=g_jP\\
         \iff&\forall h\in H,g_j^{-1}hg_jP=P\\
         \iff&\forall h\in H,g_j^{-1}hg_j\in P\\
         \iff&\forall h\in H,h\in g_jPg_j^{-1}\\
         \iff&H\subset g_jPg_j^{-1},
-    \end{align*}注意到$H,P$均成群,所以$H<g_jPg_j^{-1}$,即$H$包含在一个与$P$共轭的$\Sp$-子群中,定理得证.
+    \end{align*}注意到$H,P$均成群,所以$H<g_jPg_j^{-1}$,即$H$包含在一个与$P$共轭的$\Sp$子群中,定理得证.
 \end{proof}
-\begin{corollary}\label{sadjnasd}
+\begin{corollary}\label{p81tl1}
     对有限群而言,任意两个$\Sp$子群都互相共轭.
 \end{corollary}
 \begin{proof}
@@ -686,7 +686,7 @@ Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的�
 \begin{proof}
     $G$的子群$P$是正规子群即$P$的所有共轭子群都等与$P$自身.
 
-    任取$G$的两个$\Sp$子群$P_0,P$,由推论\ref{sadjnasd}可知$P_0,P$互相共轭,又由于$P_0,P$互相共轭可知$P_0=P$,推论得证.
+    任取$G$的两个$\Sp$子群$P_0,P$,由推论\ref{p81tl1}可知$P_0,P$互相共轭,又由于$P_0,P$互相共轭可知$P_0=P$,推论得证.
 \end{proof}
 \begin{definition}[正规化子]\label{zghz}
     对群$G$的任意子群$H$,定义\begin{align*}
@@ -694,7 +694,7 @@ Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的�
     \end{align*}则$N(H)<G$且$H\subset N(H)$.称$N(H)$为子群$H$的正规化子.
 \end{definition}
 由定义\ref{zghz}可立即推出$H\lhd N(H)$.
-\begin{corollary}\label{asdihufjankdsf}
+\begin{corollary}\label{p81tl2}
     若$G$是有限群,$P$是$G$的$\Sp$子群,则\begin{align*}
         (1)&N(N(P))=N(P)\\
         (2)&\text{$N(P)$不包含$G$的另一个$\Sp$子群.}
@@ -703,7 +703,7 @@ Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的�
 \begin{proof}
     \stars
 \end{proof}
-\begin{corollary}\label{asdbhjvfn}
+\begin{corollary}\label{p81tl3}
     若$G$是有限群,$p$是素数且$p\Big||G|$,则$G$的$\Sp$子群的个数是$|G|$的因子.
 \end{corollary}
 \begin{proof}
@@ -713,7 +713,7 @@ Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的�
     若$|G|=p^lm,p$是素数且$(p,m)=1,l\geq1$,记$G$的$\Sp$子群的个数为$k$,则$k\equiv1\mod p$.
 \end{theorem}
 \begin{analysis}
-    注意到该定理的结论与推论\ref{sadyhbfjk}十分相似,这引诱我们构造某$p$-群$P$,使其作用在某$k$元集合$X$后所得不动元素的个数为$1$.
+    注意到该定理的结论与推论\ref{p77tl4}十分相似,这引诱我们构造某$p$-群$P$,使其作用在某$k$元集合$X$后所得不动元素的个数为$1$.
 \end{analysis}
 \begin{proof}
     令\begin{align*}
@@ -730,24 +730,24 @@ Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的�
         \iff&\forall a\in P,aQa^{-1}=Q\\
         \iff&\forall a\in P,a\in N(Q)\\
         \iff&P\subset N(Q),
-    \end{align*}又$Q\subset N(Q)$且$P,Q$都是$G$的$\Sp$子群,所以由推论\ref{asdihufjankdsf}可知$P=Q$,进而$|X_0|=1$.由推论\ref{sadyhbfjk}可知\begin{align*}
+    \end{align*}又$Q\subset N(Q)$且$P,Q$都是$G$的$\Sp$子群,所以由推论\ref{p81tl2}可知$P=Q$,进而$|X_0|=1$.由推论\ref{p77tl4}可知\begin{align*}
         |X_0|\equiv|X|\mod p,
     \end{align*}即\begin{align*}
         &1\equiv k\mod p\\
         \iff&k\equiv1\mod p,
     \end{align*}定理得证.
 \end{proof}
-\begin{corollary}\label{asuidgbuj}
+\begin{corollary}\label{p82tl}
     若群$G$的阶为$p^lm$,其中$p$是素数且$(p,m)=1$,则$G$的$\Sp$子群的个数是$m$的因子.
 \end{corollary}
 \begin{proof}
     设$G$的$\Sp$子群的个数为$k$.
 
-    由推论\ref{asdbhjvfn}可知$k\Big||G|$,由$|G|=p^lm$,$p$是素数且$(p,m)=1$\begin{align}\label{asdkmfjn}
+    由推论\ref{p81tl3}可知$k\Big||G|$,由$|G|=p^lm$,$p$是素数且$(p,m)=1$\begin{align}\label{asdkmfjn}
         k|p\text{或}k|m.
     \end{align}
 
-    由定理\ref{xldsdl}可知\begin{align}\label{sadijf}
+    由Sylow第三定理(定理\ref{xldsdl})可知\begin{align}\label{sadijf}
         k\nmid p.
     \end{align}
 
@@ -762,7 +762,7 @@ Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的�
         72=2^3\cdot3^2,
     \end{align*}所以利用Sylow第三定理(定理\ref{xldsdl}),可设$G$的Sylow\ $3$-子群的个数为\begin{align*}
         1+3t,t\in\N,
-    \end{align*}再利用推论\ref{asuidgbuj}可知\begin{align*}
+    \end{align*}再利用推论\ref{p82tl}可知\begin{align*}
         (1+3t)|2^3,
     \end{align*}所以$t=0$或$t=1$.
 
@@ -772,7 +772,7 @@ Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的�
 
     (2)若$t=1$,即$G$有$4$个Sylow\ $3$-子群,设为$P_1,P_2,P_3,P_4$.考虑$G$在集合\begin{align*}
         X=\l\{P_1,P_2,P_3,P_4\r\}
-    \end{align*}上的共轭变换(参考例\ref{gebh}).由推论\ref{sadjnasd}可知$G$任意两个Sylow\ $3$-子群都互相共轭,所以$G$的每个元素都在$X$上诱导出一个$4$次置换,从而诱导出同态\begin{align*}
+    \end{align*}上的共轭变换(例\ref{gebh}).由推论\ref{p81tl1}可知$G$任意两个Sylow\ $3$-子群都互相共轭,所以$G$的每个元素都在$X$上诱导出一个$4$次置换,从而诱导出同态\begin{align*}
         \phi:G\to S_4,
     \end{align*}由群同态基本定理可知\begin{align*}
         G/\ker\phi\cong\phi(G),
@@ -823,7 +823,7 @@ Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的�
 定义\ref{qdzh}与命题\ref{qdzhmt1},\ref{qdzhmt2},\ref{qdzhmt3}均可以推广到多个群的情形.
 
 经过上述讨论我们已经知道,直和$\bigoplus_{i=1}^{s}G_i$的结构完全被群$G_i$的结构决定.因此如果一个群能够分解成一些群的直和,那么该群的研究就可以归结为另一些群(一般比原来的群简单)的研究.下面将讨论在什么情况下,一个群能够分解成一些群的直和.
-\begin{theorem}\label{asfhjbd}
+\begin{theorem}\label{p85dl19}
     设群$N_i$是群$G$的正规子群,$i=1,\cdots,s$,若\begin{align*}
         &(1)\ G=\prod_{i=1}^{s}N_i\\
         &(2)\ \text{对$\forall g\in G$,表示式$g=\prod_{i=1}^{s}g_i$,是唯一的,其中$g_i\in N_i$},
@@ -837,7 +837,7 @@ Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的�
 \begin{definition}[内直和]\label{nzh}
     若群$G$同构于其正规子群$N_1,\cdots,N_s$的直和,则称群$G$分解成正规子群$N_1,\cdots,N_s$的直和,也称$G$等于$N_1,\cdots,N_s$的内直和.
 \end{definition}
-与线性空间分解成子空间的直和的情况类似,不难证明定理\ref{asfhjbd}的条件$(2)$有以下两种等价描述
+与线性空间分解成子空间的直和的情况类似,不难证明定理\ref{p85dl19}的条件$(2)$有以下两种等价描述
 
 (2')幺元的表示方式唯一,即若$e=\prod_{i=1}^sx_i$,则$x_i=e$
 
