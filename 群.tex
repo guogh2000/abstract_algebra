@@ -802,7 +802,7 @@ Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的�
         G_1\oplus G_2.
     \end{align*}
 \end{definition}\label{qdzhmt1}
-容易验证有以下命题成立.
+容易验证有以下$3$个命题成立.
 \begin{proposition}
     当群$G_1,G_2$是有限群时,$G_1\oplus G_2$也是有限群,并且\begin{align*}
         |G_1\times G_2|=|G_1|\cdot|G_2|.
@@ -818,7 +818,7 @@ Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的�
     \end{align*}\qed
 \end{proposition}
 \begin{proposition}\label{qdzhmt3}
-    $G_1\oplus G_2$中的每个元素都可以分解成$\ol{G_1}$与$\ol{G_2}$中的元素的乘积,并且该分解是唯一的.
+    $G_1\oplus G_2$中的每个元素都可以分解成$\ol{G_1}$与$\ol{G_2}$中的元素的乘积,并且该分解是唯一的.\qed
 \end{proposition}
 定义\ref{qdzh}与命题\ref{qdzhmt1},\ref{qdzhmt2},\ref{qdzhmt3}均可以推广到多个群的情形.
 
@@ -839,22 +839,19 @@ Lagrange定理(推论\ref{Lagrange定理})指出,有限群$G$的任意子群的�
 \end{definition}
 与线性空间分解成子空间的直和的情况类似,不难证明定理\ref{asfhjbd}的条件$(2)$有以下两种等价描述
 
-(2')幺元的表示方式唯一,即\begin{align*}
-    e=e\cdots e
-\end{align*}
+(2')幺元的表示方式唯一,即若$e=\prod_{i=1}^sx_i$,则$x_i=e$
 
-(2'')\begin{align*}
+(2'')\stars\begin{align*}
     N_k\bigcap\prod_{i=1,i\neq k}^{s}N_i=\l\{e\r\}.
 \end{align*}
 \begin{definition}[不可分解的]
-    若群$G$不能分解成两个非平凡的正规子群的直和,则称$G$是不可分解的.
+    若群$G$不能被分解成两个非平凡的正规子群的直和,则称$G$是不可分解的.
 \end{definition}
-事实上,任意一个有限群总可以分解成一些不可分解的群的直和.群的直和是群论中的重要问题,这里不再细说.
+事实上,任意一个有限群总能分解成一些不可分解的群的直和.群的直和是群论中的重要问题,这里不再细说.
 
 下面给出一个例子,来看看有限交换群的分解.
-
 \begin{example}
-    有限交换群能分解成$p$-群的直和.
+    有限交换群能被分解成$p$-群的直和.
 \end{example}
 \begin{proof}
     设$G$是有限交换群,$|G|=n$的标准分解式为\begin{align*}
