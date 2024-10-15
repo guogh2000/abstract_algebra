@@ -125,15 +125,15 @@
     假设$\Z$在新定义的运算下成环,则$\Z$关于加法成交换群.对$\forall n\in\Z$
     \begin{align*}
         1\oplus n=1\cdot n=n,
-    \end{align*}所以$\Z$在新定义的运算下,关于加法的所成的交换群中的单位元是$1$.注意到$\forall m\in\Z$\begin{align*}
+    \end{align*}所以$\Z$在新定义的运算下,关于加法的所成的交换群中的幺元是$1$.注意到$\forall m\in\Z$\begin{align*}
         0\oplus m=0\cdot m=0\neq1,
     \end{align*}所以在此加法群中,$0$无逆元,这与$\Z$关于加法成交换群矛盾,所以$\Z$在新定义的运算下不成环.
 \end{solution}
 \begin{problem}[P56T29]
-    设$L$为有单位元素的交换环,在$L$中定义\begin{align*}
+    设$L$为有幺元的交换环,在$L$中定义\begin{align*}
         &a\oplus b=a+b-1,\\
         &a\odot b=a+b-ab.
-    \end{align*}证明在新定义的运算下,$L$仍为有单位元素的交换环,并且与原来的环同构.
+    \end{align*}证明在新定义的运算下,$L$仍为有幺元的交换环,并且与原来的环同构.
 \end{problem}
 \begin{proof}
     (1)对任意$a,b,c\in L$\begin{align*}
@@ -150,7 +150,7 @@
         &1\oplus a\\
         =&1+a-1\\
         =&a,
-    \end{align*}$L$关于$\oplus$有单位元素;
+    \end{align*}$L$关于$\oplus$有幺元;
 
     (3)对任意$a\in L$\begin{align*}
         &(-a)\oplus a\\
@@ -188,9 +188,9 @@
         &0\odot a\\
         =&0+a-0a\\
         =&a,
-    \end{align*}$L$关于$\odot$有单位元素.
+    \end{align*}$L$关于$\odot$有幺元.
 
-    (1)$\sim$(7)说明$L$成有单位元素的交换环,其中零元为$1$,单位元为$0$.
+    (1)$\sim$(7)说明$L$成有幺元的交换环,其中零元为$1$,幺元为$0$.
 
     定义$\varphi$为$(L;+,\cdot)\to(L;\oplus,\odot)$的映射\begin{align*}
         \varphi(x)=1-x,
@@ -213,11 +213,11 @@
 \begin{problem}[P56T30]
     给环出$L$与它的子环$S$的例子,它们分别具有下列性质
 
-    (1)$L$有单位元素,$S$无单位元素;
+    (1)$L$有幺元,$S$无幺元;
 
-    (2)$L$无单位元素,$S$有单位元素;
+    (2)$L$无幺元,$S$有幺元;
 
-    (3)$L,S$均有单位元素,但不相同;
+    (3)$L,S$均有幺元,但不相同;
 
     (4)$L$不交换,$S$交换.
 \end{problem}
@@ -230,7 +230,7 @@
 
     (1.1.2)$\forall a\in\Z,\exists 0\in\Z$满足\begin{align*}
         0+a=a,
-    \end{align*}可见$(\Z;+)$存在左单位元;
+    \end{align*}可见$(\Z;+)$存在左幺元;
 
     (1.1.3)$\forall a\in\Z,\exists-a\in\Z$满足\begin{align*}
         -a+a=0,
@@ -244,13 +244,13 @@
         a(b+c)=ab+ac,
     \end{align*}可见$(\Z;+,\cdot)$满足乘法对于加法的分配律.\\(1.1.1)$\sim$(1.1.5)说明$(\Z;+,\cdot)$成环.注意到$\forall a\in\Z$,有$1\in \Z$满足\begin{align*}
         1\cdot a=a,
-    \end{align*}所以$(\Z;+,\cdot)$有单位元素$1$.\\(1.2)对于$S$:
+    \end{align*}所以$(\Z;+,\cdot)$有幺元$1$.\\(1.2)对于$S$:
 
-    同理可证$S$成环.假设$S$有单位元素$e$,则$\forall s\in S$\begin{align*}
+    同理可证$S$成环.假设$S$有幺元$e$,则$\forall s\in S$\begin{align*}
         es=s,
     \end{align*}现取$n\in\Z$且$m\neq0$,则$2n\in2\Z$且\begin{align*}
         e(2n)=2n\overset{\text{等式两端同时除以$2n$}}{\Lra}e=1\notin2\Z,
-    \end{align*}这与$e\in S$矛盾,所以$S$没有单位元素.
+    \end{align*}这与$e\in S$矛盾,所以$S$没有幺元.
 
     (2)\begin{align*}
         L=\l(\l\{\l(\begin{matrix}
@@ -309,7 +309,7 @@
             1&0\\
             0&1
         \end{matrix}\r)\notin L,
-    \end{align*}亦即$L$没有单位元素.
+    \end{align*}亦即$L$没有幺元.
 
     容易验证$S$成环.注意到$\forall s=\l(\begin{matrix}
         a&0\\
@@ -319,7 +319,7 @@
         0&0
     \end{matrix}\r)\in S$满足\begin{align*}
         es=se=s,
-    \end{align*}所以$S$有单位元素$\l(\begin{matrix}
+    \end{align*}所以$S$有幺元$\l(\begin{matrix}
         1&0\\
         0&0
     \end{matrix}\r)$.
@@ -338,7 +338,7 @@
     \end{matrix}\r),e_2=\l(\begin{matrix}
         1&0\\
         0&0
-    \end{matrix}\r)$验证它们分别是$L$与$S$中的单位元素即可.
+    \end{matrix}\r)$验证它们分别是$L$与$S$中的幺元即可.
 
     (4)\begin{align*}
         L=\l(\l\{\l(\begin{matrix}
@@ -398,32 +398,32 @@
     \end{align*}所以$S$交换.
 \end{solution}
 \begin{problem}[P56T31]
-    环$L$中元素$e_L$称为左单位元,若对$\forall a\in L$\begin{align*}
+    环$L$中元素$e_L$称为左幺元,若对$\forall a\in L$\begin{align*}
         e_La=a;
-    \end{align*}元素$e_R$称为右单位元,若对$\forall a\in L$\begin{align*}
+    \end{align*}元素$e_R$称为右幺元,若对$\forall a\in L$\begin{align*}
         e_Ra=a;
     \end{align*}证明
 
-    (1)若$L$既有左单位又有右单位,则$L$有单位元素;
+    (1)若$L$既有左单位又有右单位,则$L$有幺元;
 
-    (2)若$L$有左单位,无零因子,则$L$有单位元素;
+    (2)若$L$有左单位,无零因子,则$L$有幺元;
 
     (3)若$L$有左单位,无右单位,则$L$至少有两个左单位.
 \end{problem}
 \begin{proof}
     (1)由\begin{align*}
         e_Le_R=\l\{\begin{matrix}
-            e_R\text{($e_L$是左单位元)};\\
-            e_L\text{($e_R$是右单位元)}
+            e_R\text{($e_L$是左幺元)};\\
+            e_L\text{($e_R$是右幺元)}
         \end{matrix}\r.
-    \end{align*}可知$e_L=e_R$,所以$L$有单位元素;
+    \end{align*}可知$e_L=e_R$,所以$L$有幺元;
 
     (2)在等式$e_La=a$两端同时左乘$a$可得\begin{align*}
         &ae_La=a^2\\
         \Lra&(ae_L-a)a=0\\
         \Lra&ae_L-a=0\\
         \Lra& ae_L=a,
-    \end{align*}可见$L$有单位元素;
+    \end{align*}可见$L$有幺元;
 
     (3)设$e_L$为$L$的一个左单位,由于$L$无右单位,所以$\exists x\in L$,满足\begin{align*}
         &xe_L\neq x\\
@@ -449,7 +449,7 @@
     \end{align*}所以$F\subset I$,从而$F=I$.可见域$F$没有非平凡的理想.
 \end{proof}
 \begin{problem}[P57T35]
-    设$L$为有单位元素的交换环.若$L$无非平凡的理想,则$L$为域.
+    设$L$为有幺元的交换环.若$L$无非平凡的理想,则$L$为域.
 \end{problem}
 \begin{proof}
     由命题\ref{auhisgnjdvk}与引理\ref{zncxkjvna}可知,若能证明$L$的非零元可逆,便能推出$L$为域.
