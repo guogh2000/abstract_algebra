@@ -11,7 +11,6 @@
         [\text{左逆元}]&(3)\forall a\in G,\exists b\in G\ \ \mr{s.t.}\ \ ba=e.
     \end{align*}
 \end{definition}
-
 1.若$ba=e$,则$ab=e$.\begin{proof}
     任取$b\in G$,存在$c\in G$,使得$cb=e$,于是\begin{align}
         a=ea=(cb)a=c(ba)=ce,\label{1.1}
@@ -25,7 +24,6 @@
         ae=a(ba)=(ab)a=ea=a,
     \end{align*}问题证毕.
 \end{proof}
-
 3.群$G$中有惟一的元素$e$具有性质\begin{align*}
     \forall a\in G,ea=ae=a.
 \end{align*}\begin{proof}
@@ -33,13 +31,11 @@
         e_1=e_1e_2=e_2,
     \end{align*}可见惟一性得证.
 \end{proof}
-
 4.对群$G$中任意元素$a$,有惟一元素$b$,使$ab=ba=e$.\begin{proof}
     假设在$G$中还有元素$c$满足$ac=ca=e$,则\begin{align*}
         c=ec=ce=c(ab)=(ca)b=eb=b,
     \end{align*}这就证明了惟一性.
 \end{proof}
-
 5.对于群$G$中任意元素$a,b$,方程\begin{align*}
     ax=b
 \end{align*}在$G$中有惟一解.\begin{proof}
@@ -55,20 +51,54 @@
 
     综上所述,问题得证.
 \end{proof}
-
 \begin{definition}[Abel群(或交换群)]
     若群$G$的运算适合交换律,则称群$G$为Abel群(或交换群).
 \end{definition}
-
 \begin{definition}[阶]
     群$G$中所含元素的个数称为群$G$的阶,记作$|G|$.
 \end{definition}
-
 \begin{definition}[有限群与无限群]
     若$|G|$是一个有限数(无限数),则称群$G$为有限群(无限群).
 \end{definition}
 \section{群的例子}
-\stars
+本节将不加证明地给出一些常见的群的例子和性质.
+\begin{definition}[图形\os{$F$}的对称群,二面体群]\label{txfddiq}\label{emtq}
+    已知$F$是平面上的一个图形.令$G_F$为全体保持$F$不变的平面正交变换所成的集合,则$G_F$在变换的称发下成群,称为图形$F$的对称群.
+
+    若用$T$表示绕$O$旋转$90^\circ,S$表示对于直线$l$的镜面反射,则不难看出\begin{align*}
+        G_F=\l\{T,T^2,T^3,T^4,ST,ST^2,ST^3,ST^4\r\},
+    \end{align*}其中$T^4=I,S^2=I,ST=T^{-1}S$($I$表示恒等映射).
+    
+    类似地,若$F$是平面上正$n$边形,则$F$的对称群$G_F$由$2n$个元素组成.令$T$为绕中心转$\frac{2\pi}{n},S$为对于某一对称轴的镜面反射,则有\begin{align*}
+        G_F=\l\{T,T^2,\cdots,T^n,ST,ST^2,\cdots,ST^n\r\},
+    \end{align*}其中$T^n=I,S^2=I,ST=T^{-1}S$.称这些群为二面体群记作$D_n$.
+\end{definition}
+\begin{definition}[对称群\os{$S_n$},集合\os{$M$}的全变换群,\os{$n$}元置换,\os{$n$}元对称群,不相交的]\label{diqsn}\label{jhmdqbhq}\label{vh}\label{nydiq}\label{diq}\label{lh}\label{dh}
+    若$M$为非空集合,则$M$到自身的全体可逆变换关于变换的乘法成群,称该群为集合$M$的全变换群,记作$S(M)$.当$M$是无限集,$S(M)$为无限群.
+
+    当$M$含有$n$个元素时,$M$的可逆变换称为$M$的$n$元置换,$S(M)$称为$n$元对称群,简记为$S_n$.
+
+    若$M$中的元素用$1,2,\cdots,n$编号后,则$S$中的元素表示为\begin{align*}
+        \sigma=\l(\begin{matrix}
+            1&2&&n\\
+            \alpha_1&\alpha_2&\cdots&\alpha_n,
+        \end{matrix}\r)
+    \end{align*}其中$\alpha_i=\sigma(i),i=1,2,\cdots,n$.易见$n$元置换与$n$阶排列之间存在一一对应,亦即$|S|=n!$.
+
+    若一个$n$元置换$\sigma$将$1,2,\cdots,n$中某$m$个数$\alpha_1,\cdots,\alpha_m$轮换,即\begin{align*}
+        &\sigma(\alpha_1)=\alpha_2,\sigma(\alpha_2)=\alpha_3,\cdots\\
+        &\sigma(\alpha_{m-1})=\alpha_m,\sigma(\alpha_m)=\alpha_1,
+    \end{align*}其余的数保持不变,则称$\sigma$为轮换,表示为\begin{align*}
+        \sigma=(\alpha_1\alpha_2\cdots\alpha_m).
+    \end{align*}当$m=2$时,也称$\sigma$为对换.
+
+    若$S_n$中的两个轮换$(\alpha_1\alpha_2\cdots\alpha_m)$与$\beta_1\beta_2\beta_l$满足\begin{align*}
+        \alpha_i\neq\beta_j,i=1,2,\cdots,m,j=1,2,\cdots,l,
+    \end{align*}则称这两个对换为不相交的.
+\end{definition}
+\begin{proposition}
+    非单位的置换能惟一地表成一些不相交的轮换的乘积.\qed
+\end{proposition}
 \section{子群,陪集}
 \begin{definition}[子群]
     若群$G$的非空子集合$H$对$G$的运算也成群,则称群$H$是群$G$的子群,记作$H<G$.

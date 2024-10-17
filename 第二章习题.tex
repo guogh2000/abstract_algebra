@@ -75,10 +75,22 @@
     \end{align*}可见问题得证.
 \end{proof}
 \begin{problem}[P97T10]
-    证明$S_n$由$n-1$个对换$(12),(13),\cdots,(1n)$生成,$S_n$也可由$n-1$个对换$(12),(23),\cdots,(n-1\ n)$生成.
+    证明$S_n$中的任意一个置换能由$n-1$个对换$(12),(13),\cdots,(1n)$生成,也能由$n-1$个对换$(12),(23),\cdots,(n-1\ n)$生成.
 \end{problem}
 \begin{proof}
-    \stars
+    由引理\ref{p65yl}可知$S_n$中的任意一个置换都可以拆成若干个对换$(ij)$的复合,注意到\begin{align*}
+        (1i)(1j)(1i)=(ij),
+    \end{align*}所以任意一个置换都能由$(n-1)$个对换\begin{align*}
+        (12),(13),\cdots,(1n)
+    \end{align*}生成,第一个论断证毕.
+
+    注意到\begin{align*}
+        (1i)(i\ i+1)(1i)=(1\ i+1),
+    \end{align*}故可用归纳法证明\begin{align*}
+        (12),(23),\cdots,(n-1\ n)
+    \end{align*}能生成\begin{align*}
+        (12)(13),\cdots,(1n),
+    \end{align*}再结合第一个论断可知它能生成$S_n$中的任意一个置换,第二个论断证毕.
 \end{proof}
 \begin{problem}[P97T16]
     设$H_1,H_2$是群$G$的两个子群,证明$H_1\cap H_2$的任一左陪集是$H_1$的一个左陪集与$H_2$的一个左陪集的交.
@@ -103,17 +115,75 @@
 
     由(1),(2)便知$g(H_1\cap H_2)=gH_1\cap gH_2$,综上,问题得证.
 \end{proof}
-\begin{problem}[P98T18]
-    设$G$为有限群,$H<G$且$|G/H|=n>1$.证明$G$含有指数整除$n!$的非平凡正规子群或者$G$同构于$S_n$的一个子群.
+\begin{problem}[P98T18]\label{p98t18}
+    设$G$为有限群,$H<G$且$|G/H|=n>1$.证明$G$或者含有指数能整除$n!$的非平凡正规子群,或者$G$同构于$S_n$的一个子群.
 \end{problem}
 \begin{proof}
-    \stars
+    记$P=\l\{a_iH:i=,1,\cdots,n,a\in G\r\}$为$H$的所有左陪集组成的集合.定义群$G$在集合$P$上的群作用为\begin{align*}
+        g:P\to&P\\
+        a_iH\mapsto&ga_iH,
+    \end{align*}容易验证这是良定义的.从而群作用$g$能诱导出群同态\begin{align*}
+        \phi: G\to S_n,
+    \end{align*}其中\begin{align*}
+        \ker\phi\lhd G
+    \end{align*}且\begin{align}
+        &\im\phi<S_n\nonumber\\
+        \overset{|G/H|>1}{\Lra}&|\im\phi|>1\label{skdnj}\\
+        \Lra&\im\phi\neq\l\{e\r\}\nonumber\\
+        \Lra&\ker\phi\neq G\label{jnakd}.
+    \end{align}
+
+    (1)当$\ker\phi\neq\l\{e\r\}$时,结合\eqref{jnakd}可知$G/\ker\phi$中的任意元素$g\ker\phi$满足\begin{align*}
+        &g\ker\phi\lhd G\\
+        &g\ker\phi\neq\l\{e\r\}\\
+        &g\ker\phi\neq G,
+    \end{align*}又\begin{align*}
+        |g\ker\phi|\Big||G/\ker\phi|\xlongequal[]{\text{群同态基本定理(定理\ref{qttjbdy})}}|\im\phi|\Big||S_n|=n!,
+    \end{align*}所以$g\ker\phi$是$G$的一个指数能整除$n!$的非平凡子群.
+    
+    (2)若$\ker\phi=\l\{e\r\}$,则\begin{align*}
+        &G/\ker\phi\cong\im\phi\\
+        &G\cong\im\phi<S_n,
+    \end{align*}结合\eqref{skdnj}可知此时$G$同构于$S_n$的非平凡的正规子群$\im\phi$.
+
+    由(1),(2)便知问题证毕.
 \end{proof}
+\begin{remark}
+    在证明例\ref{p98t18}时所构造的群同态$\phi$是十分重要的,通常将其称为传递置换表示,下面严格地给出它的定义.
+\end{remark}
+\begin{definition}[传递置换表示]\label{idvhbu}
+    若$H$是群$G$的子群,$H$的全体左陪集构成集合\begin{align*}
+        P=\l\{a_iH:a_i\in G,i=1,\cdots,r\r\},
+    \end{align*}则称群作用\begin{align*}
+        g:P\to&P\\
+        a_iH\mapsto&ga_iH
+    \end{align*}所诱导出的群同态\begin{align*}
+        \phi:G\to S_r
+    \end{align*}为$G$在$H$上的传递置换表示.
+\end{definition}
 \begin{problem}[P98T19]
     设$G$为有限群,$p$是$|G|$的最小素因子.证明指数为$p$的子群(若存在)必正规.
 \end{problem}
 \begin{proof}
-    \stars
+    设$H$是群$G$的子群并且$|H|=p$,下面来证明$H\lhd G$.记$G$在$H$上的传递置换表示为$\phi$.
+
+    (1)若$\ker\phi=\l\{e\r\}$,则由群同态基本定理(定理\ref{qttjbdy})可知\begin{align*}
+        &G/\ker\phi\cong\im\phi\\
+        \iff&G\cong\im\phi<S_p,
+    \end{align*}于是\begin{align*}
+        |G|=|\im\phi|\Big||S_p|=p!,
+    \end{align*}结合$p$是$|G|$的最小素因子便知$|G|=p$,于是\begin{align*}
+        &|H|=\frac{|G|}{|G/H|}=\frac{p}{p}=1\\
+        \iff&H=\l\{e\r\}\\
+        \Lra\ &H\text{是$G$的正规子群}.
+    \end{align*}
+
+    (2)若$\ker\phi\neq\l\{e\r\}$,
+
+
+
+
+
 \end{proof}
 \begin{problem}[P98T21]
     证明任一非交换的$6$阶群同构于$S_3$.
