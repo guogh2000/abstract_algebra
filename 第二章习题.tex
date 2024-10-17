@@ -129,7 +129,7 @@
     \end{align*}且\begin{align}
         &\im\phi<S_n\nonumber\\
         \overset{|G/H|>1}{\Lra}&|\im\phi|>1\label{skdnj}\\
-        \Lra&\phi\neq\mr{id}\nonumber\\
+        \Lra&\im\phi\neq\l\{e\r\}\nonumber\\
         \Lra&\ker\phi\neq G\label{jnakd}.
     \end{align}
 
@@ -144,7 +144,7 @@
     (2)若$\ker\phi=\l\{e\r\}$,则\begin{align*}
         &G/\ker\phi\cong\im\phi\\
         &G\cong\im\phi<S_n,
-    \end{align*}结合\ref{skdnj}可知此时$G$同构于$S_n$的非平凡的正规子群$\im\phi$.
+    \end{align*}结合\eqref{skdnj}可知此时$G$同构于$S_n$的非平凡的正规子群$\im\phi$.
 
     由(1),(2)便知问题证毕.
 \end{proof}
@@ -165,11 +165,20 @@
     设$G$为有限群,$p$是$|G|$的最小素因子.证明指数为$p$的子群(若存在)必正规.
 \end{problem}
 \begin{proof}
-    设$H$是群$G$的子群并且$|H|=p$,下面来证明$H\lhd G$.
+    设$H$是群$G$的子群并且$|H|=p$,下面来证明$H\lhd G$.记$G$在$H$上的传递置换表示为$\phi$.
 
-    记$G$在$H$上的传递置换表示为$\phi$,则
+    (1)若$\ker\phi=\l\{e\r\}$,则由群同态基本定理(定理\ref{qttjbdy})可知\begin{align*}
+        &G/\ker\phi\cong\im\phi\\
+        \iff&G\cong\im\phi<S_p,
+    \end{align*}于是\begin{align*}
+        |G|=|\im\phi|\Big||S_p|=p!,
+    \end{align*}结合$p$是$|G|$的最小素因子便知$|G|=p$,于是\begin{align*}
+        &|H|=\frac{|G|}{|G/H|}=\frac{p}{p}=1\\
+        \iff&H=\l\{e\r\}\\
+        \Lra\ &H\text{是$G$的正规子群}.
+    \end{align*}
 
-
+    (2)若$\ker\phi\neq\l\{e\r\}$,
 
 
 
