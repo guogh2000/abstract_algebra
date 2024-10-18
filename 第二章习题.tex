@@ -175,17 +175,55 @@
 \begin{problem}[P98T21]
     证明任一非交换的$6$阶群同构于$S_3$.
 \end{problem}
+证明该问题需要用到以下引理.
+\begin{lemma}\label{sdfmk}
+    素数阶群都是循环群.
+\end{lemma}
 \begin{proof}
-    \stars
+    任取阶为素数$p$的有限群$G,e\neq g\in G$,于是由Lagrange定理(推论\ref{Lagrangedl})可知\begin{align*}
+        &\exists k\in\N_+\st|G|=k|<g>|\\
+        \overset{\text{$p$是素数,$g\neq e$}}{\Lra}&|G|=|<g>|\\
+        \Lra&G=<g>,
+    \end{align*}亦即$G$是循环群,由$G$的任意性可知问题得证.
+\end{proof}
+\begin{proof}
+    设$G$是非交换的$6$阶群.注意到\begin{align*}
+        6=2\times3,
+    \end{align*}所以由$Sl$第一定理(定理\ref{xldydl})可知$G$有阶为$2$的$\Sl$2-子群$A$,阶为$3$的$\Sl$3-子群$B$,由引理\ref{sdfmk}可知$A,B$都是循环群,故可设\begin{align*}
+        \text{$A=<\alpha>,B=<\beta>$,其中$o(a)=2,o(b)=3$.}
+    \end{align*}
+    由于$G$不交换,故可用反证法证明\begin{align*}
+        &\text{$\alpha,\beta$不交换}\\
+        \Lra&\alpha\neq\beta,\alpha\neq\beta^2\\
+        \overset{\beta\cdot\beta^2=\beta^3=e}{\Lra}&\alpha\neq\beta^{-1}\\
+        \Lra&\alpha\notin B,
+    \end{align*}所以$B$的左陪集$B,\alpha B$满足\begin{align*}
+        &B\cap\alpha B=\emptyset,|B|+|\alpha B|=|B|+|B|=3+3=6=|G|\\
+        \Lra&G=B\cup\alpha B=\l\{e,\beta,\beta^2,\alpha,\alpha\beta,\alpha\beta^2\r\}.
+    \end{align*}定义\begin{align*}
+        \phi:G\to&S_6\\
+        \alpha\mapsto&(12)\\
+        \beta\mapsto&(123),
+    \end{align*}利用上述讨论不难验证这是良定义的同构映射,从而\begin{align*}
+        G\cong S_6.
+    \end{align*}
 \end{proof}
 \begin{problem}[P98T29]
-    设$G$为有限群,$A,B$是$G$的两个非空子集.若$|A|+|B|>|G|$,则$AB=G$.
+    已知$A,B$是有限群$G$的两个非空子集.若$|A|+|B|>|G|$,则$AB=G$.
 \end{problem}
 \begin{proof}
-    \stars
+    反设$AB\neq G$,由于$AB\subset G$,所以\begin{align*}
+        &G/AB\supset\l\{AB\r\}\\
+        \Lra&[G:AB]>1\\
+        \Lra&\exists g\in G\st g\notin AB\\
+        \Lra&\exists g\in G\st\l\{g\r\}\cap AB=\emptyset\\
+        \Lra&\exists g\in G\st gB^{-1}\cap A=\emptyset\\
+        \overset{|gB^{-1}|=|B^{-1}|=|B|}{\Lra}&\text{$G$中至少有$|B|$个元素不在$A$中}\\
+        \overset{|G|\neq\infty}{\Lra}&|G|-|A|\geq|B|,
+    \end{align*}矛盾,假设不成立,从而$AB=G$.
 \end{proof}
 \begin{problem}[P98T33]
-    设$G$是有限群,$N\lhd G,P$为$N$的一个$\mr{Sylow}$子群,$T$为$P$在$G$中的正规化子.证明$G=NT$.
+    设$G$是有限群,$N\lhd G,P$为$N$的$\Sp$子群,$T$为$P$在$G$中的正规化子.证明$G=NT$.
 \end{problem}
 \begin{proof}
     \stars
