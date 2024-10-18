@@ -189,7 +189,7 @@
 \begin{proof}
     设$G$是非交换的$6$阶群.注意到\begin{align*}
         6=2\times3,
-    \end{align*}所以由$Sl$第一定理(定理\ref{xldydl})可知$G$有阶为$2$的$\Sl$2-子群$A$,阶为$3$的$\Sl$3-子群$B$,由引理\ref{sdfmk}可知$A,B$都是循环群,故可设\begin{align*}
+    \end{align*}所以由$Sl$第一定理(定理\ref{xldydl})可知$G$有阶为$2$的\Sl2$A$,阶为$3$的\Sl3$B$,由引理\ref{sdfmk}可知$A,B$都是循环群,故可设\begin{align*}
         \text{$A=<\alpha>,B=<\beta>$,其中$o(a)=2,o(b)=3$.}
     \end{align*}
     由于$G$不交换,故可用反证法证明\begin{align*}
@@ -223,13 +223,34 @@
     \end{align*}矛盾,假设不成立,从而$AB=G$.
 \end{proof}
 \begin{problem}[P98T33]
-    设$G$是有限群,$N\lhd G,P$为$N$的$\Sp$子群,$T$为$P$在$G$中的正规化子.证明$G=NT$.
+    已知$G$是有限群,$N\lhd G,P$为$N$的\Sl{p}.证明$G=N\cdot N_G(P)$.
 \end{problem}
 \begin{proof}
-    \stars
+    对$P$在$G$中的任意一个共轭子群$Q$,存在$g\in G$使得\begin{align*}
+        Q=gPg^{-1}\overset{\text{P<N}}{<}gNg^{-1}\xlongequal[]{N\lhd G}N,
+    \end{align*}可见$P$在$G$的共轭子群都在$N$中,所以对$\forall g\in G,gPg^{-1}$是$N$的\Sl{p},并且
+
+    (1)若$gPg^{-1}=P$,则\begin{align*}
+        &g\in N_G(P)\subset N\cdot N_G(P)\\
+        \Lra&G\subset N\cdot N_G(P).
+    \end{align*}
+
+    (2)若$gPg^{-1}\neq P$,注意到\begin{align*}
+        \text{$gPg^{-1}$是$P$在$G$中的共轭子群}\\
+        \text{$P$在$G$中的共轭子群也在$N$中},
+    \end{align*}所以由$P$是$N$的\Sl{p}与推论\ref{p81tl1}可知\begin{align*}
+        &\exists n\in N\st gPg^{-1}=nPn^{-1}\\
+        \iff&(n^{-1}g)P(g^{-1}n)=P\\
+        \iff&n^{-1}g\in N_G(P),
+    \end{align*}记$t\in N_G(P)\st n^{-1}g=t$,就有\begin{align*}
+        &g=nt\in N\cdot N_G(P)\\
+        \overset{g\text{的任意性}}{\Lra}&G\subset N\cdot N_G(P).
+    \end{align*}
+
+    由$N\cdot N_G(P)<G$与(1),(2)便知$G=N\cdot N_G(P)$.
 \end{proof}
 \begin{problem}[P98T35]
-    设$G$为有限群,$H<G,P$是$G$的$\Sp$子群,$N\lhd G$.证明$P\cap N$是$N$的一个$\Sp$子群,同时$PN/N$是$G/N$的一个$\Sp$子群.
+    已知$G$是有限群,$H<G,P$是$G$的\Sl{p}
 \end{problem}
 \begin{proof}
     \stars

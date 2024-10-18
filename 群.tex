@@ -564,7 +564,7 @@
     H_x=&\l\{g\in G:gxg^{-1}=x\r\}\nonumber\\
     =&\l\{g\in G:gx=xg\r\}.\label{sdaubhf}
 \end{align}
-\begin{definition}[中心化子]
+\begin{definition}[中心化子]\label{vxhz}
     称等式\eqref{sdaubhf}右端的集合为$x$在$G$里的中心化子,记作$Z(x)$,它就是在群$G$的共轭作用下$x$的稳定子群$H_x$.
 \end{definition}
 \begin{theorem}[轨道-稳定子定理]\label{gdwdzdl}
@@ -690,45 +690,47 @@ Lagrange定理(推论\ref{Lagrangedl})指出,有限群$G$的任意子群的阶�
         \iff&\forall h\in H,g_j^{-1}hg_j\in P\\
         \iff&\forall h\in H,h\in g_jPg_j^{-1}\\
         \iff&H\subset g_jPg_j^{-1},
-    \end{align*}注意到$H,P$均成群,所以$H<g_jPg_j^{-1}$,即$H$包含在一个与$P$共轭的$\Sp$子群中,定理得证.
+    \end{align*}注意到$H,P$均成群,所以$H<g_jPg_j^{-1}$,即$H$包含在一个与$P$共轭的\Sl{p}中,定理得证.
 \end{proof}
 \begin{corollary}\label{p81tl1}
-    对有限群而言,任意两个$\Sp$子群都互相共轭.
+    对有限群而言,任意两个\Sl{p}都互相共轭.
 \end{corollary}
 \begin{proof}
     \stars
 \end{proof}
 \begin{corollary}\label{asdinfjkasdfmk}
-    有限群$G$的$\Sp$子群是惟一的当且仅当$G$的$\Sp$子群是正规子群.
+    有限群$G$的\Sl{p}是惟一的当且仅当$G$的\Sl{p}是正规子群.
 \end{corollary}
 \begin{proof}
     $G$的子群$P$是正规子群即$P$的所有共轭子群都等与$P$自身.
 
-    任取$G$的两个$\Sp$子群$P_0,P$,由推论\ref{p81tl1}可知$P_0,P$互相共轭,又由于$P_0,P$互相共轭可知$P_0=P$,推论得证.
+    任取$G$的两个\Sl{p}$P_0,P$,由推论\ref{p81tl1}可知$P_0,P$互相共轭,又由于$P_0,P$互相共轭可知$P_0=P$,推论得证.
 \end{proof}
-\begin{definition}[正规化子]\label{zghz}
+\begin{definition}[正规化子]\label{vghz}
     对群$G$的任意子群$H$,定义\begin{align*}
-        N(H)=\l\{g\in G:gHg^{-1}=H\r\},
-    \end{align*}则$N(H)<G$且$H\subset N(H)$.称$N(H)$为子群$H$的正规化子.
+        N_G(H)=\l\{g\in G:gHg^{-1}=H\r\},
+    \end{align*}则$N_G(H)<G$且$H\subset N_G(H)$.称$N_G(H)$为子群$H$在$G$中的正规化子,简记为$N(H)$.
 \end{definition}
-由定义\ref{zghz}可立即推出$H\lhd N(H)$.
+\begin{remark}
+    由定义\ref{vghz}可立即推出$H\lhd N_G(H)$,这也是引出正规化子的意义.
+\end{remark}
 \begin{corollary}\label{p81tl2}
-    若$G$是有限群,$P$是$G$的$\Sp$子群,则\begin{align*}
-        (1)&N(N(P))=N(P)\\
-        (2)&\text{$N(P)$不包含$G$的另一个$\Sp$子群.}
+    若$G$是有限群,$P$是$G$的\Sl{p},则\begin{align*}
+        (1)&N_G(N_G(P))=N_G(P)\\
+        (2)&\text{$N_G(P)$不包含$G$的另一个\Sl{p}.}
     \end{align*}
 \end{corollary}
 \begin{proof}
     \stars
 \end{proof}
 \begin{corollary}\label{p81tl3}
-    若$G$是有限群,$p$是素数且$p\Big||G|$,则$G$的$\Sp$子群的个数是$|G|$的因子.
+    若$G$是有限群,$p$是素数且$p\Big||G|$,则$G$的\Sl{p}的个数是$|G|$的因子.
 \end{corollary}
 \begin{proof}
     \stars
 \end{proof}
 \begin{theorem}[Sylow第三定理]\label{xldsdl}
-    若$|G|=p^lm,p$是素数且$(p,m)=1,l\geq1$,记$G$的$\Sp$子群的个数为$k$,则$k\equiv1\mod p$.
+    若$|G|=p^lm,p$是素数且$(p,m)=1,l\geq1$,记$G$的\Sl{p}的个数为$k$,则$k\equiv1\mod p$.
 \end{theorem}
 \begin{analysis}
     注意到该定理的结论与推论\ref{p77tl4}十分相似,这引诱我们构造某$p$-群$P$,使其作用在某$k$元集合$X$后所得不动元素的个数为$1$.
@@ -748,7 +750,7 @@ Lagrange定理(推论\ref{Lagrangedl})指出,有限群$G$的任意子群的阶�
         \iff&\forall a\in P,aQa^{-1}=Q\\
         \iff&\forall a\in P,a\in N(Q)\\
         \iff&P\subset N(Q),
-    \end{align*}又$Q\subset N(Q)$且$P,Q$都是$G$的$\Sp$子群,所以由推论\ref{p81tl2}可知$P=Q$,进而$|X_0|=1$.由推论\ref{p77tl4}可知\begin{align*}
+    \end{align*}又$Q\subset N(Q)$且$P,Q$都是$G$的\Sl{p},所以由推论\ref{p81tl2}可知$P=Q$,进而$|X_0|=1$.由推论\ref{p77tl4}可知\begin{align*}
         |X_0|\equiv|X|\mod p,
     \end{align*}即\begin{align*}
         &1\equiv k\mod p\\
@@ -756,10 +758,10 @@ Lagrange定理(推论\ref{Lagrangedl})指出,有限群$G$的任意子群的阶�
     \end{align*}定理得证.
 \end{proof}
 \begin{corollary}\label{p82tl}
-    若群$G$的阶为$p^lm$,其中$p$是素数且$(p,m)=1$,则$G$的$\Sp$子群的个数是$m$的因子.
+    若群$G$的阶为$p^lm$,其中$p$是素数且$(p,m)=1$,则$G$的\Sl{p}的个数是$m$的因子.
 \end{corollary}
 \begin{proof}
-    设$G$的$\Sp$子群的个数为$k$.
+    设$G$的\Sl{p}的个数为$k$.
 
     由推论\ref{p81tl3}可知$k\Big||G|$,由$|G|=p^lm$,$p$是素数且$(p,m)=1$\begin{align}\label{asdkmfjn}
         k|p\text{或}k|m.
