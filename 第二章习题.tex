@@ -1,6 +1,6 @@
 \section{CHAPTER2习题}
 \begin{problem}[P97T1]
-    已知$G$是有限群,$N\lhd G$,$\l(|N|,|G/N|\r)=1$.证明:若元素$a$的阶整除$|N|$,则$a\in N$.
+    已知$G$是有限群,$N\lhd G$,$\l(|N|,[G:N]\r)=1$.证明:若元素$a$的阶整除$|N|$,则$a\in N$.
 \end{problem}
 \begin{proof}
     考虑自然同态\begin{align*}
@@ -17,12 +17,12 @@
     注意到\begin{align*}
         aN\in G/N,
     \end{align*}所以\begin{align*}
-        \l|aN\r|\Big|\l|G/N\r|,
+        \l|aN\r|\Big|\l[G:N\r],
     \end{align*}即\begin{align}\label{asjgndk}
-        \l|\pi(a)\r|\Big|\l|G/N\r|.
+        \l|\pi(a)\r|\Big|\l[G:N\r].
     \end{align}
 
-    由式\eqref{snjdkk}与\eqref{asjgndk}结合$\l(|N|,|G/N|\r)=1$可知\begin{align*}
+    由式\eqref{snjdkk}与\eqref{asjgndk}结合$\l(|N|,[G:N]\r)=1$可知\begin{align*}
         &|\pi(a)|=1\\
         \Lra&\pi(a)=N\\
         \Lra&aN=N\\
@@ -116,43 +116,37 @@
     由(1),(2)便知$g(H_1\cap H_2)=gH_1\cap gH_2$,综上,问题得证.
 \end{proof}
 \begin{problem}[P98T18]\label{p98t18}
-    设$G$为有限群,$H<G$且$|G/H|=n>1$.证明$G$或者含有指数能整除$n!$的非平凡正规子群,或者$G$同构于$S_n$的一个子群.
+    设$G$为有限群,$H<G$且$[G:H]=n>1$.证明$G$或者含有指数能整除$n!$的非平凡正规子群,或者$G$同构于$S_n$的一个子群.
 \end{problem}
 \begin{proof}
-    记$P=\l\{a_iH:i=,1,\cdots,n,a\in G\r\}$为$H$的所有左陪集组成的集合.定义群$G$在集合$P$上的群作用为\begin{align*}
-        g:P\to&P\\
-        a_iH\mapsto&ga_iH,
-    \end{align*}容易验证这是良定义的.从而群作用$g$能诱导出群同态\begin{align*}
-        \phi: G\to S_n,
-    \end{align*}其中\begin{align*}
-        \ker\phi\lhd G
-    \end{align*}且\begin{align}
-        &\im\phi<S_n\nonumber\\
-        \overset{|G/H|>1}{\Lra}&|\im\phi|>1\label{skdnj}\\
+    设群$G$在子群$H$上的传递置换表示(定义\ref{idvhbu})为\begin{align*}
+        \phi:G\to S_n.
+    \end{align*}
+    
+    由$[G:H]>1$可知\begin{align}
+        &\im\phi>1\nonumber\\
         \Lra&\im\phi\neq\l\{e\r\}\nonumber\\
         \Lra&\ker\phi\neq G\label{jnakd}.
     \end{align}
 
-    (1)当$\ker\phi\neq\l\{e\r\}$时,结合\eqref{jnakd}可知$G/\ker\phi$中的任意元素$g\ker\phi$满足\begin{align*}
-        &g\ker\phi\lhd G\\
-        &g\ker\phi\neq\l\{e\r\}\\
-        &g\ker\phi\neq G,
-    \end{align*}又\begin{align*}
-        |g\ker\phi|\Big||G/\ker\phi|\xlongequal[]{\text{群同态基本定理(定理\ref{qttjbdy})}}|\im\phi|\Big||S_n|=n!,
-    \end{align*}所以$g\ker\phi$是$G$的一个指数能整除$n!$的非平凡子群.
+    (1)若$\ker\phi\neq\l\{e\r\}$,结合\eqref{jnakd}可知\begin{align}
+        \text{$\ker\phi$是$G$的非平凡正规子群.}\label{uhnj}
+    \end{align}注意到\begin{align}
+        |\ker\phi|\Big|[G:H]\xlongequal[]{\text{群同态基本定理(定理\ref{qttjbdy})}}|\im\phi|\Big||S_n|=n!,\label{sjda}
+    \end{align}所以由\eqref{uhnj}与\eqref{sjda}可知$\ker\phi$是$G$的指数能够整除$n!$的非平凡的正规子群.
     
     (2)若$\ker\phi=\l\{e\r\}$,则\begin{align*}
         &G/\ker\phi\cong\im\phi\\
-        &G\cong\im\phi<S_n,
-    \end{align*}结合\eqref{skdnj}可知此时$G$同构于$S_n$的非平凡的正规子群$\im\phi$.
+        \iff&G\cong\im\phi<S_n,
+    \end{align*}即$G$同构于$S_n$的子群$\im\phi$.
 
     由(1),(2)便知问题证毕.
 \end{proof}
 \begin{problem}[P98T19]
-    设$G$为有限群,$p$是$|G|$的最小素因子.证明指数为$p$的子群(若存在)必正规.
+    设$G$为有限群,$p$是$|G|$的最小素因子.证明指数(定义\ref{vs})为$p$的子群(若存在)必正规.
 \end{problem}
 \begin{proof}
-    设$H$是群$G$的子群并且$|H|=p$,下面来证明$H\lhd G$.记$G$在$H$上的传递置换表示为$\phi$.
+    设$H$是群$G$的指数为$p$的子群,即$[G:H]=p$,$\phi$是$G$在$H$上的传递置换表示(定义\ref{idvhbu}).
 
     (1)若$\ker\phi=\l\{e\r\}$,则由群同态基本定理(定理\ref{qttjbdy})可知\begin{align*}
         &G/\ker\phi\cong\im\phi\\
@@ -160,17 +154,23 @@
     \end{align*}于是\begin{align*}
         |G|=|\im\phi|\Big||S_p|=p!,
     \end{align*}结合$p$是$|G|$的最小素因子便知$|G|=p$,于是\begin{align*}
-        &|H|=\frac{|G|}{|G/H|}=\frac{p}{p}=1\\
+        &|H|=\frac{|G|}{[G:H]}=\frac{p}{p}=1\\
         \iff&H=\l\{e\r\}\\
         \Lra\ &H\text{是$G$的正规子群}.
     \end{align*}
 
-    (2)若$\ker\phi\neq\l\{e\r\}$,
+    (2)若$\ker\phi\neq\l\{e\r\}$,则\begin{align*}
+        &g\in\ker\phi\\
+        \iff&\forall a_i\in G,ga_iH=a_iH\\
+        \overset{\text{当$a_i=e$时}}{\Lra}&gH=H\\
+        \iff&g\in H,
+    \end{align*}由此可见$\ker\phi\subset H$,从而$\ker\phi\lhd H$.注意到\begin{align*}
+        &[G:\ker\phi]=|\im\phi|\Big||S_p|=p!\\
+        \overset{\text{$p$是$|G|$的最小素因子}}{\Lra}&[G:\ker\phi]=p\\
+        \overset{\ker\phi\lhd H,[G:H]=p}{\Lra}&\text{$H=\ker\phi$是$G$的指数为$p$的正规子群}.
+    \end{align*}
 
-
-
-
-
+    由(1),(2)可知问题证毕.
 \end{proof}
 \begin{problem}[P98T21]
     证明任一非交换的$6$阶群同构于$S_3$.
@@ -179,7 +179,7 @@
     \stars
 \end{proof}
 \begin{problem}[P98T29]
-    设$G$为有限群,$A,B$是$G$的两个非空子集,如果$|A|+|B|>|G|$,则$AB=G$.
+    设$G$为有限群,$A,B$是$G$的两个非空子集.若$|A|+|B|>|G|$,则$AB=G$.
 \end{problem}
 \begin{proof}
     \stars
