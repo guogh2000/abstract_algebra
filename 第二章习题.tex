@@ -107,7 +107,7 @@
 
     (2)反之,对任意给定的$g\in G$,在$gH_1\cap gH_2$中任取$gh_0$,有\begin{align*}
         &gh_0\in gH_1,gh_0\in gH_2\\
-        \overset{g\text{的任意性}}{\Lra}&h_0\in H_1,h_0\in H_2\\
+        \xLra[]{g\text{的任意性}}&h_0\in H_1,h_0\in H_2\\
         \Lra&h_0\in H_1\cap H_2\\
         \Lra&gh_0\in g(H_1\cap H_2)\\
         \Lra&gH_1\cap gH_2\subset g(H_1\cap H_2).
@@ -162,12 +162,12 @@
     (2)若$\ker\phi\neq\l\{e\r\}$,则\begin{align*}
         &g\in\ker\phi\\
         \iff&\forall a_i\in G,ga_iH=a_iH\\
-        \overset{\text{当$a_i=e$时}}{\Lra}&gH=H\\
+        \xLra[]{\text{当$a_i=e$时}}\ &gH=H\\
         \iff&g\in H,
     \end{align*}由此可见$\ker\phi\subset H$,从而$\ker\phi\lhd H$.注意到\begin{align*}
         &[G:\ker\phi]=|\im\phi|\Big||S_p|=p!\\
-        \overset{\text{$p$是$|G|$的最小素因子}}{\Lra}&[G:\ker\phi]=p\\
-        \overset{\ker\phi\lhd H,[G:H]=p}{\Lra}&\text{$H=\ker\phi$是$G$的指数为$p$的正规子群}.
+        \xLra[]{\text{$p$是$|G|$的最小素因子}}&[G:\ker\phi]=p\\
+        \xLra[]{\ker\phi\lhd H,[G:H]=p}&\text{$H=\ker\phi$是$G$的指数为$p$的正规子群}.
     \end{align*}
 
     由(1),(2)可知问题证毕.
@@ -182,7 +182,7 @@
 \begin{proof}
     任取阶为素数$p$的有限群$G,e\neq g\in G$,于是由Lagrange定理(推论\ref{Lagrangedl})可知\begin{align*}
         &\exists k\in\N_+\st|G|=k|<g>|\\
-        \overset{\text{$p$是素数,$g\neq e$}}{\Lra}&|G|=|<g>|\\
+        \xLra[]{\text{$p$是素数,$g\neq e$}}&|G|=|<g>|\\
         \Lra&G=<g>,
     \end{align*}亦即$G$是循环群,由$G$的任意性可知问题得证.
 \end{proof}
@@ -195,7 +195,7 @@
     由于$G$不交换,故可用反证法证明\begin{align*}
         &\text{$\alpha,\beta$不交换}\\
         \Lra&\alpha\neq\beta,\alpha\neq\beta^2\\
-        \overset{\beta\cdot\beta^2=\beta^3=e}{\Lra}&\alpha\neq\beta^{-1}\\
+        \xLra[]{\beta\cdot\beta^2=\beta^3=e}&\alpha\neq\beta^{-1}\\
         \Lra&\alpha\notin B,
     \end{align*}所以$B$的左陪集$B,\alpha B$满足\begin{align*}
         &B\cap\alpha B=\emptyset,|B|+|\alpha B|=|B|+|B|=3+3=6=|G|\\
@@ -218,8 +218,8 @@
         \Lra&\exists g\in G\st g\notin AB\\
         \Lra&\exists g\in G\st\l\{g\r\}\cap AB=\emptyset\\
         \Lra&\exists g\in G\st gB^{-1}\cap A=\emptyset\\
-        \overset{|gB^{-1}|=|B^{-1}|=|B|}{\Lra}&\text{$G$中至少有$|B|$个元素不在$A$中}\\
-        \overset{|G|\neq\infty}{\Lra}&|G|-|A|\geq|B|,
+        \xLra[]{|gB^{-1}|=|B^{-1}|=|B|}&\text{$G$中至少有$|B|$个元素不在$A$中}\\
+        \xLra[]{|G|\neq\infty}&|G|-|A|\geq|B|,
     \end{align*}矛盾,假设不成立,从而$AB=G$.
 \end{proof}
 \begin{problem}[P98T33]
@@ -236,15 +236,15 @@
     \end{align*}
 
     (2)若$gPg^{-1}\neq P$,注意到\begin{align*}
-        \text{$gPg^{-1}$是$P$在$G$中的共轭子群}\\
-        \text{$P$在$G$中的共轭子群也在$N$中},
+        &\text{$gPg^{-1}$是$P$在$G$中的共轭子群}\\
+        &\text{$P$在$G$中的共轭子群也在$N$中},
     \end{align*}所以由$P$是$N$的\Sl{p}与推论\ref{p81tl1}可知\begin{align*}
         &\exists n\in N\st gPg^{-1}=nPn^{-1}\\
         \iff&(n^{-1}g)P(g^{-1}n)=P\\
         \iff&n^{-1}g\in N_G(P),
     \end{align*}记$t\in N_G(P)\st n^{-1}g=t$,就有\begin{align*}
         &g=nt\in N\cdot N_G(P)\\
-        \overset{g\text{的任意性}}{\Lra}&G\subset N\cdot N_G(P).
+        \xLra[]{g\text{的任意性}}&G\subset N\cdot N_G(P).
     \end{align*}
 
     由$N\cdot N_G(P)<G$与(1),(2)便知$G=N\cdot N_G(P)$.
