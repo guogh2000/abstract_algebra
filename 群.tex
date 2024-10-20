@@ -1015,4 +1015,77 @@ Lagrange定理(推论\ref{Lagrangedl})指出,有限群$G$的任意子群的阶�
 % \end{*problem}
 % \noindent 这就是所谓的群扩张问题.群扩张是群论中的重要理论,这里不作讨论.
 \section{幺半群}
-\stars
+\begin{definition}[幺半群]\label{ybq}
+    设$S$是一个非空集合,在$G$上定义了一个称之为乘法的代数运算,记作$ab$,若该代数运算满足如下性质,就称$S$为一个群\begin{align*}
+        [\text{结合律}]&(1)(ab)c=a(bc)\\
+        [\text{幺元}]&(2)\exists e\in S\st\forall s\in S,es=se=s.
+    \end{align*}
+\end{definition}
+\begin{remark}
+    定义\ref{ybq}中的幺元是惟一的.\qed
+\end{remark}
+\begin{definition}[子幺半群]
+    若$Q$是幺半群$S$的具有以下性质的非空子集合\begin{align*}
+        &(1)e\in Q\\
+        &(2)\text{$Q$对于$S$的代数运算封闭},
+    \end{align*}则称$Q$是$S$的子幺半群.
+\end{definition}
+\begin{definition}[变换幺半群]
+    幺半群$M(X)$的子幺半群称为集合$X$上的变换幺半群.
+    
+    \stars
+\end{definition}
+\begin{definition}[同态,同构]
+    已知$\phi$是幺半群$S$到幺半群$S'$的映射,若它适合以下两个条件\begin{align*}
+        &(1)\phi(e)=e'\\
+        &(2)\forall a,b\in S,\phi(ab)=\phi(a)\phi(b),
+    \end{align*}则称$\phi$为$S$到$S'$的同态映射.特别地,若$\phi$还是一一映射,则称$\phi$为同构映射.
+\end{definition}
+\begin{theorem}
+    任一幺半群$S$都与集合$S$上的变换幺半群同构.
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{definition}[同余关系]
+    已知$S$为幺半群,$\sim$为定义在$S$上的等价关系.若$\sim$条件\begin{align*}
+        a\sim b,b\sim c\Lra ab\sim cd,
+    \end{align*}则称$\sim$为$S$上的同余关系.
+\end{definition}
+\begin{definition}[剩余类的乘法]\label{uyldif}
+    已知$A,B$为幺半群$S$的两个剩余类,$a\in A,b\in B$.称$ab$所在的剩余类为剩余类$A,B$的乘积,记作$AB$.
+\end{definition}
+\begin{proposition}
+    幺半群$S$的全体剩余类在定义\ref{uyldif}中的乘法下成幺半群.
+\end{proposition}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{definition}[商幺半群]
+    已知$\sim$为定义在幺半群$S$上的同余关系,称全体剩余类在上述定义下所成的幺半群为$S$对于同余关系$\sim$的商幺半群,记为$S/\sim$.
+\end{definition}
+\begin{theorem}
+    已知$\phi:S\to S'$是幺半群$S$到$S'$的同态,定义\begin{align*}
+        a\sim b\iff\phi(a)=\phi(b),
+    \end{align*}则$\sim$是同余关系.
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{theorem}
+    已知$\sim$为定义在幺半群$S$上的同余关系,$\pi:S\to S/\sim$为自然同态,$\phi:S\to S'$为同态,则存在惟一的同态$\psi:S/\sim\to S'$使得\begin{align*}
+        \phi=\pi\psi,
+    \end{align*}即\begin{center}
+        \begin{tikzcd}
+            &  & S'                                            \\
+            &  &                                               \\
+S \arrow[rruu, "\phi" description] \arrow[rr, "\pi" description] \arrow[rruu, "\psi\pi", dashed, bend left] &  & S/\sim \arrow[uu, "\psi" description, dashed]
+\end{tikzcd}
+    \end{center}
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{definition}[半群]
+    若在幺半群的定义(定义\ref{ybq})中不要求有幺元,则称这样的代数结构为半群.
+\end{definition}

@@ -6,39 +6,53 @@
 \section{群的定义和简单性质}
 \begin{definition}[群]
     设$G$是一个非空集合,在$G$上定义了一个称之为乘法的代数运算,记作$ab$,若该代数运算满足如下性质,就称$G$为一个群\begin{align*}
-        [\text{结合律}]&(1)(ab)c=a(bc);\\
-        [\text{左幺元}]&(2)\exists e\in G\ \ \mr{s.t.}\ \ \forall a\in G,\text{有}ea=a;\\
+        [\text{结合律}]&(1)(ab)c=a(bc)\\
+        [\text{左幺元}]&(2)\exists e\in G\ \ \mr{s.t.}\ \ \forall a\in G,\text{有}ea=a\\
         [\text{左逆元}]&(3)\forall a\in G,\exists b\in G\ \ \mr{s.t.}\ \ ba=e.
     \end{align*}
 \end{definition}
-1.若$ba=e$,则$ab=e$.\begin{proof}
+\begin{proposition}[左右逆元相等]
+    若$ba=e$,则$ab=e$.
+\end{proposition}
+\begin{proof}
     任取$b\in G$,存在$c\in G$,使得$cb=e$,于是\begin{align}
         a=ea=(cb)a=c(ba)=ce,\label{1.1}
     \end{align}在等式\eqref{1.1}两侧同时右乘$b$,就有\begin{align*}
         ab=(ce)b=c(eb)=cb=e,
     \end{align*}问题证毕.
 \end{proof}
-
-2.若对所有的$a\in G$,有$ea=a$,那么也有$ae=a$,对所有的$a\in G$.\begin{proof}
+\begin{proposition}[左右幺元相等]
+    若对所有的$a\in G$,有$ea=a$,那么也有$ae=a$,对所有的$a\in G$.
+\end{proposition}
+\begin{proof}
     取$b\in G$,使得$ba=e$,同时$ab=e$,于是\begin{align*}
         ae=a(ba)=(ab)a=ea=a,
     \end{align*}问题证毕.
 \end{proof}
-3.群$G$中有惟一的元素$e$具有性质\begin{align*}
-    \forall a\in G,ea=ae=a.
-\end{align*}\begin{proof}
+\begin{proposition}[幺元惟一性]
+    群$G$中有惟一的元素$e$具有性质\begin{align*}
+        \forall a\in G,ea=ae=a.
+    \end{align*}
+\end{proposition}
+\begin{proof}
     假设$G$中有元素$e_1,e_2$满足此性质,则\begin{align*}
         e_1=e_1e_2=e_2,
     \end{align*}可见惟一性得证.
 \end{proof}
-4.对群$G$中任意元素$a$,有惟一元素$b$,使$ab=ba=e$.\begin{proof}
+\begin{proposition}[逆元惟一性]
+    对群$G$中任意元素$a$,有惟一元素$b$,使$ab=ba=e$.
+\end{proposition}
+\begin{proof}
     假设在$G$中还有元素$c$满足$ac=ca=e$,则\begin{align*}
         c=ec=ce=c(ab)=(ca)b=eb=b,
     \end{align*}这就证明了惟一性.
 \end{proof}
-5.对于群$G$中任意元素$a,b$,方程\begin{align*}
-    ax=b
-\end{align*}在$G$中有惟一解.\begin{proof}
+\begin{proposition}
+    对于群$G$中任意元素$a,b$,方程\begin{align*}
+        ax=b
+    \end{align*}在$G$中有惟一解.
+\end{proposition}
+\begin{proof}
     在题设方程两侧同时左乘$a^{-1}\in G$,有\begin{align*}
         (a^{-1}a)x=a^{-1}b
     \end{align*}亦即$x=a^{-1}b\in G$,解的存在性得证.
@@ -223,15 +237,15 @@
 
 \begin{definition}[象]
     若$\varphi:G\mapsto G'$,定义\begin{align*}
-        \varphi G=\l\{\varphi(a):a\in G\r\}
+        \im\varphi=\l\{\varphi(a):a\in G\r\}
     \end{align*}为同态映射$\varphi$的象.
 \end{definition}
 \begin{remark}
-    (1)易见$\varphi G$是$G'$的子群;
+    (1)易见$\im\varphi$是$G'$的子群;
 
-    (2)若$\varphi$是映上的,即$\varphi G=G'$,称$\varphi$为满同态;
+    (2)若$\varphi$是映上的,即$\im\varphi=G'$,称$\varphi$为满同态;
 
-    (3)若$\varphi$是单射,即$G$与$\varphi G$同构,亦即$G$与$G'$的一个子群同构,则称$\varphi$为单一同态,或嵌入映射.
+    (3)若$\varphi$是单射,即$G$与$\im\varphi$同构,亦即$G$与$G'$的一个子群同构,则称$\varphi$为单一同态,或嵌入映射.
 \end{remark}
 \begin{definition}[完全反象,核]
     对于同态映射$\varphi:G\mapsto G'$,定义\begin{align*}
