@@ -1,3 +1,71 @@
-\chapter{环}
 第一章介绍了环,理想,商环以及环同态等概念并建立了环同态基本定理.本章将进一步给出环的几个重要的同态定理与几种构造环的方法.
 \section{环的同态定理}
+在给出环的同态定理之前,先介绍理想的运算.
+\begin{proposition}
+    已知$H,N$是环$R$的子环,则$H\cap N$是环$R$的子环.
+\end{proposition}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{proposition}
+    已知$H$是环$R$的子环,$N$是环$R$的理想,则$H\cap N$是环$H$的理想.
+\end{proposition}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{definition}[子环的和]
+    已知$H,N$是环$R$的子环,则称集合\begin{align*}
+        \l\{h+n:h\in H,n\in N\r\}
+    \end{align*}为子环$H,N$的和,记作$H+N$.
+\end{definition}
+\begin{remark}
+    子环的和不一定是子环,但子环的和关于环的加法成$\mr{Abel}$群.
+\end{remark}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{proposition}
+    已知$H$是环$R$的子环,$N$是$R$的理想,则$H+N$是$R$子环.
+\end{proposition}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{proposition}
+    已知$H,N$是环$R$的理想,则$H+N$是$R$的理想.
+\end{proposition}
+\begin{proof}
+    \stars
+\end{proof}
+下面开始介绍环的同态定理.
+\begin{theorem}[环的第一同构定理]\label{hddytgdl}
+    已知$H,N$是环$R$的子环,理想,则\begin{align*}
+        H/H\cap N\cong H+N/N.
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{theorem}\label{p102dl2}
+    已知$R$是环,$\sigma:R\to\im\sigma$是同态映射,则映射\begin{align*}
+        \phi:A\to&B\\
+        H\mapsto&\im\sigma|_{H}
+    \end{align*}是一一对应且理想与理想对应,其中\begin{align*}
+        &A=\l\{H:H\supset\ker\sigma,H\text{是}R\text{的子环}\r\}\\
+        &B=\l\{H_0:H_0\text{是}\im\sigma\text{的子环}\r\}.
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{theorem}[环的第二同构定理]\label{hddetgdl}
+    已知$R$是环,$\sigma:R\to\im\sigma$是同态映射,$H$是$R$的理想且$H\supset\ker\sigma$,则\begin{align*}
+        R/H\cong\l(R/\ker\sigma\r)/\l(H/\ker\sigma\r).
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{remark}
+    取$H=\ker\sigma$即得环同态基本定理(定理\ref{httjbdl}).
+\end{remark}
+将环的第一同构定理(定理\ref{hddytgdl})与环的第二同构定理(定理\ref{hddetgdl})统称为环的同态定理.

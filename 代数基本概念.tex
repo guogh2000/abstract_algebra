@@ -1,4 +1,3 @@
-\chapter{代数基本概念}
 \section{代数运算}
 \begin{definition}[代数运算]
     设$A$是一个非空集合,任意一个由$A\times A\lra A$的映射就称为定义在$A$上的代数运算.
@@ -448,10 +447,16 @@
 \section{环,子环}
 \begin{definition}[环]
     设$L$是一个非空集合,在$L$上定义了两个代数运算,一个叫加法,记为$a+b$,一个叫乘法,记为$ab$.若这两种运算具有性质\begin{align*}
-        &(1)\text{$L$对于加法构成Abel群};\\
+        &(1)\text{$L$对于加法构成$\mr{Abel}$群};\\
         &(2)\text{$L$对于乘法满足结合律};\\
         &(3)\text{$L$满足乘法对加法的分配律},
     \end{align*}则称$L$为环.
+
+    在学习了幺半群后,可用以下更简洁的语言定义环.
+
+    已知$(L,+)$成$\mr{Abel}$群,$(L,\cdot)$成幺半群,并且$\cdot$关于$+$满足如下结合律\begin{align*}
+        \forall a,b,c\in L,a\cdot(b+c)=a\cdot b+a\cdot c,
+    \end{align*}则称$(L,+,\cdot)$为环.
 \end{definition}
 \begin{definition}[子环]
     设$S$是环$L$的非空子集合,若$S$对于$L$的两种运算也成环,则称环$S$是环$L$的子环.
