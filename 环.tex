@@ -1,17 +1,44 @@
 第一章介绍了环,理想,商环以及环同态等概念并建立了环同态基本定理.本章将进一步给出环的几个重要的同态定理与几种构造环的方法.
 \section{环的同态定理}
 在给出环的同态定理之前,先介绍理想的运算.
-\begin{proposition}
+\begin{proposition}\label{jkasdnf}
     已知$H,N$是环$R$的子环,则$H\cap N$是环$R$的子环.
 \end{proposition}
 \begin{proof}
-    \stars
+    $\forall x,y\in H\cap N$注意到\begin{align*}
+        x,y\in H\Lra&\begin{array}{l}
+            x-y\in H\\
+            xy\in H,
+        \end{array}\\
+        x,y\in N\Lra&\begin{array}{l}
+            x-y\in N\\
+            xy\in N,
+        \end{array}
+    \end{align*}可见\begin{align*}
+        &\forall x,y\in H\cap N\Lra\begin{array}{l}
+            x-y\in H\cap N\\
+            xy\in H\cap N\\
+        \end{array}\\
+        \iff&\begin{array}{l}
+            H\cap N\text{是}R\text{的加法子群}\\
+            \text{$H\cap N$关于$R$的乘法封闭,}
+        \end{array}\\
+        \iff&\text{$H\cap N$是$R$的子环},
+    \end{align*}命题得证.
 \end{proof}
 \begin{proposition}
     已知$H$是环$R$的子环,$N$是环$R$的理想,则$H\cap N$是环$H$的理想.
 \end{proposition}
 \begin{proof}
-    \stars
+    注意到\begin{align*}
+        \text{$H$是$R$的子环}\Lra&\text{$H$是$R$的加法子群}\\
+        \text{$N$是$R$的理想}\Lra&\text{$N$是$R$的加法子群},
+    \end{align*}所以$H\cap N$是$R$的加法子群.
+
+    由于$N$是环$R$的理想,故$\forall n\in H\cap N,h\in H$\begin{align}
+        &n\in N,h\in H\subset R\Lra nh,hn\in N\label{klm}\\
+        &n\in H,h\in H\Lra nh,hn\in H,\label{sadklm}
+    \end{align}由\eqref{klm}与\eqref{sadklm}便知$nh,hn\in H\cap N$,从而$H\cap N$是$H$的理想.
 \end{proof}
 \begin{definition}[子环的和]
     已知$H,N$是环$R$的子环,则称集合\begin{align*}
@@ -19,7 +46,7 @@
     \end{align*}为子环$H,N$的和,记作$H+N$.
 \end{definition}
 \begin{remark}
-    子环的和不一定是子环,但子环的和关于环的加法成$\mr{Abel}$群.
+    子环的和不一定是子环,但子环的和关于环的加法成群.
 \end{remark}
 \begin{proof}
     \stars
