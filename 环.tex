@@ -1,30 +1,27 @@
 第一章介绍了环,理想,商环以及环同态等概念并建立了环同态基本定理.本章将进一步给出环的几个重要的同态定理与几种构造环的方法.
 \section{环的同态定理}
 在给出环的同态定理之前,先介绍理想的运算.
+\begin{proposition}
+    子群的交仍是子群.
+
+    \stars
+\end{proposition}
+\begin{proof}
+    1%\stars
+\end{proof}
 \begin{proposition}\label{jkasdnf}
     已知$H,N$是环$R$的子环,则$H\cap N$是环$R$的子环.
 \end{proposition}
 \begin{proof}
+    由于$H\cap N$是$R$的加法子Abel群,所以只需证明$H\cap N$是关于$R$的乘法封闭即可.
+    
     $\forall x,y\in H\cap N$注意到\begin{align*}
-        x,y\in H\Lra&\begin{array}{l}
-            x-y\in H\\
-            xy\in H,
-        \end{array}\\
-        x,y\in N\Lra&\begin{array}{l}
-            x-y\in N\\
-            xy\in N,
-        \end{array}
+        x,y\in H\Lra&xy\in H\\
+        x,y\in N\Lra&xy\in N,
     \end{align*}可见\begin{align*}
-        &\forall x,y\in H\cap N\Lra\begin{array}{l}
-            x-y\in H\cap N\\
-            xy\in H\cap N\\
-        \end{array}\\
-        \iff&\begin{array}{l}
-            H\cap N\text{是}R\text{的加法子群}\\
-            \text{$H\cap N$关于$R$的乘法封闭,}
-        \end{array}\\
-        \iff&\text{$H\cap N$是$R$的子环},
-    \end{align*}命题得证.
+        \forall x,y\in H\cap N\Lra&xy\in H\cap N\\
+        \iff&\text{$H\cap N$关于$R$的乘法封闭,}
+    \end{align*}所以$H\cap N$是$R$的子环,命题得证.
 \end{proof}
 \begin{proposition}
     已知$H$是环$R$的子环,$N$是环$R$的理想,则$H\cap N$是环$H$的理想.
@@ -49,19 +46,47 @@
     子环的和不一定是子环,但子环的和关于环的加法成群.
 \end{remark}
 \begin{proof}
-    \stars
+    对于第一个论断,考虑以下反例\begin{*example}
+        已知$R$是数域$\F$上全体$2$阶方阵关于矩阵的加法与乘法所成的环,令\begin{align*}
+            &H=\l\{\l(\begin{matrix}
+                0&0\\
+                a&0
+            \end{matrix}\r):a\in\F\r\}\\
+            &N=\l\{\l(\begin{matrix}
+                0&b\\
+                0&0
+            \end{matrix}\r):b\in\F\r\},
+        \end{align*}容易验证$H,N$是$R$的子环,$H+N$不是$R$的子环.
+    \end{*example}
+    对于第二个论断,由群的第一同构定理(定理\ref{qddytgdl})即得成立.
 \end{proof}
 \begin{proposition}
     已知$H$是环$R$的子环,$N$是$R$的理想,则$H+N$是$R$子环.
 \end{proposition}
 \begin{proof}
-    \stars
+    由群的第一同构定理(定理\ref{qddytgdl})可知,$H+N$是$R$的加法子环,所以只要证明$H+N$关于$R$的乘法封闭即可.
+
+    $\forall x,y\in H,N,\exists x_1,y_1\in H,x_2,y_2\in N\st x=x_1+x_2,y=y_1+y_2$,所以\begin{align*}
+        xy=&(x_1+x_2)(y_1+y_2)\\
+        =&x_1y_1+x_1y_2+x_2y_1+x_2y_2,
+    \end{align*}注意到$x_1y_2\in H,x_1y_2,x_2y_2,x_2y_2\in N$,所以\begin{align*}
+        xy\in H+N,
+    \end{align*}这就证明了$H+N$关于$R$的乘法封闭.
+
+    综上,问题得证.
 \end{proof}
 \begin{proposition}
     已知$H,N$是环$R$的理想,则$H+N$是$R$的理想.
 \end{proposition}
 \begin{proof}
-    \stars
+    由群的第一同构定理(定理\ref{qddytgdl})可知,$H+N$是$R$的加法子群,所以只要证明$H+N$关于$R$的乘法具有吸收性即可.
+
+    注意到\begin{align*}
+        &\forall a\in H+N,\exists a_1\in H,a_2\in N\st a=a_1+a_2\\
+        \Lra&\forall r\in R,\\
+        &ar=(a_1+a_2)r=a_1r+a_2r\in H+N\\
+        &ra=r(a_1+a_2)=ra_1+ra_2\in H+N,
+    \end{align*}所以$H+N$是$R$的理想.
 \end{proof}
 下面开始介绍环的同态定理.
 \begin{theorem}[环的第一同构定理]\label{hddytgdl}

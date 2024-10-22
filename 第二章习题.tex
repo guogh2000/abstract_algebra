@@ -250,8 +250,18 @@
     由$N\cdot N_G(P)<G$与(1),(2)便知$G=N\cdot N_G(P)$.
 \end{proof}
 \begin{problem}[P98T35]
-    已知$G$是有限群,$H<G,P$是$G$的\Sl{p}
+    已知$G$是有限群,$H<G,P$是$G$的\Sl{p},$p\Big||H|$,证明存在$a\in G\st aPa^{-1}\cap H$是$H$的\Sl{p}.
 \end{problem}
 \begin{proof}
-    \stars
+    由$p\Big||H|$可知$H$存在\Sl{p}子群,记为$A$,它也是$G$的$p$-群,从而由Sylow第二定理(定理\ref{xldedl})可知\begin{align*}
+        \exists a\in G\st A\subset aPa^{-1},
+    \end{align*}从而\begin{align}
+        A\subset aPa^{-1}\cap H.\label{fsdjkn}
+    \end{align}
+
+    注意到$aPa^{-1}\cap H$是$H$的阶为$p$的幂的子群,所以\begin{align}
+        |aPa^{-1}\cap H|\leq|H|.\label{afsdkjn}
+    \end{align}
+
+    由\eqref{fsdjkn}与\eqref{afsdkjn}便知$aPa^{-1}$是$H$的\Sl{p},问题得证.
 \end{proof}
