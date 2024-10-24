@@ -60,15 +60,12 @@
         (2)&H\cap N\lhd H\text{且}H/H\cap N\cong NH/N.
     \end{align*}
 \end{remark}
-\begin{theorem}[群的第二同构定理]\label{qddetgdl}
+\begin{proposition}\label{sdajfan}
     设$G$是群.若$N\lhd G,H\lhd G$并且$N\subset H$,则\begin{align*}
-        (1)&H/N\lhd G/N\\
-        (2)&(G/N)/(H/N)\cong G/H.
+        H/N\lhd G/N.
     \end{align*}
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    (1)的证明
-
     定义映射\begin{align*}
         \varphi:G/N&\to G/H\\
         gN&\mapsto gH,
@@ -86,17 +83,25 @@
         \iff&g\in H\\
         \iff&gN\in H/N,
     \end{align*}可见$\ker\varphi=H/N$,所以\begin{align*}
-        &H/N\lhd G/N\\
-        &(G/N)/(H/N)\cong\im\varphi.
+        H/N\lhd G/N.
     \end{align*}
+\end{proof}
+\begin{theorem}[群的第二同构定理]\label{qddetgdl}
+    设$G$是群.若$N\lhd G,H\lhd G$并且$N\subset H$,则\begin{align*}
+        (G/N)/(H/N)\cong G/H.
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    定义映射\begin{align*}
+        \varphi:G/N&\to G/H\\
+        gN&\mapsto gH,
+    \end{align*}显然$\varphi$是良定义的,并且由命题\ref{sdajfan}的证明过程可知$\phi$是同态映射.
 
-    (2)的证明
-    
     对$\forall gH\in G/H,\exists g\in G\st$\begin{align*}
         \varphi(gN)=gH,
     \end{align*}可见$\varphi$是满同态,进而\begin{align*}
         \im\varphi=G/H,
-    \end{align*}所以\begin{align*}
+    \end{align*}由命题\ref{sdajfan}的证明过程可知$\ker\phi=H/N$,所以由群同态基本定理(定理\ref{qttjbdy})可知\begin{align*}
         (G/N)/(H/N)\cong G/H.
     \end{align*}
 \end{proof}
@@ -632,8 +637,8 @@ Lagrange定理(推论\ref{Lagrangedl})指出,有限群$G$的任意子群的阶�
 \begin{proof}
     \stars
 \end{proof}
-\begin{theorem}[Sylow第一定理]\label{xldydl}
-    若群$G$的阶为$n=p^lm$,其中$p$为素数,$(p,m)=1,l\geq1$,则对于$0\leq k\leq l$,$G$有$p^k$阶子群.特别地,称$p^l$阶子群为$G$的$\mr{Sylow}\ p$-子群.
+\begin{theorem}[Sylow第一定理-存在定理]\label{xldydl}
+    已知群$G$的阶为$p^lm$,其中$(p,m)=1,p$为素数,$l\geq1$.则对$0\leq k\leq l,G$有$p^k$阶子群.
 \end{theorem}
 \begin{proof}
     令\begin{align*}
@@ -672,16 +677,25 @@ Lagrange定理(推论\ref{Lagrangedl})指出,有限群$G$的任意子群的阶�
 
     由式\eqref{duhsbvj}与式\eqref{sduibfhbj}可知,$H_{A_j}$是$G$的$p^k$阶子群.定理得证.
 \end{proof}
-\begin{theorem}[Sylow第二定理]\label{xldedl}
-    若有限群$G$的阶为$p^lm$,其中$p$为素数且$(p,m)=1$,记$P$为$G$的$\mr{Sylow}\ p$-子群.则$G$的任意一个阶为$p^k(k\leq l)$的子群$H$包含在一个与$P$共轭的$\mr{Sylow}\ p$-子群中.
+\begin{definition}
+    若群$G$的阶为$p^lm$,其中$(p,m)=1,p$为素数,$l\geq1$,则称$G$的$p^l$阶子群为$G$的\Sl{p}.
+\end{definition}
+\begin{theorem}[Sylow第二定理-包含与共轭定理]\label{xldedl}
+    已知群$G$的阶为$p^lm$,其中$(p,m)=1,p$为素数,$l\geq1$.则
+    
+    (1)$G$的任一$p$-群包含在一\Sl{p}中.
+
+    (2)$G$的所有\Sl{p}两两共轭,亦即$G$的所有\Sl{p}恰好构成$G$的一个共轭子群类.
 \end{theorem}
 \begin{proof}
-    令\begin{align*}
+    (1)
+    
+    由Sylow第一定理(定理\ref{xldydl})可设$G$的任一$p$-子群$H$,任一\Sl{p}$P$,令\begin{align*}
         X=\l\{gP:g\in G\r\},
     \end{align*}对$\forall h\in H$,定义映射\begin{align*}
         h:X\to&X\\
         gP\mapsto&hgP,
-    \end{align*}容易验证该定义是良定义的,$h$确定了群$H$在集合$X$上的作用.由Lagrange定理(推论\ref{Lagrangedl})的证明过程可知\begin{align*}
+    \end{align*}容易验证这是良定义的,$h$确定了群$H$在集合$X$上的作用.由Lagrange定理(推论\ref{Lagrangedl})的证明过程可知\begin{align*}
         |G|=|X|\cdot|P|,
     \end{align*}所以$|X|=m$.注意到有限$p$-群$H$作用在集合$X$上,并且$(p,m)=1$,所以由推论\ref{p77tl3}可知$X$有不动元素,不妨设其中的一个为$g_jP$,即\begin{align*}
         &\forall h\in H,hg_jP=g_jP\\
@@ -689,21 +703,31 @@ Lagrange定理(推论\ref{Lagrangedl})指出,有限群$G$的任意子群的阶�
         \iff&\forall h\in H,g_j^{-1}hg_j\in P\\
         \iff&\forall h\in H,h\in g_jPg_j^{-1}\\
         \iff&H\subset g_jPg_j^{-1},
-    \end{align*}注意到$H,P$均成群,所以$H<g_jPg_j^{-1}$,即$H$包含在一个与$P$共轭的\Sl{p}中,定理得证.
-\end{proof}
-\begin{corollary}\label{p81tl1}
-    对有限群而言,任意两个\Sl{p}都互相共轭.
-\end{corollary}
-\begin{proof}
-    \stars
+    \end{align*}注意到$H,P$均成群,所以$H<g_jPg_j^{-1}$,即$H$包含在一个与$P$共轭的\Sl{p}$g_jPg_j^{-1}$中,而\begin{align*}
+        |P|=|g_jPg_j^{-1}|,
+    \end{align*}所以$H$包含在一\Sl{p}中,第一个论断得证.
+
+    (2)
+
+    当(1)中的$p$-群$H$不失任意性地取为\Sl{p}时,便有\begin{align*}
+        \text{对$G$的任意两个\Sl{p}$H$与$P$,有$H$与$P$共轭},
+    \end{align*}第二个论断得证.
 \end{proof}
 \begin{corollary}\label{asdinfjkasdfmk}
     有限群$G$的\Sl{p}是惟一的当且仅当$G$的\Sl{p}是正规子群.
 \end{corollary}
 \begin{proof}
-    $G$的子群$P$是正规子群即$P$的所有共轭子群都等与$P$自身.
-
-    任取$G$的两个\Sl{p}$P_0,P$,由推论\ref{p81tl1}可知$P_0,P$互相共轭,又由于$P_0,P$互相共轭可知$P_0=P$,推论得证.
+    (1)
+    
+    设$P$是$G$的惟一一个\Sl{p},于是\begin{align}
+        \forall g\in G,gPg^{-1}=P,\label{njkasdf}
+    \end{align}否则由Sylow第一定理(定理\ref{xldydl})$G$有异于$P$的\Sl{p}.
+    
+    等式\eqref{njkasdf}即$P\lhd G$,必要性证毕.
+    
+    (2)
+    
+    $G$的子群$P$是正规子群亦即$P$的所有共轭子群都等与$P$自身,由此即得充分性成立.
 \end{proof}
 \begin{definition}[正规化子]\label{vghz}
     对群$G$的任意子群$H$,定义\begin{align*}
@@ -723,18 +747,22 @@ Lagrange定理(推论\ref{Lagrangedl})指出,有限群$G$的任意子群的阶�
     \stars
 \end{proof}
 \begin{corollary}\label{p81tl3}
-    若$G$是有限群,$p$是素数且$p\Big||G|$,则$G$的\Sl{p}的个数是$|G|$的因子.
+    若$G$是有限群,$p$是素数且$p\big||G|$,则$G$的\Sl{p}的个数是$|G|$的因子.
 \end{corollary}
 \begin{proof}
     \stars
 \end{proof}
-\begin{theorem}[Sylow第三定理]\label{xldsdl}
-    若$|G|=p^lm,p$是素数且$(p,m)=1,l\geq1$,记$G$的\Sl{p}的个数为$k$,则$k\equiv1\mod p$.
+\begin{theorem}[Sylow第三定理-计数定理]\label{xldsdl}
+    已知群$G$的阶为$p^lm$,其中$(p,m)=1,p$为素数,$l\geq1$.若记$k$为$G$的\Sl{p}的个数,则\begin{align*}
+        &k\equiv1\mod p,&&k|m.
+    \end{align*}
 \end{theorem}
 \begin{analysis}
-    注意到该定理的结论与推论\ref{p77tl4}十分相似,这引诱我们构造某$p$-群$P$,使其作用在某$k$元集合$X$后所得不动元素的个数为$1$.
+    注意到该定理结论的第一个论断与推论\ref{p77tl4}十分相似,这促使我们构造某$p$-群$P$,使其作用在某$k$元集合$X$后所得不动元素的个数为$1$.
 \end{analysis}
 \begin{proof}
+    (1)第一个论断的证明
+    
     令\begin{align*}
         X=\l\{P:P<G,|P|=p^l\r\},
     \end{align*}于是$|X|=k$.
@@ -747,27 +775,23 @@ Lagrange定理(推论\ref{Lagrangedl})指出,有限群$G$的任意子群的阶�
     \end{align*}则\begin{align*}
         Q\in X_0\iff&\forall a\in P,a(Q)=Q\\
         \iff&\forall a\in P,aQa^{-1}=Q\\
-        \iff&\forall a\in P,a\in N(Q)\\
-        \iff&P\subset N(Q),
-    \end{align*}又$Q\subset N(Q)$且$P,Q$都是$G$的\Sl{p},所以由推论\ref{p81tl2}可知$P=Q$,进而$|X_0|=1$.由推论\ref{p77tl4}可知\begin{align*}
+        \iff&\forall a\in P,a\in N_P(Q)\\
+        \iff&P\subset N_P(Q),
+    \end{align*}又$Q\subset N_P(Q)$且$P,Q$都是$G$的\Sl{p},所以由推论\ref{p81tl2}可知$P=Q$,进而$|X_0|=1$.由推论\ref{p77tl4}可知\begin{align*}
         |X_0|\equiv|X|\mod p,
     \end{align*}即\begin{align*}
         &1\equiv k\mod p\\
         \iff&k\equiv1\mod p,
-    \end{align*}定理得证.
-\end{proof}
-\begin{corollary}\label{p82tl}
-    若群$G$的阶为$p^lm$,其中$p$是素数且$(p,m)=1$,则$G$的\Sl{p}的个数是$m$的因子.
-\end{corollary}
-\begin{proof}
-    设$G$的\Sl{p}的个数为$k$.
+    \end{align*}第一个论断得证.
 
-    由推论\ref{p81tl3}可知$k\Big||G|$,由$|G|=p^lm$,$p$是素数且$(p,m)=1$\begin{align}\label{asdkmfjn}
-        k|p\text{或}k|m.
-    \end{align}
+    (2)第二个论断的证明
 
-    由Sylow第三定理(定理\ref{xldsdl})可知\begin{align}\label{sadijf}
+    由第一个论断可知\begin{align}\label{sadijf}
         k\nmid p.
+    \end{align}
+    
+    由推论\ref{p81tl3}与$|G|=p^lm$,$p$是素数且$(p,m)=1$\begin{align}
+        k|p\text{或}k|m.\label{asdkmfjn}
     \end{align}
 
     由式\eqref{asdkmfjn}与\eqref{sadijf}可知$k|m$,推论得证.
@@ -781,7 +805,7 @@ Lagrange定理(推论\ref{Lagrangedl})指出,有限群$G$的任意子群的阶�
         72=2^3\cdot3^2,
     \end{align*}所以利用Sylow第三定理(定理\ref{xldsdl}),可设$G$的Sylow\ $3$-子群的个数为\begin{align*}
         1+3t,t\in\N,
-    \end{align*}再利用推论\ref{p82tl}可知\begin{align*}
+    \end{align*}再由Sylow第三定理(定理\ref{xldsdl})可知\begin{align*}
         (1+3t)|2^3,
     \end{align*}所以$t=0$或$t=1$.
 
@@ -791,7 +815,7 @@ Lagrange定理(推论\ref{Lagrangedl})指出,有限群$G$的任意子群的阶�
 
     (2)若$t=1$,即$G$有$4$个Sylow\ $3$-子群,设为$P_1,P_2,P_3,P_4$.考虑$G$在集合\begin{align*}
         X=\l\{P_1,P_2,P_3,P_4\r\}
-    \end{align*}上的共轭变换(例\ref{gebh}).由推论\ref{p81tl1}可知$G$任意两个Sylow\ $3$-子群都互相共轭,所以$G$的每个元素都在$X$上诱导出一个$4$次置换,从而诱导出同态\begin{align*}
+    \end{align*}上的共轭变换(例\ref{gebh}).由Sylow第二定理(定理\ref{xldedl})可知$G$任意两个Sylow\ $3$-子群都互相共轭,所以$G$的每个元素都在$X$上诱导出一个$4$次置换,从而诱导出同态\begin{align*}
         \phi:G\to S_4,
     \end{align*}由群同态基本定理(定理\ref{qttjbdy})可知\begin{align*}
         G/\ker\phi\cong\im\phi,
@@ -1047,7 +1071,7 @@ Lagrange定理(推论\ref{Lagrangedl})指出,有限群$G$的任意子群的阶�
     \stars
 \end{proof}
 \begin{definition}[同余关系]
-    已知$S$为幺半群,$\sim$为定义在$S$上的等价关系.若$\sim$条件\begin{align*}
+    已知$S$为幺半群,$\sim$为定义在$S$上的等价关系(定义\ref{djgx}).若$\sim$适合\begin{align*}
         a\sim b,b\sim c\Lra ab\sim cd,
     \end{align*}则称$\sim$为$S$上的同余关系.
 \end{definition}
@@ -1069,7 +1093,23 @@ Lagrange定理(推论\ref{Lagrangedl})指出,有限群$G$的任意子群的阶�
     \end{align*}则$\sim$是同余关系.
 \end{theorem}
 \begin{proof}
-    111
+    (1)$\sim$是等价关系\\
+    (i)由$\phi(a)=\phi(a)$可知$a\sim a$,这就证明了反身性.\\
+    (ii)若$\phi(a)=\phi(b)$,则$\phi(b)=\phi(a)$,亦即\begin{align*}
+        a\sim b\Lra b\sim a,
+    \end{align*}这就证明了对称性.\\
+    (iii)若$\phi(a)=\phi(b),\phi(a)=\phi(c)$,则$\phi(a)=\phi(c)$,亦即\begin{align*}
+        a\sim b,a\sim c\Lra a\sim c,
+    \end{align*}这就证明了传递性.(i),(ii),(iii)便证明了$\sim$是等价关系.
+
+    (2)$a\sim b,c\sim d\Lra ac\sim bd$\\
+    若$\phi(a)=\phi(b),\phi(c)=\phi(d)$,则\begin{align*}
+        &\phi(a)\phi(c)=\phi(b)\phi(d)\\
+        \xiff[]{\phi\text{同态映射}}&\phi(ac)=\phi(bd)\\
+        \iff&ac\sim bd.
+    \end{align*}
+
+    由(1),(2)便知$\sim$是同余关系,定理得证.
 \end{proof}
 \begin{theorem}
     已知$\sim$为定义在幺半群$S$上的同余关系,$\pi:S\to S/\sim$为自然同态,$\phi:S\to S'$为同态,则存在惟一的同态$\psi:S/\sim\to S'$使得\begin{align*}

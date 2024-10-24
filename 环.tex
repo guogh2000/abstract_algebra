@@ -1,19 +1,24 @@
 第一章介绍了环,理想,商环以及环同态等概念并建立了环同态基本定理.本章将进一步给出环的几个重要的同态定理与几种构造环的方法.
 \section{环的同态定理}
 在给出环的同态定理之前,先介绍理想的运算.
-\begin{proposition}
+\begin{proposition}\label{zqdj}
     子群的交仍是子群.
-
-    \stars
 \end{proposition}
 \begin{proof}
-    1%\stars
+    设$H,N$是群$(G,\cdot)$的子群,现在来证明$H\cap N$仍是$G$的子群.
+
+    $\forall x,y\in H\cap N$,易见\begin{align*}
+        &x,y\in H\xLra[]{H<G}xy^{-1}\in H\\
+        &x,y\in N\xLra[]{N<G}xy^{-1}\in N,
+    \end{align*}从而\begin{align*}
+        x,y^{-1}\in H\cap N\Lra H\cap N<G,
+    \end{align*}命题得证.
 \end{proof}
 \begin{proposition}\label{jkasdnf}
     已知$H,N$是环$R$的子环,则$H\cap N$是环$R$的子环.
 \end{proposition}
 \begin{proof}
-    由于$H\cap N$是$R$的加法子Abel群,所以只需证明$H\cap N$是关于$R$的乘法封闭即可.
+    由命题\ref{zqdj}可知$H\cap N$是$R$的加法子Abel群,所以只需证明$H\cap N$是关于$R$的乘法封闭即可.
     
     $\forall x,y\in H\cap N$注意到\begin{align*}
         x,y\in H\Lra&xy\in H\\
@@ -30,7 +35,7 @@
     注意到\begin{align*}
         \text{$H$是$R$的子环}\Lra&\text{$H$是$R$的加法子群}\\
         \text{$N$是$R$的理想}\Lra&\text{$N$是$R$的加法子群},
-    \end{align*}所以$H\cap N$是$R$的加法子群.
+    \end{align*}所以由命题\ref{zqdj}可知$H\cap N$是$R$的加法子群.
 
     由于$N$是环$R$的理想,故$\forall n\in H\cap N,h\in H$\begin{align}
         &n\in N,h\in H\subset R\Lra nh,hn\in N\label{klm}\\
@@ -42,9 +47,9 @@
         \l\{h+n:h\in H,n\in N\r\}
     \end{align*}为子环$H,N$的和,记作$H+N$.
 \end{definition}
-\begin{remark}
+\begin{proposition}
     子环的和不一定是子环,但子环的和关于环的加法成群.
-\end{remark}
+\end{proposition}
 \begin{proof}
     对于第一个论断,考虑以下反例\begin{*example}
         已知$R$是数域$\F$上全体$2$阶方阵关于矩阵的加法与乘法所成的环,令\begin{align*}
@@ -88,6 +93,15 @@
         &ra=r(a_1+a_2)=ra_1+ra_2\in H+N,
     \end{align*}所以$H+N$是$R$的理想.
 \end{proof}
+\begin{proposition}
+    已知$H,N$是环$R$的子环,理想,则$N$是$H+N$的理想.
+\end{proposition}
+\begin{proof}
+    $N$是$R$的理想\begin{align*}
+        \iff&\text{$\forall r\in R,n\in N$,都有}nr\in N,rn\in N\\
+        \Lra&\forall r_0\in H+N,n\in N,\text{都有}n_0r\in N,rn_0\in N,
+    \end{align*}从而$N$是$H+N$的理想,命题证毕.
+\end{proof}
 下面开始介绍环的同态定理.
 \begin{theorem}[环的第一同构定理]\label{hddytgdl}
     已知$H,N$是环$R$的子环,理想,则\begin{align*}
@@ -96,6 +110,14 @@
 \end{theorem}
 \begin{proof}
     \stars
+    由群的第一同构定理(定理\ref{qddytgdl})可知有群同构\begin{align*}
+        H/H\cap N\cong H+N/N,
+    \end{align*}其中的同构映射为\begin{align*}
+        \phi:H/H\cap N\to&H+N/N\\
+        h+H\cap N\mapsto h+N,
+    \end{align*}只需证明$\phi$保持乘法运算即可得到$\phi$是同构映射,从而定理成立.
+
+    验证即可11111111
 \end{proof}
 \begin{theorem}\label{p102dl2}
     已知$R$是环,$\sigma:R\to\im\sigma$是同态映射,则映射\begin{align*}
@@ -109,15 +131,33 @@
 \begin{proof}
     \stars
 \end{proof}
+\begin{proposition}
+    已知$R$是环,$H,N$是$R$的理想且$N\subset H$.则$H/N$是$R/N$的理想.
+\end{proposition}
+\begin{proof}
+    任取$hN\in H/N,rN\in R/N$,有\begin{align*}
+        &hN\cdot rN\\
+        \xLra[]{(N,+)\lhd(R,+)}&=hrN\\
+        \xLra[]{\text{$H$是$R$的理想}}&\in HN=H/N,
+    \end{align*}同理可证$rN\cdot hN\in H/N$,从而$H/N$是$R/N$的理想,命题得证.
+\end{proof}
 \begin{theorem}[环的第二同构定理]\label{hddetgdl}
-    已知$R$是环,$\sigma:R\to\im\sigma$是同态映射,$H$是$R$的理想且$H\supset\ker\sigma$,则\begin{align*}
-        R/H\cong\l(R/\ker\sigma\r)/\l(H/\ker\sigma\r).
+    已知$R$是环,$H,N$是$R$的理想且$N\subset H$.则\begin{align*}
+        (R/N)/(H/N)\cong R/H.
     \end{align*}
 \end{theorem}
 \begin{proof}
     \stars
+    由群的第二同构定理(定理\ref{qddetgdl})可得如下群同构\begin{align*}
+        (R/N)/(H/N)\cong R/H,
+    \end{align*}其中的同构映射为\begin{align*}
+        \phi:R/N\to&R/H\\
+        rN\mapsto&rH,
+    \end{align*}只需证明$\phi$保持乘法运算即可.
+
+    1
 \end{proof}
 \begin{remark}
-    取$H=\ker\sigma$即得环同态基本定理(定理\ref{httjbdl}).
+    取$H=\{e\}$即得环同态基本定理(定理\ref{httjbdl}).
 \end{remark}
-将环的第一同构定理(定理\ref{hddytgdl})与环的第二同构定理(定理\ref{hddetgdl})统称为环的同态定理.
+环同态基本定理(定理\ref{httjbdl}),环的第一同构定理(定理\ref{hddytgdl}),环的第二同构定理(定理\ref{hddetgdl})统称为环的同态定理.

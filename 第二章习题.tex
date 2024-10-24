@@ -156,13 +156,13 @@
     \end{align*}结合$p$是$|G|$的最小素因子便知$|G|=p$,于是\begin{align*}
         &|H|=\frac{|G|}{[G:H]}=\frac{p}{p}=1\\
         \iff&H=\l\{e\r\}\\
-        \Lra\ &H\text{是$G$的正规子群}.
+        \Lra&H\text{是$G$的正规子群}.
     \end{align*}
 
     (2)若$\ker\phi\neq\l\{e\r\}$,则\begin{align*}
         &g\in\ker\phi\\
         \iff&\forall a_i\in G,ga_iH=a_iH\\
-        \xLra[]{\text{当$a_i=e$时}}\ &gH=H\\
+        \xLra[]{\text{当$a_i=e$时}}&gH=H\\
         \iff&g\in H,
     \end{align*}由此可见$\ker\phi\subset H$,从而$\ker\phi\lhd H$.注意到\begin{align*}
         &[G:\ker\phi]=|\im\phi|\Big||S_p|=p!\\
@@ -238,7 +238,7 @@
     (2)若$gPg^{-1}\neq P$,注意到\begin{align*}
         &\text{$gPg^{-1}$是$P$在$G$中的共轭子群}\\
         &\text{$P$在$G$中的共轭子群也在$N$中},
-    \end{align*}所以由$P$是$N$的\Sl{p}与推论\ref{p81tl1}可知\begin{align*}
+    \end{align*}所以由$P$是$N$的\Sl{p}与Sylow第二定理(定理\ref{xldedl})可知\begin{align*}
         &\exists n\in N\st gPg^{-1}=nPn^{-1}\\
         \iff&(n^{-1}g)P(g^{-1}n)=P\\
         \iff&n^{-1}g\in N_G(P),
