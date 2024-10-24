@@ -161,3 +161,178 @@
     取$H=\{e\}$即得环同态基本定理(定理\ref{httjbdl}).
 \end{remark}
 环同态基本定理(定理\ref{httjbdl}),环的第一同构定理(定理\ref{hddytgdl}),环的第二同构定理(定理\ref{hddetgdl})统称为环的同态定理.
+\section{环的直和}
+\begin{definition}[环的直和]\label{hdvh}
+    已知$R_1\times R_2\times\cdots\times R_s$为环$R_1,\cdots,R_s$的$\mr{Cartesian}$积,对$a_k,b_k\in R_k$,定义\begin{align*}
+        &(a_1,a_2,\cdots,a_s)+(b_1,b_2,\cdots,b_s)=(a_1+b_1,a_2+b_2,\cdots,a_s+b_s)\\
+        &(a_1,a_2,\cdots,a_s)\cdot(b_1,b_2,\cdots,b_s)=(a_1b_1,a_2b_2,\cdots,a_sb_s),
+    \end{align*}则$R_1\times R_2\times\cdots\times R_s$在新定义的加法与乘法下成环,称其为环$R_1,R_2,\cdots,R_s$的直和,记作\begin{align*}
+        \bigoplus_{k=1}^sR_k.
+    \end{align*}
+\end{definition}
+\begin{remark}
+    (1)环$\l(R_1\times R_2\times\cdots\times R_s,+,\cdot\r)$的零元为$(0,0,\cdots,0)$.
+
+    (2)若环$R_i$有幺元$1_i$,则环$\l(R_1\times\cdots\times R_s,+,\cdot\r)$有幺元$(1_1,\cdots,1_s)$.
+    
+    
+    (3)$\bigoplus_{i=1}^{s}R_i=\sum_{i=1}^sR_i.$
+    
+    (4)$\bigoplus_{k=1}^sR_k$中元素可惟一地分解为$R_i$中元素的和.
+    
+    (5)$\forall r_i\in R_i,r_j\in R_j\text{且}i\neq j,\text{有}r_i\cdot r_j=(0,0,\cdots,0)$.
+
+    (6)若$R_i$为交换环,则$\bigoplus_{k=1}^sR_k$为交换环.
+
+    (7)令$R_k'=\l(\l\{0,\cdots,0,r_k,0,\cdots,0:r_k\in R_k\r\},+,\cdot\r)$,则\begin{align*}
+        &(7.1)\text{$R_i'$是$\bigoplus_{k=1}^sR_k$的理想且$R_i'\cong R_i$}\\
+        &(7.2)R_i'\cap\l(\sum_{j\neq i}R_j\r)=(0,0,\cdots,0).
+    \end{align*}\qed
+\end{remark}
+\begin{theorem}\label{sdkjfh}
+    若环$R$的子环$R_1,R_2,\cdots,R_s$适合\begin{align*}
+        &(1)\text{$R_i$是$R$的理想}\\
+        &(2)R=\sum_{i=1}^{s}R_i\\
+        &(3)R_i\cap\l(\sum_{j\neq i}^{j}R_j\r)=\l(0,0,\cdots,0\r),
+    \end{align*}则\begin{align*}
+        R\cong\bigoplus_{i=1}^{r}R_i.
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{definition}[内直和]
+    若环$R$的子环$R_1,R_2,\cdots,R_s$适合定理\ref{sdkjfh}的条件,则称$R$为$R_1,R_2,\cdots,R_s$的内直和.
+\end{definition}
+\begin{definition}[理想的积]\label{lxdj}
+    设$H,N$是环$R$的理想,则有限和\begin{align*}
+        \sum a_ib_i,a_i\in H,b_i\in N
+    \end{align*}组成的集合是$R$的理想,称其为$H$和$N$的积,记作$H\cdot N.$\qed
+\end{definition}
+\begin{remark}
+    理想的乘法对理想的加法满足分配律.\qed
+\end{remark}
+\begin{definition}[互素]\label{hs}
+    若幺环$R$的理想$H,N$满足$H+N=R$,则称$H,N$互素.
+\end{definition}
+\begin{lemma}
+    设$H,N,K$是幺环$R$的理想,则
+
+    (1)若$R$交换,则$H,N$互素是$H\cdot N=H\cap N$的充分条件.
+
+    (2)若$H,K$均与$N$互素,则$H\cdot K$与$N$互素.
+\end{lemma}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{theorem}\label{p105dl5}
+    设幺环$R$的理想$N_1,\cdots,N_r$两两互素,则\begin{align*}
+        R\l/\bigcap_{i=1}^{r}N_i\r.\cong\bigoplus_{i=1}^{r}R/N_i.
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+整数环$\l(\Z,+,\cdot\r)$的概念可以推广到任意环.
+\begin{definition}[模$N$同余]
+    已知$N$是环$R$的理想,对$\forall a,b\in R$,若$a-b\in N$,则称$a,b$模$N$同余,记作\begin{align*}
+        a\equiv b\mod N,
+    \end{align*}反之,称$a,b$模$N$非同余,记作\begin{align*}
+        a\not\equiv b\mod N.
+    \end{align*}
+\end{definition}
+\begin{theorem}[中国剩余定理]\label{vguydl}
+    若幺环$R$的理想$N_1,\cdots,N_r$两两互素,则$\forall b_1,\cdots,b_r\in R$,同余方程组\begin{align*}
+        \l\{\begin{array}{c}
+            x\equiv b_1\mod N_1\\
+            x\equiv b_2\mod N_2\\
+            \cdots\\
+            x\equiv b_r\mod N_r
+        \end{array}\r.
+    \end{align*}在$R$内恒有解,且任意两解模$\bigcap_{i=1}^{r}N_i$同余.
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+定理\ref{p105dl5}有一个特殊情况值得提一下,即
+\begin{theorem}\label{p107dl5'}
+    若幺环$R$的理想$N_1,\cdots,N_r$两两互素,$\bigcap_{i=1}^{r}N_i=\l(0,\cdots,0\r)$,则\begin{align*}
+        R\cong\bigoplus_{i=1}^{r}R/N_i.
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{example}
+    \stars
+\end{example}
+\begin{definition}[由$S$生成的理想,生成元集,有限生成的,主理想]\label{ysuidlx}\label{uiyj}\label{yxuid}\label{vlx}
+    已知$S$是任一环$R$的非空子集.称$R$中所有包含$S$的理想的交为由$S$生成的理想,记作$(S)$,同时包含$S$的最小理想.称$S$为$(S)$的生成元集.若$S=\l\{a_1,\cdots,a_r\r\}$为有限集,则称$(S)$为有限生成的,$(S)$记作$(a_1,\cdots,a_r)$.称由一个元$a$生成的理想$(a)$为主理想.
+\end{definition}
+\begin{proposition}
+    环$R$的主理想$(a)$是由下列形状元素\begin{align*}
+        na,xa,ay,xay
+    \end{align*}的一切有限和组成的,其中$n\in\Z,x,y\in R$.
+\end{proposition}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{proposition}
+    交换环$R$的主理想$(a)$是由下列形状元素\begin{align*}
+        na,xa
+    \end{align*}的一切有限和组成的,其中$n\in\Z,x\in R$.
+\end{proposition}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{proposition}
+    交换幺环$R$的主理想$(a)$是由下列形状元素\begin{align*}
+        xa
+    \end{align*}的一切有限和组成的,其中$x\in R$.
+\end{proposition}
+\begin{proof}
+    \stars
+\end{proof}
+\section{环的反同构}
+在数域$\F$上全体$n$阶矩阵关于矩阵的加法与乘法构成的环$M_n(\F)$上,称转置映射\begin{align*}
+    \phi:M_n(\F)\to&M_n(\F)\\
+    A\mapsto&A^T
+\end{align*}为$M_n(\F)$上的反自同构,将其延伸到一般环上就有\begin{definition}[反同构,反自同构]\label{ftg}\label{fztg}
+    若环$R$到$R'$的一一对应$\sigma$满足\begin{align*}
+        &(1)\sigma(a+b)=\sigma(a)+\sigma(b)\\
+        &(2)\sigma(a\cdot b)=\sigma(b)\cdot\sigma(a),
+    \end{align*}则称$\sigma$为$R$到$R'$的反自同构,也称$R$与$R'$反同构.当$R'=R$时,称$\sigma$为$R$的反自同构.
+\end{definition}
+\begin{proposition}
+    若环$R$与环$R'$成反同构且$R$交换,则$R'$也交换,反同构也是同构.
+\end{proposition}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{proposition}\label{sdkf}
+    环$R$的自同构与反自同构关于映射的乘法成群.
+\end{proposition}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{proposition}
+    记命题\ref{sdkf}中的群为$G$.则对于命题\ref{sdkf}中的$R$有\begin{align*}
+        &(1)\Aut(R)<G.\\
+        &(2)[G:\Aut(R)]\leq2.
+    \end{align*}
+\end{proposition}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{proposition}
+    对任一非交换环$R$,可作出环$R'$使得$R'$与$R$成反同构.
+\end{proposition}
+\begin{proof}
+    \stars
+\end{proof}
+\begin{example}
+    存在没有反自同构的交换环.
+\end{example}
+\begin{proof}
+    \stars
+\end{proof}
